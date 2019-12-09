@@ -173,6 +173,9 @@ html {
   text-align: center;
   top: 85%;
 }
+.wrapper .footer-links a {
+  text-decoration: none;
+}
 .wrapper .footer-links i {
   font-size: 1.2rem;
   color: #0e2a58;
