@@ -64,7 +64,7 @@ function removeAnimation(clearFrameID) {
     }
   }
 }
-var baseRef = "";
+var baseRef = "/nus-115";
 function redirect() {
   var currentSlick = $(".slick-current")
     .text()

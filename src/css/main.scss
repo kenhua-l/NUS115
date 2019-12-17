@@ -34,173 +34,118 @@ body {
 
 svg {
   // display: none;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  // will-change: transform;
+  // backface-visibility: hidden;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
+  z-index: -4;
+  perspective: 1000;
+  transform: translateZ(0);
   transform: translate(-50%, -50%);
-  z-index: -10;
-}
-
-.cls-15,
-.cls-16,
-.cls-17,
-.cls-22,
-.cls-23,
-.cls-24,
-.cls-18 {
-  stroke-dasharray: 800;
-  stroke-dashoffset: 810;
-  -webkit-animation: dash 10s infinite alternate;
-  animation: dash 10s infinite alternate;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-
-.cls-19,
-.cls-20,
-.cls-21,
-.cls-20,
-.cls-21,
-.cls-22,
-.cls-23,
-.cls-24,
-.cls-25,
-.cls-26 {
-  stroke-dasharray: 800;
-  stroke-dashoffset: 810;
-  -webkit-animation: dash 10s infinite alternate;
-  animation: dash 10s infinite alternate;
-}
-
-.cls-10,
-.cls-11,
-.cls-8,
-.cls-9,
-.cls-12,
-.cls-13,
-.cls-14 {
-  stroke-dasharray: 800;
-  stroke-dashoffset: 810;
-  -webkit-animation: dash 15s infinite alternate;
-  animation: dash 15s infinite alternate;
-  -webkit-animation-delay: 10s;
-  animation-delay: 10s;
 }
 
 .cls-2,
-.cls-3,
 .cls-4,
-.cls-5,
+.cls-8,
+.cls-13,
+.cls-16,
+.cls-22,
+.cls-26,
+.cls-29,
+.cls-39,
+.cls-42,
+.cls-43,
+.cls-45,
+.cls-59,
+.cls-63 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: animate 13s ease forwards 0.2s infinite alternate;
+}
+
 .cls-6,
-.cls-7,
+.cls-14,
+.cls-15,
+.cls-17,
+.cls-24,
 .cls-25,
-.cls-26 {
-  stroke-dasharray: 800;
-  stroke-dashoffset: 810;
-  -webkit-animation: dash 20s infinite alternate;
-  animation: dash 20s infinite alternate;
-  -webkit-animation-delay: 15s;
-  animation-delay: 15s;
+.cls-40,
+.cls-51,
+.cls-52,
+.cls-54,
+.cls-57 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: animate 13s ease forwards 1.2s infinite alternate;
 }
 
-// .cls-27,
-// .cls-28,
-// .cls-29,
-// .cls-30,
-// .cls-31,
-// .cls-32,
-// .cls-33,
-// .cls-34,
-// .cls-35,
-// .cls-36,
-// .cls-37,
-// .cls-38 {
-//   stroke-dasharray: 800;
-//   stroke-dashoffset: 810;
-//   -webkit-animation: dash 15s infinite alternate;
-//   animation: dash 15s infinite alternate;
-//   -webkit-animation-delay: 10s;
-//   animation-delay: 10s;
-// }
-// .cls-39,
-// .cls-40,
-// .cls-41,
-// .cls-42,
-// .cls-43,
-// .cls-44,
-// .cls-45,
-// .cls-46,
-// .cls-47,
-// .cls-48,
-// .cls-49,
-// .cls-50,
-// .cls-51,
-// .cls-52,
-// .cls-53,
-// .cls-54,
-// .cls-55 {
-//   stroke-dasharray: 800;
-//   stroke-dashoffset: 810;
-//   -webkit-animation: dash 10s infinite alternate;
-//   animation: dash 10s infinite alternate;
-// }
-// .cls-56,
-// .cls-57,
-// .cls-58,
-// .cls-59,
-// .cls-60,
-// .cls-61,
-// .cls-62,
-// .cls-63,
-// .cls-64,
-// .cls-65,
-// .cls-66,
-// .cls-67,
-// .cls-68,
-// .cls-69,
-// .cls-70,
-// .cls-71,
-// .cls-72,
-// .cls-73,
-// .cls-74 {
-//   stroke-dasharray: 800;
-//   stroke-dashoffset: 810;
-//   -webkit-animation: dash 15s infinite alternate;
-//   animation: dash 15s infinite alternate;
-// }
-// .cls-75,
-// .cls-76,
-// .cls-77,
-// .cls-78,
-// .cls-79,
-// .cls-80,
-// .cls-81,
-// .cls-82,
-// .cls-83,
-// .cls-84,
-// .cls-85,
-// .cls-86,
-// .cls-87 {
-//   stroke-dasharray: 800;
-//   stroke-dashoffset: 810;
-//   -webkit-animation: dash 20s infinite alternate;
-//   animation: dash 20s infinite alternate;
-//   -webkit-animation-delay: 15s;
-//   animation-delay: 15s;
-// }
+.cls-1,
+.cls-9,
+.cls-11,
+.cls-20,
+.cls-27,
+.cls-28,
+.cls-36,
+.cls-46,
+.cls-50,
+.cls-53 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: animate 13s ease forwards 2.5s infinite alternate;
+}
 
-@-webkit-keyframes dash {
-  to {
-    stroke-dashoffset: -200;
+.cls-7,
+.cls-10,
+.cls-18,
+.cls-32,
+.cls-38,
+.cls-30,
+.cls-44,
+.cls-48,
+.cls-58,
+.cls-62 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: animate 13s ease forwards 3.5s infinite alternate;
+}
+
+.cls-3,
+.cls-12,
+.cls-19,
+.cls-21,
+.cls-31,
+.cls-33,
+.cls-34,
+.cls-37,
+.cls-41,
+.cls-55 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: animate 13s ease forwards 4.2s infinite alternate;
+}
+
+.cls-5,
+.cls-23,
+.cls-35,
+.cls-47,
+.cls-49,
+.cls-56,
+.cls-60,
+.cls-61 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: animate 14s ease forwards 5s infinite alternate;
+}
+
+@keyframes animate {
+  from {
+    stroke-dashoffset: 1200;
   }
-}
-
-@keyframes dash {
   to {
-    stroke-dashoffset: -200;
+    stroke-dashoffset: -110;
   }
 }
 
@@ -334,7 +279,6 @@ html {
 
 #revert-animation {
   #animation-container {
-    display: inline;
     display: initial;
     position: absolute;
     bottom: 0;
