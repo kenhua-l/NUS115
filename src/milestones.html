@@ -8,57 +8,89 @@
 <!-- <link rel="stylesheet" href="style.css" /> -->
 <link rel="stylesheet" href="./css/all.min.css" />
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/line-awesome.min.css" />
 <link rel="stylesheet" href="./css/slick.css" />
 <link rel="stylesheet" href="./css/slick-theme.css" />
 <link rel="stylesheet" href="./css/main.css" />
 
 <body>
     <main id="main-container">
-        <div id="revert-animation">
+        <div id="clear-animation">
             <div id="animation-container">
                 <div id="animation"></div>
             </div>
         </div>
-
-        <div id="animation-container">
-            <div id="animation"></div>
-        </div>
-        <div id="container home-content" class="wrapper">
+        <div id="container" class="wrapper">
             <div class="logo">
                 <img src="./images/nus115-logo.png">
             </div>
-            <div class="slick-container">
-                <div class="slick-item">
-                    <div class="item-container">
-                        <h2>ABOUT</h2>
-                    </div>
+            <div class="content-container">
+                <div id="animation-container">
+                    <div id="animation"></div>
                 </div>
-                <div class="slick-item">
-                    <div class="item-container">
-                        <h2>MESSAGE</h2>
+                <div class="content">
+                    <span class="close-btn"><i class="las la-times"></i></span>
+                    <div class="tabs">
+                        <ul class="d-flex flex-wrap">
+                            <li><a href="#">TECHNOLOGY</a></li>
+                            <li><a href="#">HEALTH</a></li>
+                            <li><a href="#">ENTERPRISE</a></li>
+                            <li><a href="#">COMMUNITY</a></li>
+                            <li><a class="active" href="#">SUSTAINABILITY</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="slick-item">
-                    <div class="item-container">
-                        <h2>MILESTONES</h2>
-                    </div>
-                </div>
-                <div class="slick-item">
-                    <div class="item-container">
-                        <h2>EVENTS</h2>
-                    </div>
-                </div>
-                <div class="slick-item">
-                    <div class="item-container">
-                        <h2>SPEAKER</h2>
+                    <div class="d-flex justify-content-between flex-wrap milestone-master-container">
+                        <div class="col-12 col-lg-7 p-0 m-0 order-1 milestones-content">
+                            <div>
+                                <h2>Sustainability</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 p-0 m-0 text-right order-2 slider-section">
+                            <div class="milestones-container">
+                                <div class="milestones-item">
+                                    <img src="./images/nus building.jpg">
+                                    <div class="text-overlay">
+                                        <div>
+                                            <p class="date">2019</p>
+                                            <p class="title">NUS opens first net-zero energy building</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="milestones-item">
+                                    <img src="./images/nus building.jpg">
+                                    <div class="text-overlay">
+                                        <div>
+                                            <p class="date">2019</p>
+                                            <p class="title">NUS opens first net-zero energy building</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="milestones-item">
+                                    <img src="./images/nus building.jpg">
+                                    <div class="text-overlay">
+                                        <div>
+                                            <p class="date">2019</p>
+                                            <p class="title">NUS opens first net-zero energy building</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="milestones-item">
+                                    <img src="./images/nus building.jpg">
+                                    <div class="text-overlay">
+                                        <div>
+                                            <p class="date">2019</p>
+                                            <p class="title">NUS opens first net-zero energy building</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="learn-more" id="learnmore-container">
-                <a onclick="redirect()" class="btn learn-more-btn">LEARN MORE</a>
-            </div>
-
 
             <div class="footer-links">
                 <div class="footer-links-container">
@@ -76,7 +108,10 @@
                     </div>
                 </div>
             </div>
+
             <div class="overlay"></div>
+
+
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 979.81 335.45">
                 <defs>
                     <style>
@@ -995,6 +1030,7 @@
                     </g>
                 </g>
             </svg>
+
         </div>
     </main>
 </body>
