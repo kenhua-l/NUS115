@@ -1,18 +1,51 @@
+$(window).resize(function() {
+  if ($(window).width() < 992) {
+    $(".tabs")
+      .addClass("tabs-dropdown")
+      .removeClass("tabs");
+  } else {
+    $(".tabs-dropdown")
+      .addClass("tabs")
+      .removeClass("tabs-dropdown");
+  }
+});
 $(document).ready(function() {
   $(".slick-container").slick({
     centerMode: true,
     centerPadding: "25%",
     arrows: false,
     focusOnSelect: true,
-    infinite: false
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerPadding: "20%"
+        }
+      }
+    ]
   });
+  var slideNum = location.hash;
+  if (slideNum == "#about") {
+    $(".slick-container").slick("slickGoTo", 0);
+  } else if (slideNum == "#message") {
+    $(".slick-container").slick("slickGoTo", 1);
+  } else if (slideNum == "#milestone") {
+    $(".slick-container").slick("slickGoTo", 2);
+  } else if (slideNum == "#events") {
+    $(".slick-container").slick("slickGoTo", 3);
+  } else if (slideNum == "#speaker") {
+    $(".slick-container").slick("slickGoTo", 4);
+  } else {
+    $(".slick-container").slick("slickGoTo", 2);
+  }
   // Animation control
   removeAnimation($("#clear-animation"));
   $(".home-content").hide();
-  exitAnimation($("#revert-animation"), true);
+  exitAnimation($("#revert-animation"), true, null);
 
   $(".close-btn").on("click", function() {
-    exitAnimation($("#clear-animation"), false);
+    exitAnimation($("#clear-animation"), false, $(this).attr("id"));
   });
 
   // HOVER
@@ -30,8 +63,119 @@ $(document).ready(function() {
       });
     }
   );
+  // Nav tabs
+  $(".tabs ul li a").on("click", function() {
+    navTabs(true);
+  });
+
+  // Dropdown
+  if ($(window).width() < 992) {
+    $(".tabs")
+      .addClass("tabs-dropdown")
+      .removeClass("tabs");
+  }
+
+  $(".selected-container").on("click", function() {
+    console.log("clicked");
+    $(".tabs-dropdown ul").Toggle();
+  });
+
+  $(".tabs-dropdown ul li a").on("click", function() {
+    navTabs(true);
+    $(".tabs-dropdown ul").slideToggle();
+  });
+
+  $(".milestones-container").on("beforeChange", function(
+    event,
+    slick,
+    currentSlide,
+    nextSlide
+  ) {
+    if (nextSlide == 0) {
+      location.href = "#technology";
+      $(".tabs-dropdown .selected").text(function() {
+        return "TECHNOLOGY";
+      });
+    } else if (nextSlide == 1) {
+      location.href = "#health";
+      $(".tabs-dropdown .selected").text(function() {
+        return "HEALTH";
+      });
+    } else if (nextSlide == 2) {
+      location.href = "#enterprise";
+      $(".tabs-dropdown .selected").text(function() {
+        return "ENTERPRISE";
+      });
+    } else if (nextSlide == 3) {
+      location.href = "#community";
+      $(".tabs-dropdown .selected").text(function() {
+        return "COMMUNITY";
+      });
+    } else if (nextSlide == 4) {
+      location.href = "#sustainability";
+      $(".tabs-dropdown .selected").text(function() {
+        return "SUSTAINABILITY";
+      });
+    }
+    navTabs(false);
+  });
 });
 
+function navTabs(toggle) {
+  setTimeout(() => {
+    var hash = location.hash;
+    if (hash == "") {
+      hash = "#technology";
+    }
+    $(".milestones-content")
+      .find(".active")
+      .removeClass("active");
+    $(".tabs")
+      .find(".active")
+      .removeClass("active");
+    $(".tabs-dropdown")
+      .find(".active")
+      .removeClass("active");
+    $(".tabs")
+      .find(hash)
+      .addClass("active");
+    $(".tabs-dropdown")
+      .find(hash)
+      .addClass("active");
+    $(".milestones-content " + hash).addClass("active");
+
+    if (toggle == true) {
+      if (hash == "#technology") {
+        $(".milestones-container").slick("slickGoTo", 0);
+        $(".tabs-dropdown .selected").text(function() {
+          return "TECHNOLOGY";
+        });
+      } else if (hash == "#health") {
+        $(".milestones-container").slick("slickGoTo", 1);
+        $(".tabs-dropdown .selected").text(function() {
+          return "HEALTH";
+        });
+      } else if (hash == "#enterprise") {
+        $(".milestones-container").slick("slickGoTo", 2);
+        $(".tabs-dropdown .selected").text(function() {
+          return "ENTERPRISE";
+        });
+      } else if (hash == "#community") {
+        $(".milestones-container").slick("slickGoTo", 3);
+        $(".tabs-dropdown .selected").text(function() {
+          return "COMMUNITY";
+        });
+      } else if (hash == "#sustainability") {
+        $(".milestones-container").slick("slickGoTo", 4);
+        $(".tabs-dropdown .selected").text(function() {
+          return "SUSTAINABILITY";
+        });
+      }
+    } else {
+      return;
+    }
+  }, 50);
+}
 function responsiveSlider(slider) {
   var settings = {
     dots: true,
@@ -64,7 +208,7 @@ function removeAnimation(clearFrameID) {
     }
   }
 }
-var baseRef = "/nus-115";
+var baseRef = " ";
 function redirect() {
   var currentSlick = $(".slick-current")
     .text()
@@ -78,7 +222,7 @@ function redirect() {
     pageHref = baseRef + "/milestones.html";
   } else if (currentSlick == "EVENTS") {
     pageHref = baseRef + "/events.html";
-  } else if (currentSlick == "SPEAKER") {
+  } else if (currentSlick == "DISTINGUISHED SPEAKER SERIES") {
     pageHref = baseRef + "/speaker.html";
   }
   var conHeight = $("#animation-container").height();
@@ -158,16 +302,16 @@ function redirectedAnimate(frameID) {
       $(".event-slider-container").slick({
         slidesToShow: 3,
         focusOnSelect: true,
-        infinite: true,
+        infinite: false,
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1200,
             settings: {
               slidesToShow: 2
             }
           },
           {
-            breakpoint: 600,
+            breakpoint: 992,
             settings: {
               slidesToShow: 1
             }
@@ -178,6 +322,7 @@ function redirectedAnimate(frameID) {
         if (posclear > conWidth) {
           clearInterval(widthClear);
           elem.removeAttr("style");
+          navTabs(true);
           frameID.find("#animation-container").hide();
         } else {
           posclear = posclear + 20;
@@ -195,7 +340,7 @@ function redirectedAnimate(frameID) {
   }
 }
 
-function exitAnimation(frameID, homeClear) {
+function exitAnimation(frameID, homeClear, currentPage) {
   var conWidth = frameID.find("#animation-container").width();
   var elem = frameID.find("#animation");
   frameID.find("#animation-container").show();
@@ -211,7 +356,7 @@ function exitAnimation(frameID, homeClear) {
     function revertFrameY() {
       if (posclear > conWidth) {
         clearInterval(revertY);
-        window.location.href = baseRef + "/index.html";
+        window.location.href = baseRef + "/index.html#" + currentPage;
       } else {
         posclear = posclear + 20;
         elem.css({
