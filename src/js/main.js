@@ -20,7 +20,8 @@ $(document).ready(function() {
       {
         breakpoint: 768,
         settings: {
-          centerPadding: "20%"
+          centerPadding: "18%",
+          variableWidth: true
         }
       }
     ]
@@ -77,12 +78,12 @@ $(document).ready(function() {
 
   $(".selected-container").on("click", function() {
     console.log("clicked");
-    $(".tabs-dropdown ul").Toggle();
+    $(".tabs-dropdown ul").slideToggle();
   });
 
   $(".tabs-dropdown ul li a").on("click", function() {
-    navTabs(true);
     $(".tabs-dropdown ul").slideToggle();
+    navTabs(true);
   });
 
   $(".milestones-container").on("beforeChange", function(
@@ -175,6 +176,9 @@ function navTabs(toggle) {
       return;
     }
   }, 50);
+  $(".content-container").animate({
+    scrollTop: 0
+  });
 }
 function responsiveSlider(slider) {
   var settings = {

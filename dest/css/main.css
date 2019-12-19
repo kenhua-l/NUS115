@@ -163,8 +163,8 @@ html {
 
 .slick-current .item-container h2 {
   color: white !important;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
 .wrapper {
@@ -178,17 +178,28 @@ html {
           transform: translateY(-50%);
 }
 
+@media (max-width: 768px) {
+  .wrapper .slick-container {
+    top: 45%;
+  }
+}
+
 .wrapper .slick-container .slick-item {
-  padding: 3rem 0;
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.wrapper .slick-container .slick-item .item-container {
+  padding: 0 2rem;
 }
 
 .wrapper .slick-container .slick-item h2 {
   color: #9c9c9c;
   font-size: 4.95rem;
   letter-spacing: 4px;
-  text-align: center;
   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
   z-index: 1;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -211,7 +222,7 @@ html {
 
 @media (max-width: 600px) {
   .wrapper .slick-container .slick-item h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
@@ -220,8 +231,27 @@ html {
           transform: translateY(-10%);
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1200px) {
   .wrapper .slick-container .slick-item #speaker-menu h2 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrapper .slick-container .slick-item #speaker-menu h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper .slick-container .slick-item #speaker-menu h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper .slick-container .slick-item #speaker-menu h2 {
+    max-width: 300px;
     font-size: 1.5rem;
   }
 }
@@ -242,11 +272,11 @@ html {
   color: white;
   border: 1.5px solid white;
   margin: 0 auto;
-  font-size: 1.2rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 0px;
   letter-spacing: 0.2rem;
+  font-size: 1rem;
 }
 
 .wrapper .footer-links {
@@ -359,7 +389,7 @@ html {
 }
 
 .logo img {
-  max-height: 100px;
+  max-height: 60px;
 }
 
 @media (max-width: 992px) {
@@ -386,6 +416,8 @@ html {
 
 @media (max-width: 768px) {
   .content-container {
+    top: 15%;
+    height: 65%;
     width: 95%;
     left: 2.5%;
   }
@@ -404,6 +436,13 @@ html {
   padding: 3rem 2.5rem;
   height: 100%;
   width: 97%;
+}
+
+@media (max-width: 768px) {
+  .content-container .content {
+    padding: 3rem 1.5rem;
+    width: 100%;
+  }
 }
 
 .content-container .content .tabs .selected-container {
@@ -435,7 +474,7 @@ html {
 
 .content-container .content .tabs-dropdown {
   height: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .content-container .content .tabs-dropdown .selected-container {
@@ -493,6 +532,7 @@ html {
   color: #fb8400;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
+  max-width: 95%;
 }
 
 .content-container .content p {
@@ -515,6 +555,12 @@ html {
 .content-container .content .milestones-content {
   margin-top: 1rem !important;
   padding-right: 1rem !important;
+}
+
+@media (max-width: 768px) {
+  .content-container .content .milestones-content {
+    padding-right: 1rem !important;
+  }
 }
 
 .content-container .content .milestones-content div {
@@ -613,12 +659,24 @@ html {
   content: "\f054";
 }
 
+@media (max-width: 768px) {
+  .content-container .content .event-slider-container .slick-next::before {
+    font-size: 1rem;
+  }
+}
+
 .content-container .content .event-slider-container .slick-prev::before {
   color: white;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 2rem;
   content: "\f053";
+}
+
+@media (max-width: 768px) {
+  .content-container .content .event-slider-container .slick-prev::before {
+    font-size: 1rem;
+  }
 }
 
 .milestone-master-container {
@@ -678,6 +736,12 @@ html {
   letter-spacing: 0.15rem;
 }
 
+@media (max-width: 768px) {
+  .milestone-master-container .slider-section .milestones-container .milestones-item .text-overlay .title {
+    font-size: 1rem;
+  }
+}
+
 .milestone-master-container .slider-section .milestones-container .slick-prev {
   left: 10px !important;
   z-index: 4;
@@ -697,12 +761,24 @@ html {
   content: "\f054";
 }
 
+@media (max-width: 768px) {
+  .milestone-master-container .slider-section .milestones-container .slick-next::before {
+    font-size: 1rem;
+  }
+}
+
 .milestone-master-container .slider-section .milestones-container .slick-prev::before {
   color: white;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 2rem;
   content: "\f053";
+}
+
+@media (max-width: 768px) {
+  .milestone-master-container .slider-section .milestones-container .slick-prev::before {
+    font-size: 1rem;
+  }
 }
 
 .milestone-master-container .slider-section .milestones-container .slick-dots {
@@ -719,4 +795,10 @@ html {
   content: " ";
   border-top: 7px solid white;
   padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .milestone-master-container .slider-section .milestones-container .slick-dots li button::before {
+    font-size: 10px;
+  }
 }

@@ -165,8 +165,8 @@ html {
 
 .slick-current .item-container h2 {
   color: white !important;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  // -webkit-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .wrapper {
@@ -175,15 +175,25 @@ html {
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+
+    @media (max-width: 768px) {
+      top: 45%;
+    }
     .slick-item {
-      padding: 3rem 0;
+      padding-top: 3rem;
+      margin-bottom: 3rem;
+      // width: initial !important;
+      // max-width: 400px;
+      .item-container {
+        padding: 0 2rem;
+      }
       h2 {
         color: #9c9c9c;
         font-size: 4.95rem;
         letter-spacing: 4px;
-        text-align: center;
         font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
         z-index: 1;
+        text-align: center;
 
         @media (max-width: 1200px) {
           font-size: 4.5rem;
@@ -195,14 +205,23 @@ html {
           font-size: 3rem;
         }
         @media (max-width: 600px) {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
       }
-
       #speaker-menu {
         transform: translateY(-10%);
         h2 {
-          @media (max-width: 600px) {
+          @media (min-width: 1200px) {
+            font-size: 4.5rem;
+          }
+          @media (max-width: 1200px) {
+            font-size: 4rem;
+          }
+          @media (max-width: 992px) {
+            font-size: 3rem;
+          }
+          @media (max-width: 768px) {
+            max-width: 300px;
             font-size: 1.5rem;
           }
         }
@@ -223,11 +242,17 @@ html {
       color: white;
       border: 1.5px solid white;
       margin: 0 auto;
-      font-size: 1.2rem;
       font-weight: 500;
       padding: 0.5rem 1rem;
       border-radius: 0px;
       letter-spacing: 0.2rem;
+      font-size: 1rem;
+      // @media (min-width: 768px) {
+      //   font-size: 1.2rem;
+      // }
+      // @media (max-width: 768px) {
+      //   font-size: 1rem;
+      // }
     }
   }
 
@@ -339,7 +364,7 @@ html {
   -webkit-box-align: center;
   align-items: center;
   img {
-    max-height: 100px;
+    max-height: 60px;
   }
   @media (max-width: 992px) {
     height: 15%;
@@ -361,6 +386,8 @@ html {
   margin: 0 auto;
   overflow: auto;
   @media (max-width: 768px) {
+    top: 15%;
+    height: 65%;
     width: 95%;
     left: 2.5%;
   }
@@ -376,6 +403,11 @@ html {
     padding: 3rem 2.5rem;
     height: 100%;
     width: 97%;
+
+    @media (max-width: 768px) {
+      padding: 3rem 1.5rem;
+      width: 100%;
+    }
     .tabs {
       .selected-container {
         display: none;
@@ -401,7 +433,7 @@ html {
     }
     .tabs-dropdown {
       height: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       .selected-container {
         width: 250px;
         position: relative;
@@ -450,6 +482,7 @@ html {
       color: #fb8400;
       margin-bottom: 1.5rem;
       font-size: 2.5rem;
+      max-width: 95%;
     }
     p {
       color: white;
@@ -469,6 +502,10 @@ html {
     .milestones-content {
       margin-top: 1rem !important;
       padding-right: 1rem !important;
+
+      @media (max-width: 768px) {
+        padding-right: 1rem !important;
+      }
 
       div {
         display: none;
@@ -548,6 +585,9 @@ html {
         font-weight: 900;
         font-size: 2rem;
         content: "\f054";
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
       .slick-prev::before {
         color: white;
@@ -555,6 +595,9 @@ html {
         font-weight: 900;
         font-size: 2rem;
         content: "\f053";
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -601,6 +644,10 @@ html {
             font-size: 1.8rem;
             font-weight: 600;
             letter-spacing: 0.15rem;
+
+            @media (max-width: 768px) {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -619,6 +666,10 @@ html {
         font-weight: 900;
         font-size: 2rem;
         content: "\f054";
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
       .slick-prev::before {
         color: white;
@@ -626,6 +677,10 @@ html {
         font-weight: 900;
         font-size: 2rem;
         content: "\f053";
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
       .slick-dots {
         bottom: 0;
@@ -637,6 +692,10 @@ html {
             content: " ";
             border-top: 7px solid white;
             padding: 0 1rem;
+
+            @media (max-width: 768px) {
+              font-size: 10px;
+            }
           }
         }
       }
