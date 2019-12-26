@@ -215,25 +215,27 @@ function removeAnimation(clearFrameID) {
 var baseRef = "";
 
 // slick-redirect
-function redirect() {
-  var currentSlick = $(".slick-current")
-    .text()
-    .trim();
+function redirect(url) {
+  // e.preventDefault();
+  // var currentSlick = $(".slick-current")
+    // .text()
+    // .trim();
 
-  var pageHref = baseRef + "/about.html";
-  if (currentSlick == "ABOUT") {
-    pageHref = baseRef + "/about.html";
-  } else if (currentSlick == "MESSAGE") {
-    pageHref = baseRef + "/message.html";
-  } else if (currentSlick == "MILESTONES") {
-    pageHref = baseRef + "/milestones.html";
-  } else if (currentSlick == "EVENTS") {
-    pageHref = baseRef + "/events.html";
-  } else if (currentSlick == "DISTINGUISHED SPEAKER SERIES") {
-    pageHref = baseRef + "/speaker.html";
-  }
-  console.log(pageHref);
-
+  // var pageHref = baseRef + "/about.html";
+  // if (currentSlick == "ABOUT") {
+    // pageHref = baseRef + "/about.html";
+  // } else
+  // if (currentSlick == "MESSAGE") {
+  //   pageHref = baseRef + "/message.html";
+  // } else if (currentSlick == "MILESTONES") {
+  //   pageHref = baseRef + "/milestones.html";
+  // } else if (currentSlick == "EVENTS") {
+  //   pageHref = baseRef + "/events.html";
+  // } else if (currentSlick == "DISTINGUISHED SPEAKER SERIES") {
+  //   pageHref = baseRef + "/speaker.html";
+  // }
+  // console.log(pageHref);
+  var pageHref = '/' + url + '.html';
   var conHeight = $("#animation-container").height();
   var conWidth = $("#animation-container").width();
   var elem = $("#animation");

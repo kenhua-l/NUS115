@@ -180,7 +180,7 @@ html {
   overflow: hidden;
 }
 
-.slick-current .item-container h2 {
+.slick-current h2 {
   color: white !important;
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
@@ -197,10 +197,6 @@ html {
 .wrapper .slick-container .slick-item {
   padding-top: 3rem;
   margin-bottom: 3rem;
-}
-
-.wrapper .slick-container .slick-item .item-container {
-  padding: 0 2rem;
   text-align: center;
 }
 
@@ -233,36 +229,6 @@ html {
 @media (max-width: 600px) {
   .wrapper .slick-container .slick-item h2 {
     font-size: 2rem;
-  }
-}
-
-.wrapper .slick-container .slick-item #speaker-menu {
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-}
-
-@media (min-width: 1200px) {
-  .wrapper .slick-container .slick-item #speaker-menu h2 {
-    font-size: 4.5rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .wrapper .slick-container .slick-item #speaker-menu h2 {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .wrapper .slick-container .slick-item #speaker-menu h2 {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .wrapper .slick-container .slick-item #speaker-menu h2 {
-    max-width: 300px;
-    font-size: 1.5rem;
   }
 }
 
