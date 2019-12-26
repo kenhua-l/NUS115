@@ -50,7 +50,7 @@ $(document).ready(function() {
   });
 
   // HOVER
-  $(".learn-more-btn, .find-out-more-btn").hover(
+  $(".find-out-more-btn").hover(
     function() {
       $(this).css({
         "border-color": "#f5821f",
@@ -212,11 +212,14 @@ function removeAnimation(clearFrameID) {
     }
   }
 }
-var baseRef = " ";
+var baseRef = "";
+
+// slick-redirect
 function redirect() {
   var currentSlick = $(".slick-current")
     .text()
     .trim();
+
   var pageHref = baseRef + "/about.html";
   if (currentSlick == "ABOUT") {
     pageHref = baseRef + "/about.html";
@@ -229,6 +232,8 @@ function redirect() {
   } else if (currentSlick == "DISTINGUISHED SPEAKER SERIES") {
     pageHref = baseRef + "/speaker.html";
   }
+  console.log(pageHref);
+
   var conHeight = $("#animation-container").height();
   var conWidth = $("#animation-container").width();
   var elem = $("#animation");
@@ -239,10 +244,12 @@ function redirect() {
     left: "0"
   });
   $("#animation-container").show();
+
   var pos = 0;
   var poswidth = elem.width();
   var id = setInterval(frame, 1);
   var widthMove;
+
   function frame() {
     if (pos > conHeight) {
       clearInterval(id);
@@ -259,7 +266,6 @@ function redirect() {
     if (poswidth > conWidth) {
       clearInterval(widthMove);
       window.location.href = pageHref;
-
       setTimeout(() => {
         elem.removeAttr("style");
         $("#animation-container").hide();

@@ -1,5 +1,7 @@
 $primary-orange: #e9772c;
+$primary-orange-hover: #f5821f;
 $primary-blue: #163768;
+$transition: all 0.3s;
 
 body {
   width: 100%;
@@ -9,6 +11,22 @@ body {
   background-color: $primary-blue;
   position: fixed;
 }
+
+/* added */
+button, .btn {
+  border: 1.5px solid white;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0px;
+  letter-spacing: 0.2rem;
+  color: white;
+  &:hover{
+    border-color: $primary-orange-hover;
+    color: $primary-orange-hover;
+  }
+}
+/* added */
 
 #main-container {
   height: 100%;
@@ -32,21 +50,6 @@ body {
   overflow-y: hidden;
 }
 svg {
-  // position: absolute;
-  // width: 100%;
-  // height: 100%;
-  // top: 0%;
-  // left: 0%;
-  // z-index: -4;
-
-  // display: none;
-  // will-change: transform;
-  // backface-visibility: hidden;
-  // perspective: 1000;
-  // transform: translateZ(0);
-  //transform: translate(-50%, -50%);
-
-  // display: none;
   position: absolute;
   width: 200%;
   height: 100%;
@@ -238,22 +241,6 @@ html {
     text-align: center;
     top: 65%;
     position: absolute;
-    .learn-more-btn {
-      color: white;
-      border: 1.5px solid white;
-      margin: 0 auto;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 0px;
-      letter-spacing: 0.2rem;
-      font-size: 1rem;
-      // @media (min-width: 768px) {
-      //   font-size: 1.2rem;
-      // }
-      // @media (max-width: 768px) {
-      //   font-size: 1rem;
-      // }
-    }
   }
 
   .footer-links {

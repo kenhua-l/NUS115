@@ -6,6 +6,25 @@ body {
   position: fixed;
 }
 
+/* added */
+
+button, .btn {
+  border: 1.5px solid white;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0px;
+  letter-spacing: 0.2rem;
+  color: white;
+}
+
+button:hover, .btn:hover {
+  border-color: #f5821f;
+  color: #f5821f;
+}
+
+/* added */
+
 #main-container {
   height: 100%;
   overflow: hidden;
@@ -266,17 +285,6 @@ html {
   text-align: center;
   top: 65%;
   position: absolute;
-}
-
-.wrapper .learn-more .learn-more-btn {
-  color: white;
-  border: 1.5px solid white;
-  margin: 0 auto;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0px;
-  letter-spacing: 0.2rem;
-  font-size: 1rem;
 }
 
 .wrapper .footer-links {
