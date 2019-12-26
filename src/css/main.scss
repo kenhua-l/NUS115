@@ -176,12 +176,12 @@ html {
   height: 100%;
   .slick-container {
     width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-
-    @media (max-width: 768px) {
-      top: 45%;
-    }
+    // top: 50%;
+    // transform: translateY(-50%);
+    //
+    // @media (max-width: 768px) {
+    //   top: 45%;
+    // }
     .slick-item {
       padding-top: 3rem;
       margin-bottom: 3rem;
@@ -189,6 +189,7 @@ html {
       // max-width: 400px;
       .item-container {
         padding: 0 2rem;
+        text-align: center;
       }
       h2 {
         color: #9c9c9c;
@@ -196,7 +197,7 @@ html {
         letter-spacing: 4px;
         font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
         z-index: 1;
-        text-align: center;
+        // text-align: center;
 
         @media (max-width: 1200px) {
           font-size: 4.5rem;
@@ -236,19 +237,19 @@ html {
   }
 
   .learn-more {
-    z-index: 2;
-    width: 100%;
+    // z-index: 2;
+    // width: 100%;
     text-align: center;
-    top: 65%;
-    position: absolute;
+    // top: 65%;
+    // position: absolute;
   }
 
   .footer-links {
     z-index: 1;
-    position: absolute;
+    // position: absolute;
     width: 100%;
     text-align: center;
-    top: 80%;
+    // top: 80%;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
@@ -341,7 +342,7 @@ html {
 }
 
 .logo {
-  position: absolute;
+  // position: absolute;
   width: 100%;
   display: -webkit-box;
   display: flex;
