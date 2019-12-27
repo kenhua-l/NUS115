@@ -5,6 +5,7 @@
   @@include('./partials/head.html')
 </head>
 <body>
+  @@include('./partials/header.html')
   <main id="main-container">
     <div id="clear-animation">
       <div id="animation-container">
@@ -12,9 +13,6 @@
       </div>
     </div>
     <div id="container" class="wrapper">
-      <div class="logo">
-        <img src="./images/nus115-logo.png">
-      </div>
       <div class="content-container">
         <div id="animation-container">
           <div id="animation"></div>
@@ -179,11 +177,11 @@
 
       </div>
 
-      @@include('./partials/footer.html')
       <div class="overlay"></div>
       <!-- @@include('./partials/svg.html') -->
     </div>
   </main>
+  @@include('./partials/footer.html')
   @@include('./partials/scripts.html')
 </body>
 </html>

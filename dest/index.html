@@ -15,22 +15,21 @@
     <link rel="stylesheet" href="./css/main.css" />
 </head>
 
-<body>
-    <main id="main-container">
+<body class="flex-d">
+    <header class="logo">
+        <a href="/"><img src="./images/nus115-logo.png"></a>
+    </header>
+    <main>
         <div id="revert-animation">
             <div id="animation-container">
                 <div id="animation"></div>
             </div>
         </div>
 
-        <div id="animation-container">
-            <div id="animation"></div>
-        </div>
+        <!-- <div id="animation-container">
+      <div id="animation"></div>
+    </div> -->
         <div id="container home-content" class="wrapper">
-            <div class="logo">
-                <img src="./images/nus115-logo.png">
-            </div>
-
 
             <div class="slick-container">
                 <div class="slick-item">
@@ -69,23 +68,6 @@
         <a href="javascript:void(0);" onclick="redirect()" class="btn">LEARN MORE</a>
       </div> -->
 
-            <div class="footer-links">
-                <div class="footer-links-container">
-                    <div class="d-flex justify-content-center">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fas fa-music"></i></a>
-                    </div>
-
-                    <div class="copyright-text mt-4">
-                        <small>© National University of Singapore. All Right Reserved.</small>
-                    </div>
-                </div>
-            </div>
-
             <div class="overlay"></div>
 
             <div class="svg-wrapper">
@@ -93,6 +75,24 @@
             </div>
         </div>
     </main>
+    <footer>
+        <footer class="footer-links">
+            <div class="footer-links-container">
+                <div class="d-flex justify-content-center">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fas fa-music"></i></a>
+                </div>
+
+                <div class="copyright-text mt-4">
+                    <small>© National University of Singapore. All Right Reserved.</small>
+                </div>
+            </div>
+        </footer>
+    </footer>
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/slick.min.js" type="text/javascript"></script>
