@@ -4,10 +4,8 @@
   <title>NUS 115</title>
   @@include('./partials/head.html')
 </head>
-<body class="flex-d">
-  <header class="logo">
-    <a href="/"><img src="./images/nus115-logo.png"></a>
-  </header>
+<body>
+  @@include('./partials/header.html')
   <main>
     <div id="revert-animation">
       <div id="animation-container">
@@ -64,9 +62,7 @@
       </div>
     </div>
   </main>
-  <footer>
-    @@include('./partials/footer.html')
-  </footer>
+  @@include('./partials/footer.html')
   @@include('./partials/scripts.html')
 </body>
 </html>
