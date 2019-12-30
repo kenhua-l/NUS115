@@ -32,6 +32,7 @@ body {
 main {
   -webkit-box-flex: 5;
           flex: 5;
+  max-height: 70%;
 }
 
 button, .btn {
@@ -47,6 +48,18 @@ button, .btn {
 button:hover, .btn:hover {
   border-color: #f5821f;
   color: #f5821f;
+}
+
+h2 {
+  color: #fb8400;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+p {
+  color: white;
+  font-size: 1.2rem;
+  letter-spacing: 0.03rem;
 }
 
 /* added */
@@ -203,6 +216,7 @@ html {
 
 .wrapper {
   height: 100%;
+  padding: 2.5rem 0;
 }
 
 .navigator {
@@ -357,53 +371,11 @@ html {
   background: #e9772c;
 }
 
-.content-container {
-  z-index: 2;
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 80%;
-  height: 60%;
-  margin: 0 auto;
-  overflow: auto;
-}
-
-@media (max-width: 768px) {
-  .content-container {
-    top: 15%;
-    height: 65%;
-    width: 95%;
-    left: 2.5%;
-  }
-}
-
-.content-container .close-btn {
-  position: absolute;
-  right: 1.5rem;
-  top: 0.5rem;
-  font-size: 2.5rem;
-  color: white;
-}
-
-.content-container .content {
-  display: none;
-  padding: 3rem 2.5rem;
-  height: 100%;
-  width: 97%;
-}
-
-@media (max-width: 768px) {
-  .content-container .content {
-    padding: 3rem 1.5rem;
-    width: 100%;
-  }
-}
-
-.content-container .content .tabs .selected-container {
+.tabs .selected-container {
   display: none;
 }
 
-.content-container .content .tabs ul {
+.tabs ul {
   list-style-type: none;
   margin-bottom: 1rem;
   padding: 0;
@@ -411,41 +383,41 @@ html {
   display: flex !important;
 }
 
-.content-container .content .tabs ul li {
+.tabs ul li {
   padding-right: 2rem;
   font-weight: 500;
   font-size: 1rem;
 }
 
-.content-container .content .tabs ul a {
+.tabs ul a {
   text-decoration: none;
   color: white;
 }
 
-.content-container .content .tabs .active {
+.tabs .active {
   color: #fb8400;
 }
 
-.content-container .content .tabs-dropdown {
+.tabs-dropdown {
   height: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.content-container .content .tabs-dropdown .selected-container {
+.tabs-dropdown .selected-container {
   width: 250px;
   position: relative;
   background: white;
   padding: 0.5rem 1rem;
 }
 
-.content-container .content .tabs-dropdown .selected-container p {
+.tabs-dropdown .selected-container p {
   display: inline;
   display: initial;
   color: #fb8400;
   display: initial;
 }
 
-.content-container .content .tabs-dropdown .selected-container p::after {
+.tabs-dropdown .selected-container p::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 2rem;
@@ -456,7 +428,7 @@ html {
   right: 1rem;
 }
 
-.content-container .content .tabs-dropdown ul {
+.tabs-dropdown ul {
   list-style-type: none;
   padding: 0;
   position: absolute;
@@ -467,43 +439,40 @@ html {
   padding: 0.5rem 0;
 }
 
-.content-container .content .tabs-dropdown ul li {
+.tabs-dropdown ul li {
   padding: 0.25rem 1rem !important;
 }
 
-.content-container .content .tabs-dropdown ul li a {
+.tabs-dropdown ul li a {
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
   color: #163768;
 }
 
-.content-container .content .tabs-dropdown ul li .active {
+.tabs-dropdown ul li .active {
   color: #fb8400;
 }
 
-.content-container .content h2 {
-  color: #fb8400;
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  max-width: 95%;
+.content-container {
+  background: rgba(88, 107, 134, 0.7);
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  position: relative;
 }
 
-.content-container .content p {
-  color: white;
-  font-size: 1.2rem;
-  letter-spacing: 0.03rem;
+.content-container .content {
+  display: none;
+  padding: 2rem 2.5rem;
+  height: 100%;
 }
 
-.content-container .content .find-out-more-btn {
-  padding: 0.6rem 1rem;
-  background: transparent;
-  border: 1.5px solid white;
-  color: white;
-  border-radius: 0;
-  margin-top: 1.5rem;
-  letter-spacing: 0.05rem;
-  font-weight: 500;
+@media (max-width: 768px) {
+  .content-container .content {
+    padding: 1rem 2rem;
+  }
 }
 
 .content-container .content .milestones-content {
@@ -524,27 +493,6 @@ html {
 .content-container .content .milestones-content .active {
   display: inline;
   display: initial;
-}
-
-.content-container .content .image-container {
-  height: 100%;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
-}
-
-.content-container .content .image-container img {
-  width: 90%;
-}
-
-@media (max-width: 1200px) {
-  .content-container .content .image-container img {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
 }
 
 .content-container .content .event-slider-container {
@@ -755,4 +703,12 @@ html {
   .milestone-master-container .slider-section .milestones-container .slick-dots li button::before {
     font-size: 10px;
   }
+}
+
+.close-btn {
+  position: absolute;
+  right: 1.2rem;
+  top: 0;
+  font-size: 2.5rem;
+  color: white;
 }
