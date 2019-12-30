@@ -40,26 +40,26 @@ $(document).ready(function() {
 
   // Nav tabs
   $(".tabs ul li a").on("click", function() {
+    $(".tabs ul").slideToggle();
     navTabs(true);
   });
 
   // Dropdown
-  if ($(window).width() < 992) {
-    $(".tabs")
-      .addClass("tabs-dropdown")
-      .removeClass("tabs");
-  }
+  // if ($(window).width() < 992) {
+    // $(".tabs")
+      // .addClass("tabs-dropdown")
+      // .removeClass("tabs");
+  // }
 
-  $(".selected-container").on("click", function() {
-    console.log("clicked");
-    $(".tabs-dropdown ul").slideToggle();
-    $(".tabs-dropdown ul").slideToggle();
+  $(".selected").on("click", function() {
+    // $(".tabs-dropdown ul").slideToggle();
+    $(".tabs ul").slideToggle();
   });
 
-  $(".tabs-dropdown ul li a").on("click", function() {
-    $(".tabs-dropdown ul").slideToggle();
-    navTabs(true);
-  });
+  // $(".tabs-dropdown ul li a").on("click", function() {
+  //   $(".tabs-dropdown ul").slideToggle();
+  //   navTabs(true);
+  // });
 
   $(".milestones-container").on("beforeChange", function(
     event,
@@ -69,27 +69,27 @@ $(document).ready(function() {
   ) {
     if (nextSlide == 0) {
       location.href = "#technology";
-      $(".tabs-dropdown .selected").text(function() {
+      $(".tabs .selected").text(function() {
         return "TECHNOLOGY";
       });
     } else if (nextSlide == 1) {
       location.href = "#health";
-      $(".tabs-dropdown .selected").text(function() {
+      $(".tabs .selected").text(function() {
         return "HEALTH";
       });
     } else if (nextSlide == 2) {
       location.href = "#enterprise";
-      $(".tabs-dropdown .selected").text(function() {
+      $(".tabs .selected").text(function() {
         return "ENTERPRISE";
       });
     } else if (nextSlide == 3) {
       location.href = "#community";
-      $(".tabs-dropdown .selected").text(function() {
+      $(".tabs .selected").text(function() {
         return "COMMUNITY";
       });
     } else if (nextSlide == 4) {
       location.href = "#sustainability";
-      $(".tabs-dropdown .selected").text(function() {
+      $(".tabs .selected").text(function() {
         return "SUSTAINABILITY";
       });
     }
@@ -138,27 +138,27 @@ function navTabs(toggle) {
     if (toggle == true) {
       if (hash == "#technology") {
         $(".milestones-container").slick("slickGoTo", 0);
-        $(".tabs-dropdown .selected").text(function() {
+        $(".tabs .selected").text(function() {
           return "TECHNOLOGY";
         });
       } else if (hash == "#health") {
         $(".milestones-container").slick("slickGoTo", 1);
-        $(".tabs-dropdown .selected").text(function() {
+        $(".tabs .selected").text(function() {
           return "HEALTH";
         });
       } else if (hash == "#enterprise") {
         $(".milestones-container").slick("slickGoTo", 2);
-        $(".tabs-dropdown .selected").text(function() {
+        $(".tabs .selected").text(function() {
           return "ENTERPRISE";
         });
       } else if (hash == "#community") {
         $(".milestones-container").slick("slickGoTo", 3);
-        $(".tabs-dropdown .selected").text(function() {
+        $(".tabs .selected").text(function() {
           return "COMMUNITY";
         });
       } else if (hash == "#sustainability") {
         $(".milestones-container").slick("slickGoTo", 4);
-        $(".tabs-dropdown .selected").text(function() {
+        $(".tabs .selected").text(function() {
           return "SUSTAINABILITY";
         });
       }
