@@ -10,17 +10,10 @@ $(window).resize(function() {
   }
 });
 $(document).ready(function() {
+  // homepage slick
   $('.navigator').slick({
     centerMode: true,
     centerPadding: "20%",
-    arrows: false,
-    focusOnSelect: true,
-    infinite: false,
-
-  });
-  $(".slick-container").slick({
-    centerMode: true,
-    centerPadding: "25%",
     arrows: false,
     focusOnSelect: true,
     infinite: false,
@@ -28,50 +21,22 @@ $(document).ready(function() {
       {
         breakpoint: 768,
         settings: {
-          centerPadding: "15%",
-          variableWidth: true
+          centerPadding: "15%"
         }
       }
     ]
   });
-  var slideNum = location.hash;
-  if (slideNum == "#about") {
-    $(".slick-container").slick("slickGoTo", 0);
-  } else if (slideNum == "#message") {
-    $(".slick-container").slick("slickGoTo", 1);
-  } else if (slideNum == "#milestone") {
-    $(".slick-container").slick("slickGoTo", 2);
-  } else if (slideNum == "#events") {
-    $(".slick-container").slick("slickGoTo", 3);
-  } else if (slideNum == "#speaker") {
-    $(".slick-container").slick("slickGoTo", 4);
-  } else {
-    $(".slick-container").slick("slickGoTo", 2);
-  }
+  var slideNum = $(location).attr('hash').substr(1);
+  slideToHash('.navigator', slideNum);
+
   // Animation control
   removeAnimation($("#clear-animation"));
-  // $(".home-content").hide();
   exitAnimation($("#revert-animation"), true, null);
 
   $(".close-btn").on("click", function() {
     exitAnimation($("#clear-animation"), false, $(this).attr("id"));
   });
 
-  // HOVER
-  $(".find-out-more-btn").hover(
-    function() {
-      $(this).css({
-        "border-color": "#f5821f",
-        color: "#f5821f"
-      });
-    },
-    function() {
-      $(this).css({
-        "border-color": "white",
-        color: "white"
-      });
-    }
-  );
   // Nav tabs
   $(".tabs ul li a").on("click", function() {
     navTabs(true);
@@ -129,6 +94,21 @@ $(document).ready(function() {
     navTabs(false);
   });
 });
+
+// added
+function slideToHash(slider, hash) {
+  var hashExists = false;
+  $(slider).find('.slick-slide').each(function(){
+    if($(this).data('title').toLowerCase() == hash.toLowerCase()){
+      hashExists = true;
+      $(slider).slick('slickGoTo', $(this).data('slick-index'));
+    }
+  })
+  if(!hashExists) {
+    $(slider).slick('slickGoTo', $(slider).find('[data-slick-start="true"]').data('slick-index'));
+  }
+}
+// added
 
 function navTabs(toggle) {
   setTimeout(() => {
@@ -242,7 +222,6 @@ function redirect(url) {
   // } else if (currentSlick == "DISTINGUISHED SPEAKER SERIES") {
   //   pageHref = baseRef + "/speaker.html";
   // }
-  // console.log(pageHref);
   var pageHref = '/' + url + '.html';
   var conHeight = $("#animation-container").height();
   var conWidth = $("#animation-container").width();

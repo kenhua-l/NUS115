@@ -51,11 +51,6 @@ button:hover, .btn:hover {
 
 /* added */
 
-#main-container {
-  height: 100%;
-  overflow: hidden;
-}
-
 .overlay {
   content: " ";
   top: 0;
@@ -206,6 +201,10 @@ html {
   overflow: hidden;
 }
 
+.wrapper {
+  height: 100%;
+}
+
 .navigator {
   height: 100%;
 }
@@ -221,6 +220,33 @@ html {
 
 .navigator .nav-item h2 {
   margin-top: 8rem;
+  color: #9c9c9c;
+  font-size: 4.8rem;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 1200px) {
+  .navigator .nav-item h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .navigator .nav-item h2 {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigator .nav-item h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigator .nav-item h2 {
+    font-size: 2rem;
+  }
 }
 
 .navigator .nav-item .btn-container {
@@ -233,48 +259,10 @@ html {
   margin: auto;
 }
 
-.slick-current h2 {
+.navigator .nav-item.slick-current h2 {
   color: white !important;
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
-}
-
-.wrapper {
-  height: 100%;
-}
-
-.wrapper h2 {
-  color: #9c9c9c;
-  font-size: 4.8rem;
-  letter-spacing: 4px;
-}
-
-@media (max-width: 1200px) {
-  .wrapper h2 {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .wrapper h2 {
-    font-size: 3.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .wrapper h2 {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .wrapper h2 {
-    font-size: 2rem;
-  }
-}
-
-.wrapper .learn-more {
-  text-align: center;
 }
 
 .footer-links {
@@ -283,6 +271,9 @@ html {
   text-align: center;
   display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   -webkit-box-pack: center;
           justify-content: center;
   padding: 0.5rem 0;
@@ -290,13 +281,11 @@ html {
           align-items: center;
   background: rgba(11, 46, 88, 0.8);
   box-shadow: 0 0 50px 50px rgba(11, 46, 88, 0.8);
+  color: white;
 }
 
-.footer-links a {
+.footer-links a.social {
   text-decoration: none;
-}
-
-.footer-links i {
   font-size: 1.2rem;
   color: #163768;
   width: 40px;
@@ -304,16 +293,12 @@ html {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
-  align-items: center;
+          align-items: center;
   -webkit-box-pack: center;
-  justify-content: center;
+          justify-content: center;
   background: white;
   border-radius: 100%;
   margin: 0 0.5rem;
-}
-
-.footer-links .copyright-text small {
-  color: white;
 }
 
 #animation-container {
