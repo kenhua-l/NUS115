@@ -10,6 +10,14 @@ $(window).resize(function() {
   }
 });
 $(document).ready(function() {
+  $('.navigator').slick({
+    centerMode: true,
+    centerPadding: "20%",
+    arrows: false,
+    focusOnSelect: true,
+    infinite: false,
+
+  });
   $(".slick-container").slick({
     centerMode: true,
     centerPadding: "25%",
@@ -20,7 +28,7 @@ $(document).ready(function() {
       {
         breakpoint: 768,
         settings: {
-          centerPadding: "18%",
+          centerPadding: "15%",
           variableWidth: true
         }
       }
@@ -42,7 +50,7 @@ $(document).ready(function() {
   }
   // Animation control
   removeAnimation($("#clear-animation"));
-  $(".home-content").hide();
+  // $(".home-content").hide();
   exitAnimation($("#revert-animation"), true, null);
 
   $(".close-btn").on("click", function() {
@@ -249,36 +257,50 @@ function redirect(url) {
 
   var pos = 0;
   var poswidth = elem.width();
-  var id = setInterval(frame, 1);
+  // var id = setInterval(frame, 1);
   var widthMove;
-
-  function frame() {
-    if (pos > conHeight) {
-      clearInterval(id);
-      widthMove = setInterval(widthframe, 1);
-    } else {
-      pos = pos + 20;
-      elem.css({
-        height: pos + "px"
-      });
-    }
-  }
-
-  function widthframe() {
-    if (poswidth > conWidth) {
-      clearInterval(widthMove);
+  $.when(pageTransit()).then(function(){
+    setTimeout(function(){
       window.location.href = pageHref;
-      setTimeout(() => {
-        elem.removeAttr("style");
-        $("#animation-container").hide();
-      }, 500);
-    } else {
-      poswidth = poswidth + 20;
-      elem.css({
-        width: poswidth + "px"
-      });
-    }
+    }, 1500);
+  });
+  function pageTransit() {
+    elem.animate({
+      height: $(window).height()
+    }, 500);
+    elem.animate({
+      width: $(window).width()
+    }, 1000);
+    // window.location.href = pageHref;
   }
+
+  // function frame() {
+  //   if (pos > conHeight) {
+  //     clearInterval(id);
+  //     widthMove = setInterval(widthframe, 1);
+  //   } else {
+  //     pos = pos + 20;
+  //     elem.css({
+  //       height: pos + "px"
+  //     });
+  //   }
+  // }
+  //
+  // function widthframe() {
+  //   if (poswidth > conWidth) {
+  //     clearInterval(widthMove);
+  //     window.location.href = pageHref;
+  //     setTimeout(() => {
+  //       elem.removeAttr("style");
+  //       $("#animation-container").hide();
+  //     }, 500);
+  //   } else {
+  //     poswidth = poswidth + 20;
+  //     elem.css({
+  //       width: poswidth + "px"
+  //     });
+  //   }
+  // }
 }
 
 function redirectedAnimate(frameID) {
