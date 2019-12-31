@@ -7,7 +7,6 @@ $transition: all 0.3s;
 body {
   width: 100%;
   height: 100%;
-  // height: 100vh;
   overflow: hidden;
   background-color: $primary-blue;
   position: fixed;
@@ -17,7 +16,6 @@ body {
 
 /* added */
 .logo {
-  // position: absolute;
   flex: 1;
   width: 100%;
   display: flex;
@@ -57,11 +55,6 @@ p {
   letter-spacing: 0.03rem;
 }
 /* added */
-
-// #main-container {
-  // overflow: hidden;
-  // height: 100%;
-// }
 
 .overlay {
   content: " ";
@@ -210,7 +203,7 @@ html {
     text-align: center;
     position: relative;
     h2 {
-      margin-top: 8rem;
+      margin-top: 4rem;
       color: #9c9c9c;
       font-size: 4.8rem;
       letter-spacing: 4px;
@@ -229,7 +222,7 @@ html {
     }
     .btn-container {
       position: absolute;
-      bottom: 5rem;
+      bottom: 4rem;
       width: 100%;
       .btn {
         margin: auto;
@@ -341,7 +334,7 @@ html {
   margin-bottom: 2rem;
   position: relative;
   .selected {
-      display: none;
+    display: none;
   }
   ul.nav-tabs {
     border-bottom: none;
@@ -399,10 +392,6 @@ html {
 }
 
 .content-container {
-  // z-index: 2;
-  // position: absolute;
-  // top: 20%;
-  // left: 10%;
   background: rgba(88, 107, 134, 0.7);
   width: 80%;
   height: 100%;
@@ -411,201 +400,141 @@ html {
   position: relative;
 
   .content {
-    display: none;
+    // display: none;
     padding: 2rem 2.5rem;
     height: 100%;
-    // width: 97%;
     @media (max-width: 768px) {
       padding: 1rem 2rem;
     }
-    // .image-container {
-      // height: 100%;
-      // display: -webkit-box;
-      // display: flex;
-      // -webkit-box-align: center;
-      // align-items: center;
-      // -webkit-box-pack: end;
-      // justify-content: flex-end;
-      // img {
-        // width: 90%;
-        // @media (max-width: 1200px) {
-          // width: 100%;
-          // margin-bottom: 2rem;
-        // }
-      // }
-    // }
-    .event-slider-container {
-      width: 90%;
-      margin: 0 auto;
-      .event-slider-item {
-        .slider-content {
-          width: 80%;
-          margin: 0 auto;
-          small {
-            color: white;
-            font-size: 1rem;
-          }
-          p {
-            font-size: 1.5rem;
-            font-weight: 700;
-          }
-          hr {
-            height: 2px;
-            background-color: white;
-          }
-          .banner-container {
-            margin-top: 1rem;
-            width: 70%;
-            background: #fb8400;
-            padding: 1rem 0.5rem;
-            min-height: 200px;
-            p {
-              // padding: 5rem 1.5rem;
-              text-align: center;
-              font-size: 1.4rem;
-              overflow-wrap: break-word;
-              hyphens: auto;
-            }
-          }
-        }
+  }
+}
+
+.milestones-container {
+  height: 100%;
+  .slick-list, .slick-track, .slick-slide {
+    height: 100%;
+  }
+  .milestones-item {
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: -1;
+    }
+    .text-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      height: 100%;
+      .tag {
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
       }
-      .slick-prev {
-        top: 15% !important;
-        left: -5% !important;
-        z-index: 4;
-        color: white !important;
-        opacity: 1 !important;
-      }
-      .slick-next {
-        top: 15% !important;
-        right: -5% !important;
-        z-index: 4;
-        color: white !important;
-        opacity: 1 !important;
-      }
-      .slick-next::before {
-        color: white;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 2rem;
-        content: "\f054";
+      .title {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.15rem;
         @media (max-width: 768px) {
           font-size: 1rem;
         }
       }
-      .slick-prev::before {
-        color: white;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 2rem;
-        content: "\f053";
-        @media (max-width: 768px) {
-          font-size: 1rem;
-        }
+    }
+  }
+  .slick-prev, .slick-next {
+    z-index: 1;
+    &::before {
+      color: white;
+      font-family: "Font Awesome 5 Free";
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+  }
+  .slick-prev {
+    left: 10px;
+    &::before {
+      content: "\f053";
+    }
+  }
+  .slick-next {
+    right: 10px;
+    &::before {
+      content: "\f054";
+    }
+  }
+  .slick-dots {
+    bottom: 0;
+    li {
+      padding: 0 1rem;
+      button::before {
+        content: "";
+        border-top: 5px solid white;
+        padding: 0 1rem;
       }
     }
   }
 }
 
-// .milestone-master-container {
-  // height: 85%;
-  .slider-section {
-    width: 100%;
-    .milestones-container {
-      height: 100%;
-      .slick-list {
-        height: 100% !important;
-      }
-      .slick-track {
-        height: 100% !important;
-      }
-      .milestones-item {
-        position: relative;
-        img {
-          width: 100% !important;
-          height: 100% !important;
-        }
-        .text-overlay {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: 100%;
-          display: -webkit-box;
-          display: flex;
-          -webkit-box-pack: center;
-          justify-content: center;
-          -webkit-box-align: center;
-          align-items: center;
-          text-align: center;
-          background: rgba(0, 0, 0, 0.6);
-          .date {
-            font-size: 1rem;
-            letter-spacing: 0.3rem;
-          }
-          .title {
-            width: 70%;
-            margin: 0 auto;
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 0.15rem;
-
-            @media (max-width: 768px) {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-      .slick-prev {
-        left: 10px !important;
-        z-index: 4;
-      }
-      .slick-next {
-        right: 10px !important;
-        z-index: 4;
-        color: white;
-      }
-      .slick-next::before {
-        color: white;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 2rem;
-        content: "\f054";
-
-        @media (max-width: 768px) {
-          font-size: 1rem;
-        }
-      }
-      .slick-prev::before {
-        color: white;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 2rem;
-        content: "\f053";
-
-        @media (max-width: 768px) {
-          font-size: 1rem;
-        }
-      }
-      .slick-dots {
-        bottom: 0;
-        li {
-          padding: 0 1rem;
-          button::before {
-            font-size: 30px;
-            color: white;
-            content: " ";
-            border-top: 7px solid white;
-            padding: 0 1rem;
-
-            @media (max-width: 768px) {
-              font-size: 10px;
-            }
-          }
-        }
+.events-container {
+  .events-item {
+    margin: 0 2rem;
+    color: white;
+    font-weight: 700;
+    small {
+      font-size: 1rem;
+    }
+    .event-date {
+      font-size: 1.5rem;
+    }
+    hr {
+      height: 2px;
+      background-color: white;
+    }
+    .banner-container {
+      margin-top: 1rem;
+      background: #fb8400;
+      padding: 1rem 0.5rem;
+      min-height: 200px;
+      text-align: center;
+      p {
+        font-size: 1.4rem;
+        overflow-wrap: break-word;
+        hyphens: auto;
       }
     }
   }
-// }
+  .slick-prev, .slick-next {
+    z-index: 1;
+    top: 15%;
+    &::before {
+      opacity: 1;
+      color: white;
+      font-family: "Font Awesome 5 Free";
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+  }
+  .slick-prev {
+    // left: -5%;
+    &::before {
+      content: "\f053";
+    }
+  }
+  .slick-next {
+    // right: -5%;
+    &::before {
+      content: "\f054";
+    }
+  }
+}
 
 .close-btn {
   position: absolute;
@@ -613,4 +542,6 @@ html {
   top: 0;
   font-size: 2.5rem;
   color: white;
+  cursor: pointer;
+  z-index: 1;
 }

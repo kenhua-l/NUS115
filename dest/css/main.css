@@ -233,7 +233,7 @@ html {
 }
 
 .navigator .nav-item h2 {
-  margin-top: 8rem;
+  margin-top: 4rem;
   color: #9c9c9c;
   font-size: 4.8rem;
   letter-spacing: 4px;
@@ -265,7 +265,7 @@ html {
 
 .navigator .nav-item .btn-container {
   position: absolute;
-  bottom: 5rem;
+  bottom: 4rem;
   width: 100%;
 }
 
@@ -452,7 +452,6 @@ html {
 }
 
 .content-container .content {
-  display: none;
   padding: 2rem 2.5rem;
   height: 100%;
 }
@@ -463,138 +462,49 @@ html {
   }
 }
 
-.content-container .content .event-slider-container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.content-container .content .event-slider-container .event-slider-item .slider-content {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.content-container .content .event-slider-container .event-slider-item .slider-content small {
-  color: white;
-  font-size: 1rem;
-}
-
-.content-container .content .event-slider-container .event-slider-item .slider-content p {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.content-container .content .event-slider-container .event-slider-item .slider-content hr {
-  height: 2px;
-  background-color: white;
-}
-
-.content-container .content .event-slider-container .event-slider-item .slider-content .banner-container {
-  margin-top: 1rem;
-  width: 70%;
-  background: #fb8400;
-  padding: 1rem 0.5rem;
-  min-height: 200px;
-}
-
-.content-container .content .event-slider-container .event-slider-item .slider-content .banner-container p {
-  text-align: center;
-  font-size: 1.4rem;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-}
-
-.content-container .content .event-slider-container .slick-prev {
-  top: 15% !important;
-  left: -5% !important;
-  z-index: 4;
-  color: white !important;
-  opacity: 1 !important;
-}
-
-.content-container .content .event-slider-container .slick-next {
-  top: 15% !important;
-  right: -5% !important;
-  z-index: 4;
-  color: white !important;
-  opacity: 1 !important;
-}
-
-.content-container .content .event-slider-container .slick-next::before {
-  color: white;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 2rem;
-  content: "\f054";
-}
-
-@media (max-width: 768px) {
-  .content-container .content .event-slider-container .slick-next::before {
-    font-size: 1rem;
-  }
-}
-
-.content-container .content .event-slider-container .slick-prev::before {
-  color: white;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 2rem;
-  content: "\f053";
-}
-
-@media (max-width: 768px) {
-  .content-container .content .event-slider-container .slick-prev::before {
-    font-size: 1rem;
-  }
-}
-
-.slider-section {
-  width: 100%;
-}
-
-.slider-section .milestones-container {
+.milestones-container {
   height: 100%;
 }
 
-.slider-section .milestones-container .slick-list {
-  height: 100% !important;
+.milestones-container .slick-list, .milestones-container .slick-track, .milestones-container .slick-slide {
+  height: 100%;
 }
 
-.slider-section .milestones-container .slick-track {
-  height: 100% !important;
-}
-
-.slider-section .milestones-container .milestones-item {
+.milestones-container .milestones-item {
   position: relative;
 }
 
-.slider-section .milestones-container .milestones-item img {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.slider-section .milestones-container .milestones-item .text-overlay {
+.milestones-container .milestones-item img {
   position: absolute;
   top: 0;
   height: 100%;
   width: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1;
+}
+
+.milestones-container .milestones-item .text-overlay {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
-  justify-content: center;
+          justify-content: center;
   -webkit-box-align: center;
-  align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
+  height: 100%;
 }
 
-.slider-section .milestones-container .milestones-item .text-overlay .date {
+.milestones-container .milestones-item .text-overlay .tag {
   font-size: 1rem;
   letter-spacing: 0.3rem;
 }
 
-.slider-section .milestones-container .milestones-item .text-overlay .title {
+.milestones-container .milestones-item .text-overlay .title {
   width: 70%;
   margin: 0 auto;
   font-size: 1.8rem;
@@ -603,70 +513,106 @@ html {
 }
 
 @media (max-width: 768px) {
-  .slider-section .milestones-container .milestones-item .text-overlay .title {
+  .milestones-container .milestones-item .text-overlay .title {
     font-size: 1rem;
   }
 }
 
-.slider-section .milestones-container .slick-prev {
-  left: 10px !important;
-  z-index: 4;
+.milestones-container .slick-prev, .milestones-container .slick-next {
+  z-index: 1;
 }
 
-.slider-section .milestones-container .slick-next {
-  right: 10px !important;
-  z-index: 4;
-  color: white;
-}
-
-.slider-section .milestones-container .slick-next::before {
+.milestones-container .slick-prev::before, .milestones-container .slick-next::before {
   color: white;
   font-family: "Font Awesome 5 Free";
+  font-size: 1.2rem;
   font-weight: 900;
-  font-size: 2rem;
-  content: "\f054";
 }
 
-@media (max-width: 768px) {
-  .slider-section .milestones-container .slick-next::before {
-    font-size: 1rem;
-  }
+.milestones-container .slick-prev {
+  left: 10px;
 }
 
-.slider-section .milestones-container .slick-prev::before {
-  color: white;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 2rem;
+.milestones-container .slick-prev::before {
   content: "\f053";
 }
 
-@media (max-width: 768px) {
-  .slider-section .milestones-container .slick-prev::before {
-    font-size: 1rem;
-  }
+.milestones-container .slick-next {
+  right: 10px;
 }
 
-.slider-section .milestones-container .slick-dots {
+.milestones-container .slick-next::before {
+  content: "\f054";
+}
+
+.milestones-container .slick-dots {
   bottom: 0;
 }
 
-.slider-section .milestones-container .slick-dots li {
+.milestones-container .slick-dots li {
   padding: 0 1rem;
 }
 
-.slider-section .milestones-container .slick-dots li button::before {
-  font-size: 30px;
+.milestones-container .slick-dots li button::before {
+  content: "";
+  border-top: 5px solid white;
+  padding: 0 1rem;
+}
+
+.events-container .events-item {
+  margin: 0 2rem;
   color: white;
-  content: " ";
-  border-top: 7px solid white;
-  padding: 0 1rem;
+  font-weight: 700;
 }
 
-@media (max-width: 768px) {
-  .slider-section .milestones-container .slick-dots li button::before {
-    font-size: 10px;
-  }
+.events-container .events-item small {
+  font-size: 1rem;
+}
+
+.events-container .events-item .event-date {
+  font-size: 1.5rem;
+}
+
+.events-container .events-item hr {
+  height: 2px;
+  background-color: white;
+}
+
+.events-container .events-item .banner-container {
+  margin-top: 1rem;
+  background: #fb8400;
+  padding: 1rem 0.5rem;
+  min-height: 200px;
+  text-align: center;
+}
+
+.events-container .events-item .banner-container p {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.events-container .slick-prev, .events-container .slick-next {
+  z-index: 1;
+  top: 15%;
+}
+
+.events-container .slick-prev::before, .events-container .slick-next::before {
+  opacity: 1;
+  color: white;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.events-container .slick-prev::before {
+  content: "\f053";
+}
+
+.events-container .slick-next::before {
+  content: "\f054";
 }
 
 .close-btn {
@@ -675,4 +621,6 @@ html {
   top: 0;
   font-size: 2.5rem;
   color: white;
+  cursor: pointer;
+  z-index: 1;
 }
