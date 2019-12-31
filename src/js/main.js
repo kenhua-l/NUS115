@@ -1,15 +1,3 @@
-//
-$(window).resize(function() {
-  // if ($(window).width() < 992) {
-    // $(".tabs")
-      // .addClass("tabs-dropdown")
-      // .removeClass("tabs");
-  // } else {
-    // $(".tabs-dropdown")
-      // .addClass("tabs")
-      // .removeClass("tabs-dropdown");
-  // }
-});
 $(document).ready(function() {
   // homepage slick
   $('.navigator').slick({
@@ -39,27 +27,9 @@ $(document).ready(function() {
   });
 
   // Nav tabs
-  $(".tabs ul li a").on("click", function() {
-    $(".tabs ul").slideToggle();
-    navTabs(true);
-  });
-
-  // Dropdown
-  // if ($(window).width() < 992) {
-    // $(".tabs")
-      // .addClass("tabs-dropdown")
-      // .removeClass("tabs");
-  // }
-
   $(".selected").on("click", function() {
-    // $(".tabs-dropdown ul").slideToggle();
     $(".tabs ul").slideToggle();
   });
-
-  // $(".tabs-dropdown ul li a").on("click", function() {
-  //   $(".tabs-dropdown ul").slideToggle();
-  //   navTabs(true);
-  // });
 
   $(".milestones-container").on("beforeChange", function(
     event,
@@ -124,13 +94,7 @@ function navTabs(toggle) {
     $(".tabs")
       .find(".active")
       .removeClass("active");
-    $(".tabs-dropdown")
-      .find(".active")
-      .removeClass("active");
     $(".tabs")
-      .find(hash)
-      .addClass("active");
-    $(".tabs-dropdown")
       .find(hash)
       .addClass("active");
     $(".milestones-content " + hash).addClass("active");
@@ -206,24 +170,6 @@ var baseRef = "";
 
 // slick-redirect
 function redirect(url) {
-  // e.preventDefault();
-  // var currentSlick = $(".slick-current")
-    // .text()
-    // .trim();
-
-  // var pageHref = baseRef + "/about.html";
-  // if (currentSlick == "ABOUT") {
-    // pageHref = baseRef + "/about.html";
-  // } else
-  // if (currentSlick == "MESSAGE") {
-  //   pageHref = baseRef + "/message.html";
-  // } else if (currentSlick == "MILESTONES") {
-  //   pageHref = baseRef + "/milestones.html";
-  // } else if (currentSlick == "EVENTS") {
-  //   pageHref = baseRef + "/events.html";
-  // } else if (currentSlick == "DISTINGUISHED SPEAKER SERIES") {
-  //   pageHref = baseRef + "/speaker.html";
-  // }
   var pageHref = '/' + url + '.html';
   var conHeight = $("#animation-container").height();
   var conWidth = $("#animation-container").width();

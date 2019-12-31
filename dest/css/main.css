@@ -371,41 +371,38 @@ html {
   background: #e9772c;
 }
 
+.tabs {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
 .tabs .selected {
   display: none;
 }
 
-.tabs ul {
-  list-style-type: none;
-  padding: 0;
+.tabs ul.nav-tabs {
+  border-bottom: none;
 }
 
 @media (min-width: 992px) {
-  .tabs ul {
+  .tabs ul.nav-tabs {
     display: -webkit-box !important;
     display: flex !important;
   }
 }
 
-.tabs ul li {
-  padding: 0 1rem;
-}
-
-.tabs ul li:first-child {
-  padding-left: 0;
-}
-
-.tabs ul li:last-child {
-  padding-right: 0;
-}
-
-.tabs ul li a {
+.tabs ul.nav-tabs .nav-link {
   color: white;
+  padding: 0 1rem;
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.tabs ul li a.active {
+.tabs ul.nav-tabs .nav-link:hover, .tabs ul.nav-tabs .nav-link.active {
+  border-color: transparent;
   color: #fb8400;
+  background: transparent;
 }
 
 @media (max-width: 992px) {
@@ -427,31 +424,20 @@ html {
     position: absolute;
     right: 1rem;
   }
-  .tabs ul {
-    padding: 0;
+  .tabs ul.nav-tabs {
     position: absolute;
+    top: 100%;
     z-index: 2;
     background: rgba(255, 255, 255, 0.9);
     display: none;
     width: 250px;
     padding: 0.5rem 0;
   }
-  .tabs ul li {
-    padding: 0;
-  }
-  .tabs ul li a {
+  .tabs ul.nav-tabs .nav-link {
     padding: 0.25rem 1rem;
-    font-weight: 500;
-    font-size: 1rem;
-    text-decoration: none;
     color: #163768;
-    width: 100%;
-    display: block;
   }
-  .tabs ul li a.active {
-    color: #fb8400;
-  }
-  .tabs ul li a:hover {
+  .tabs ul.nav-tabs .nav-link:hover, .tabs ul.nav-tabs .nav-link.active {
     color: #fb8400;
   }
 }
@@ -475,26 +461,6 @@ html {
   .content-container .content {
     padding: 1rem 2rem;
   }
-}
-
-.content-container .content .milestones-content {
-  margin-top: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-@media (max-width: 768px) {
-  .content-container .content .milestones-content {
-    padding-right: 1rem !important;
-  }
-}
-
-.content-container .content .milestones-content div {
-  display: none;
-}
-
-.content-container .content .milestones-content .active {
-  display: inline;
-  display: initial;
 }
 
 .content-container .content .event-slider-container {
@@ -583,36 +549,32 @@ html {
   }
 }
 
-.milestone-master-container {
-  height: 85%;
-}
-
-.milestone-master-container .slider-section {
+.slider-section {
   width: 100%;
 }
 
-.milestone-master-container .slider-section .milestones-container {
+.slider-section .milestones-container {
   height: 100%;
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-list {
+.slider-section .milestones-container .slick-list {
   height: 100% !important;
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-track {
+.slider-section .milestones-container .slick-track {
   height: 100% !important;
 }
 
-.milestone-master-container .slider-section .milestones-container .milestones-item {
+.slider-section .milestones-container .milestones-item {
   position: relative;
 }
 
-.milestone-master-container .slider-section .milestones-container .milestones-item img {
+.slider-section .milestones-container .milestones-item img {
   width: 100% !important;
   height: 100% !important;
 }
 
-.milestone-master-container .slider-section .milestones-container .milestones-item .text-overlay {
+.slider-section .milestones-container .milestones-item .text-overlay {
   position: absolute;
   top: 0;
   height: 100%;
@@ -627,12 +589,12 @@ html {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.milestone-master-container .slider-section .milestones-container .milestones-item .text-overlay .date {
+.slider-section .milestones-container .milestones-item .text-overlay .date {
   font-size: 1rem;
   letter-spacing: 0.3rem;
 }
 
-.milestone-master-container .slider-section .milestones-container .milestones-item .text-overlay .title {
+.slider-section .milestones-container .milestones-item .text-overlay .title {
   width: 70%;
   margin: 0 auto;
   font-size: 1.8rem;
@@ -641,23 +603,23 @@ html {
 }
 
 @media (max-width: 768px) {
-  .milestone-master-container .slider-section .milestones-container .milestones-item .text-overlay .title {
+  .slider-section .milestones-container .milestones-item .text-overlay .title {
     font-size: 1rem;
   }
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-prev {
+.slider-section .milestones-container .slick-prev {
   left: 10px !important;
   z-index: 4;
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-next {
+.slider-section .milestones-container .slick-next {
   right: 10px !important;
   z-index: 4;
   color: white;
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-next::before {
+.slider-section .milestones-container .slick-next::before {
   color: white;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -666,12 +628,12 @@ html {
 }
 
 @media (max-width: 768px) {
-  .milestone-master-container .slider-section .milestones-container .slick-next::before {
+  .slider-section .milestones-container .slick-next::before {
     font-size: 1rem;
   }
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-prev::before {
+.slider-section .milestones-container .slick-prev::before {
   color: white;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -680,20 +642,20 @@ html {
 }
 
 @media (max-width: 768px) {
-  .milestone-master-container .slider-section .milestones-container .slick-prev::before {
+  .slider-section .milestones-container .slick-prev::before {
     font-size: 1rem;
   }
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-dots {
+.slider-section .milestones-container .slick-dots {
   bottom: 0;
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-dots li {
+.slider-section .milestones-container .slick-dots li {
   padding: 0 1rem;
 }
 
-.milestone-master-container .slider-section .milestones-container .slick-dots li button::before {
+.slider-section .milestones-container .slick-dots li button::before {
   font-size: 30px;
   color: white;
   content: " ";
@@ -702,7 +664,7 @@ html {
 }
 
 @media (max-width: 768px) {
-  .milestone-master-container .slider-section .milestones-container .slick-dots li button::before {
+  .slider-section .milestones-container .slick-dots li button::before {
     font-size: 10px;
   }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Milestones</title>
   @@include('./partials/head.html')
@@ -20,56 +20,63 @@
         <div class="content">
           <span id="milestone" class="close-btn">&times;</span>
 
-          <div class="tabs">
-            <!-- <div class="selected-container"> -->
-              <p class="selected">SUSTAINABILITY</p>
-            <!-- </div> -->
-            <ul class="flex-wrap">
+          <div class="tabs row">
+            <p class="selected">SUSTAINABILITY</p>
+            <!-- <ul class="flex-wrap">
               <li><a id="technology" href="#technology">TECHNOLOGY</a></li>
               <li><a id="health" href="#health">HEALTH</a></li>
               <li><a id="enterprise" href="#enterprise">ENTERPRISE</a></li>
               <li><a id="community" href="#community">COMMUNITY</a></li>
               <li><a id="sustainability" class="active" href="#sustainability">SUSTAINABILITY</a></li>
+            </ul> -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#technology">TECHNOLOGY</a></li>
+              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#health">HEALTH</a></li>
+              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#enterprise">ENTERPRISE</a></li>
+              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#community">COMMUNITY</a></li>
+              <li class="nav-item" role="tab"><a class="nav-link active" data-toggle="tab" href="#sustainability">SUSTAINABILITY</a></li>
             </ul>
           </div>
 
-          <div class="d-flex justify-content-between flex-wrap milestone-master-container">
-            <div class="col-12 col-lg-7 p-0 m-0 order-1 milestones-content">
-              <div class="milestone-enterprise" id="technology">
+          <div class="row">
+            <div class="col-12 col-lg-7 tab-content">
+              <div class="tab-pane fade" id="technology" role="tabpanel">
                 <h2>Technology</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                 </p>
               </div>
-              <div class="milestone-enterprise" id="health">
+              <div class="tab-pane fade" id="health" role="tabpanel">
                 <h2>Health</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  health Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                 </p>
               </div>
-              <div class="milestone-enterprise" id="enterprise">
+              <div class="tab-pane fade" id="enterprise" role="tabpanel">
                 <h2>Enterprise</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  Lorem ipsum dolor Enterprise sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                 </p>
               </div>
-              <div class="milestone-community" id="community">
+              <div class="tab-pane fade" id="community" role="tabpanel">
+              <!-- <div class="milestone-community tab-pane" id="community"> -->
                 <h2>Community</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  Lorem comm ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                 </p>
               </div>
-              <div class="milestone-sustainability active" id="sustainability">
+              <div class="tab-pane fade show active" id="sustainability" role="tabpanel">
+              <!-- <div class="milestone-sustainability active tab-pane" id="sustainability"> -->
                 <h2>Sustainability</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  Lorem SUS ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                 </p>
               </div>
             </div>
             <div class="col-12 col-lg-5 p-0 m-0 text-right order-2 slider-section py-2 py-lg-0">
               <div class="milestones-container">
                 <div class="milestones-item" id="technology">
-                  <img src="./images/nus building.jpg">
+                  <img src="./images/nus building.jpg" alt="buidling">
                   <div class="text-overlay">
                     <div>
                       <p class="date">Technology</p>
@@ -78,7 +85,7 @@
                   </div>
                 </div>
                 <div class="milestones-item" id="health">
-                  <img src="./images/nus building.jpg">
+                  <img src="./images/nus building.jpg" alt="buidling">
                   <div class="text-overlay">
                     <div>
                       <p class="date">Health</p>
@@ -87,7 +94,7 @@
                   </div>
                 </div>
                 <div class="milestones-item" id="enterprise">
-                  <img src="./images/nus building.jpg">
+                  <img src="./images/nus building.jpg" alt="building">
                   <div class="text-overlay">
                     <div>
                       <p class="date">Enterprise</p>
@@ -96,7 +103,7 @@
                   </div>
                 </div>
                 <div class="milestones-item" id="community">
-                  <img src="./images/nus building.jpg">
+                  <img src="./images/nus building.jpg" alt="building">
                   <div class="text-overlay">
                     <div>
                       <p class="date">Community</p>
@@ -105,7 +112,7 @@
                   </div>
                 </div>
                 <div class="milestones-item" id="sustainability">
-                  <img src="./images/nus building.jpg">
+                  <img src="./images/nus building.jpg" alt="building">
                   <div class="text-overlay">
                     <div>
                       <p class="date">2019</p>
