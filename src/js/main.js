@@ -2,7 +2,7 @@ $(document).ready(function() {
   // homepage slick
   $('.navigator').slick({
     centerMode: true,
-    centerPadding: "20%",
+    centerPadding: "25%",
     arrows: false,
     focusOnSelect: true,
     infinite: false,
@@ -19,10 +19,12 @@ $(document).ready(function() {
   slideToHash('.navigator', slideNum);
 
   // Animation control
+  // $('.content').attr('style', 'display:none;');
   removeAnimation($("#clear-animation"));
   exitAnimation($("#revert-animation"), true, null);
 
-  $(".close-btn").on("click", function() {
+  // close btn
+  $('.close-btn').on('click', function() {
     exitAnimation($("#clear-animation"), false, $(this).attr("id"));
   });
 
@@ -96,12 +98,12 @@ function navTabs(toggle) {
     var slideNum = $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index');
     $('.milestones-container').slick('slickGoTo', slideNum);
     $('.tabs .selected').text(hash.substr(1).toUpperCase());
-  } else {
-    return;
   }
 }
 
 function removeAnimation(clearFrameID) {
+  console.log('removeAnimation', clearFrameID);
+  // var conWidth = clearFrameID.find(".animation-container").width();
   var conWidth = clearFrameID.find("#animation-container").width();
   var elem = clearFrameID.find("#animation");
   var posclear = 0;
@@ -110,6 +112,7 @@ function removeAnimation(clearFrameID) {
     if (posclear > conWidth) {
       clearInterval(widthClear);
       elem.removeAttr("style");
+      // clearFrameID.find(".animation-container").hide();
       clearFrameID.find("#animation-container").hide();
       redirectedAnimate($(".wrapper"));
     } else {
@@ -138,71 +141,81 @@ function redirect(url) {
 
   var pos = 0;
   var poswidth = elem.width();
-  // var id = setInterval(frame, 1);
-  var widthMove;
-  $.when(pageTransit()).then(function(){
-    setTimeout(function(){
-      window.location.href = pageHref;
-    }, 1500);
-  });
-  function pageTransit() {
-    elem.animate({
-      height: $(window).height()
-    }, 500);
-    elem.animate({
-      width: $(window).width()
-    }, 1000);
-    // window.location.href = pageHref;
-  }
-
-  // function frame() {
-  //   if (pos > conHeight) {
-  //     clearInterval(id);
-  //     widthMove = setInterval(widthframe, 1);
-  //   } else {
-  //     pos = pos + 20;
-  //     elem.css({
-  //       height: pos + "px"
-  //     });
-  //   }
-  // }
-  //
-  // function widthframe() {
-  //   if (poswidth > conWidth) {
-  //     clearInterval(widthMove);
-  //     window.location.href = pageHref;
-  //     setTimeout(() => {
-  //       elem.removeAttr("style");
-  //       $("#animation-container").hide();
-  //     }, 500);
-  //   } else {
-  //     poswidth = poswidth + 20;
-  //     elem.css({
-  //       width: poswidth + "px"
-  //     });
-  //   }
-  // }
-}
-
-function redirectedAnimate(frameID) {
-  var conHeight = frameID.find("#animation-container").height();
-  var conWidth = frameID.find("#animation-container").width();
-  var elem = frameID.find("#animation");
-  frameID.find("#animation-container").show();
-  var pos = 0;
-  var poswidth = elem.width();
-  var posclear = 0;
   var id = setInterval(frame, 1);
   var widthMove;
+  // $.when(pageTransit()).then(function(){
+  //   setTimeout(function(){
+  //     window.location.href = pageHref;
+  //   }, 1500);
+  // });
+  // function pageTransit() {
+  //   elem.animate({
+  //     height: $(window).height()
+  //   }, 500);
+  //   elem.animate({
+  //     width: $(window).width()
+  //   }, 1000);
+  //   // window.location.href = pageHref;
+  // }
+
   function frame() {
     if (pos > conHeight) {
       clearInterval(id);
       widthMove = setInterval(widthframe, 1);
     } else {
-      pos = pos + 20;
-      elem.css({
-        height: pos + "px"
-      });
+      pos = addHeight(elem, pos);
+    }
+  }
+
+  function widthframe() {
+    if (poswidth > conWidth) {
+      clearInterval(widthMove);
+      window.location.href = pageHref;
+      setTimeout(() => {
+        elem.removeAttr("style");
+        $("#animation-container").hide();
+      }, 500);
+    } else {
+      poswidth = addWidth(elem, poswidth);
+    }
+  }
+}
+
+function addHeight(container, containerHeight) {
+  containerHeight = containerHeight + 20;
+  container.css({
+    height: containerHeight + 'px'
+  });
+  return containerHeight;
+}
+
+function addWidth(container, containerWidth) {
+  containerWidth = containerWidth + 20;
+  container.css({
+    width: containerWidth + 'px'
+  });
+  return containerWidth;
+}
+
+function redirectedAnimate(frameID) {
+  // var conHeight = frameID.find("#animation-container").height();
+  var conHeight = frameID.find(".content-container").height();
+  // var conWidth = frameID.find("#animation-container").width();
+  var conWidth = frameID.find(".content-container").width();
+  console.log('conHeight:'+ conHeight+', conWidth:'+conWidth);
+  var elem = frameID.find("#animation");
+  frameID.find("#animation-container").show();
+  var pos = 0;
+  var poswidth = elem.width();
+  var posclear = 0;
+  var id = setInterval(frame, 10);
+  var widthMove;
+  function frame() {
+    if (pos > conHeight) {
+      clearInterval(id);
+      widthMove = setInterval(widthframe, 10);
+    } else {
+      pos = addHeight(elem, pos);
     }
   }
   function widthframe() {
@@ -230,6 +243,7 @@ function redirectedAnimate(frameID) {
       //   ]
       // });
       function clearFrame() {
+        // $('.content').removeAttr("style");
         if (posclear > conWidth) {
           clearInterval(widthClear);
           elem.removeAttr("style");
@@ -243,17 +257,17 @@ function redirectedAnimate(frameID) {
         }
       }
     } else {
-      poswidth = poswidth + 20;
-      elem.css({
-        width: poswidth + "px"
-      });
+      poswidth = addWidth(elem, poswidth);
     }
   }
 }
 
 function exitAnimation(frameID, homeClear, currentPage) {
   var conWidth = frameID.find("#animation-container").width();
+  console.log('exitAnimation', frameID, conWidth, $(window).width());
+  // var conWidth = frameID.find(".content-container").width();
   var elem = frameID.find("#animation");
+  console.log(elem);
   frameID.find("#animation-container").show();
   var posclear = 0;
   var revertX;
@@ -269,10 +283,7 @@ function exitAnimation(frameID, homeClear, currentPage) {
         clearInterval(revertY);
         window.location.href = baseRef + "/index.html#" + currentPage;
       } else {
-        posclear = posclear + 20;
-        elem.css({
-          width: posclear + "px"
-        });
+        posclear = addWidth(elem, posclear);
       }
     }
   } else {

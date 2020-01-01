@@ -230,6 +230,7 @@ html {
 .navigator .nav-item {
   text-align: center;
   position: relative;
+  outline: none;
 }
 
 .navigator .nav-item h2 {
@@ -315,7 +316,7 @@ html {
   margin: 0 0.5rem;
 }
 
-#animation-container {
+#animation-container, .animation-container {
   display: none;
   position: absolute;
   bottom: 0;
@@ -325,15 +326,15 @@ html {
   overflow: hidden;
 }
 
-#animation-container #animation {
+#animation-container #animation, .animation-container #animation {
   position: absolute;
   bottom: 0;
   width: 300px;
-  height: 100px;
+  height: 0;
   background: #e9772c;
 }
 
-#clear-animation #animation-container {
+#clear-animation #animation-container, #revert-animation #animation-container {
   display: inline;
   display: initial;
   position: absolute;
@@ -344,26 +345,7 @@ html {
   overflow: hidden;
 }
 
-#clear-animation #animation-container #animation {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: #e9772c;
-}
-
-#revert-animation #animation-container {
-  display: inline;
-  display: initial;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  overflow: hidden;
-}
-
-#revert-animation #animation-container #animation {
+#clear-animation #animation-container #animation, #revert-animation #animation-container #animation {
   position: absolute;
   bottom: 0;
   width: 100%;
