@@ -22,8 +22,7 @@ $(document).ready(function() {
 
   // Animation control
   $('.content').css({'visibility':'hidden'});
-  removeAnimation($("#clear-animation"));
-  exitAnimation($("#revert-animation"), true, null);
+  removeAnimation($("#clear-animation"), $('#clear-animation').data('home'));
 
   // navigator button
   $('.navigator-btn').on('click', function(e) {
@@ -33,7 +32,8 @@ $(document).ready(function() {
   // close btn
   $('.close-btn').on('click', function() {
     console.log($(location).attr('pathname').substr(1));
-    exitAnimation($('#clear-animation'), false, $(this).data('page'));
+    // exitAnimation($('#clear-animation'), false, $(this).data('page'));
+    exitAnimation($('#clear-animation'), $(this).data('page'));
   });
 
   // Milestones page
@@ -108,22 +108,26 @@ function navTabs(toggle) {
   }
 }
 
-function removeAnimation(clearFrameID) {
-  console.log('removeAnimation', clearFrameID);
-  var conWidth = clearFrameID.find(".animation-container").width();
-  var elem = clearFrameID.find(".animation");
-  clearFrameID.find(".animation-container").show();
-  var posclear = 0;
+function removeAnimation(frameID, isHome) {
+  var container = frameID.find(".animation-container");
+  var conWidth = container.width();
+  var animation = frameID.find(".animation");
+  container.show();
+
+  if(isHome){ animation.css('left', '0') }
 
   var widthClear = setInterval(clearFrame, 1);
+
+  var initial = conWidth;
+  var goal = 0;
+  var reverse = true;
   function clearFrame() {
-    if (posclear > conWidth) {
+    if (initial <= goal) {
       clearInterval(widthClear);
-      elem.removeAttr("style");
-      clearFrameID.find(".animation-container").hide();
-      redirectedAnimate($(".content-container"));
+      container.hide();
+      if(!isHome){ redirectedAnimate($(".content-container")) }
     } else {
-      posclear = transit(elem, posclear, 'left');
+      initial = transit(animation, initial, 'width', reverse);
     }
   }
 }
@@ -166,8 +170,8 @@ function redirect(url) {
   }
 }
 
-function transit(container, containerSpan, property) {
-  containerSpan = containerSpan + 20;
+function transit(container, containerSpan, property, decrease=false) {
+  containerSpan = !decrease ? containerSpan + 20 : containerSpan - 20;
   container.css(property, containerSpan + 'px');
   return containerSpan;
 }
@@ -212,40 +216,39 @@ function redirectedAnimate(frameID) {
   }
 }
 
-function exitAnimation(frameID, homeClear, currentPage) {
-  console.log('exitAnimation', frameID, conWidth, $(window).width());
-  var conWidth = frameID.find(".animation-container").width();
-  var elem = frameID.find(".animation");
-  console.log(elem);
-  frameID.find(".animation-container").show();
+function exitAnimation(frameID, currentPage) {
+  var container = frameID.find(".animation-container");
+  var conWidth = container.width();
+  var animation = frameID.find(".animation");
+  container.show();
+
   var posclear = 0;
 
-  var revertX;
-  if (homeClear == false) {
-    elem.css({
-      height: "100%",
-      width: 0,
-      right: 0
-    });
+  var widthClear = setInterval(clearFrame, 1);
 
-    revertX = setInterval(revertFrameY, 1);
-    function revertFrameY() {
-      if (posclear > conWidth) {
-        clearInterval(revertX);
-        $(location).attr('href', baseRef + "/index.html#" + currentPage);
-      } else {
-        posclear = transit(elem, posclear, 'width');
-      }
+  var initial = posclear;
+  var goal = conWidth;
+  var reverse = false;
+  function clearFrame() {
+    if (initial => goal) {
+      clearInterval(widthClear);
+      $(location).attr('href', baseRef + "/index.html#" + currentPage);
+    } else {
+      initial = transit(animation, initial, 'width', reverse);
     }
-  } else {
-    revertX = setInterval(revertFrameX, 1);
-    function revertFrameX() {
-      if (posclear > conWidth) {
-        clearInterval(revertX);
-        frameID.find(".animation-container").hide();
-      } else {
-        posclear = transit(elem, posclear, 'right');
-      }
-    }
+  }
+}
+
+function animatePage(frameId, transitToLeft=false,  ){
+  var container = frameID.find(".animation-container");
+  var conWidth = container.width();
+  var animation = frameID.find(".animation");
+  container.show();
+
+  if(transitToLeft){animation.css('left', '0')}
+  var goal = 0;
+  var widthClear = setInterval(clearFrame, 1);
+  function clearFrame() {
+
   }
 }

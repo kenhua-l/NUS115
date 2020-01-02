@@ -270,20 +270,6 @@ html {
   }
 }
 
-// @keyframes page-transit-cover {
-//   from {
-//     width: 300px;
-//     height: 100px;
-//   }
-//   50% {
-//     height: 100%;
-//   }
-//   to {
-//     height: 100%;
-//     width: 100%;
-//   }
-// }
-
 .animation-container {
   display: none;
   position: absolute;
@@ -301,11 +287,12 @@ html {
   }
 }
 
-#clear-animation, #revert-animation {
+#clear-animation {
   .animation-container {
     display: block;
     // z-index: 5;
     .animation {
+      right: 0;
       width: 100%;
       height: 100%;
     }
@@ -382,7 +369,6 @@ html {
   position: relative;
 
   .content {
-    // display: none;
     padding: 2rem 2.5rem;
     height: 100%;
     @media (max-width: 768px) {
