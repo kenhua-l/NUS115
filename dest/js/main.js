@@ -132,16 +132,16 @@ var baseRef = "";
 function redirect(url) {
   console.log('redirect');
   var pageHref = '/' + url + '.html';
-  var conHeight = $("#animation-container").height();
-  var conWidth = $("#animation-container").width();
-  var elem = $("#animation");
+  var conHeight = $(".animation-container").height();
+  var conWidth = $(".animation-container").width();
+  var elem = $(".animation");
   elem.css({
     bottom: 0,
     width: "300px",
     height: "100px",
     left: "0"
   });
-  $("#animation-container").show();
+  $(".animation-container").show();
 
   var pos = 0;
   var poswidth = elem.width();
@@ -162,7 +162,7 @@ function redirect(url) {
       window.location.href = pageHref;
       setTimeout(() => {
         elem.removeAttr("style");
-        $("#animation-container").hide();
+        $(".animation-container").hide();
       }, 500);
     } else {
       poswidth = addWidth(elem, poswidth);

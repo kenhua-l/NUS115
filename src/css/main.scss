@@ -284,7 +284,7 @@ html {
 //   }
 // }
 
-#animation-container, .animation-container {
+.animation-container {
   display: none;
   position: absolute;
   bottom: 0;
@@ -292,7 +292,7 @@ html {
   height: 100%;
   z-index: 6;
   overflow: hidden;
-  #animation, .animation {
+  .animation {
     position: absolute;
     bottom: 0;
     width: 300px;
