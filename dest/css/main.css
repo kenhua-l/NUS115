@@ -236,8 +236,9 @@ html {
 .navigator .nav-item h2 {
   margin-top: 4rem;
   color: #9c9c9c;
-  font-size: 4.8rem;
+  font-size: 4.5rem;
   letter-spacing: 4px;
+  line-height: 1;
 }
 
 @media (max-width: 1200px) {
@@ -265,6 +266,7 @@ html {
 }
 
 .navigator .nav-item .btn-container {
+  display: none;
   position: absolute;
   bottom: 4rem;
   width: 100%;
@@ -276,8 +278,12 @@ html {
 
 .navigator .nav-item.slick-current h2 {
   color: white !important;
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.navigator .nav-item.slick-current .btn-container {
+  display: block;
 }
 
 .footer-links {

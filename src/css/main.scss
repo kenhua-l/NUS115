@@ -206,8 +206,10 @@ html {
     h2 {
       margin-top: 4rem;
       color: #9c9c9c;
-      font-size: 4.8rem;
+      font-size: 4.5rem;
       letter-spacing: 4px;
+      line-height: 1;
+
       @media (max-width: 1200px) {
         font-size: 4rem;
       }
@@ -222,6 +224,7 @@ html {
       }
     }
     .btn-container {
+      display: none;
       position: absolute;
       bottom: 4rem;
       width: 100%;
@@ -229,9 +232,14 @@ html {
         margin: auto;
       }
     }
-    &.slick-current h2 {
-      color: white !important;
-      transform: scale(1.25);
+    &.slick-current {
+      h2 {
+        color: white !important;
+        transform: scale(1.15);
+      }
+      .btn-container {
+        display: block;
+      }
     }
   }
 }

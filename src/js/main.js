@@ -19,7 +19,7 @@ $(document).ready(function() {
   slideToHash('.navigator', slideNum);
 
   // Animation control
-  // $('.content').attr('style', 'display:none;');
+  $('.content').css({'visibility':'hidden'});
   removeAnimation($("#clear-animation"));
   exitAnimation($("#revert-animation"), true, null);
 
@@ -123,6 +123,7 @@ function removeAnimation(clearFrameID) {
     }
   }
 }
+
 var baseRef = "";
 
 // slick-redirect
@@ -243,7 +244,7 @@ function redirectedAnimate(frameID) {
       //   ]
       // });
       function clearFrame() {
-        // $('.content').removeAttr("style");
+        $('.content').removeAttr("style");
         if (posclear > conWidth) {
           clearInterval(widthClear);
           elem.removeAttr("style");
