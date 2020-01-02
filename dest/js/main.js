@@ -1,3 +1,5 @@
+var baseRef = $(location).attr('protocol') + '//' + $(location).attr('host');
+
 $(document).ready(function() {
   // homepage slick
   $('.navigator').slick({
@@ -23,9 +25,15 @@ $(document).ready(function() {
   removeAnimation($("#clear-animation"));
   exitAnimation($("#revert-animation"), true, null);
 
+  // navigator button
+  $('.navigator-btn').on('click', function(e) {
+    e.preventDefault();
+    redirect($(this).attr('href'));
+  });
   // close btn
   $('.close-btn').on('click', function() {
-    exitAnimation($("#clear-animation"), false, $(this).attr("id"));
+    console.log($(location).attr('pathname').substr(1));
+    exitAnimation($('#clear-animation'), false, $(this).data('page'));
   });
 
   // Milestones page
@@ -43,7 +51,6 @@ $(document).ready(function() {
     dots: true,
     adaptiveHeight: false
   })
-
   $('.milestones-container').on('beforeChange', function(e,s,c,n) {
     var nextSlideTitle = $('.milestones-item[data-slick-index="' + n + '"]').data('title');
     $(location).attr('hash', nextSlideTitle);
@@ -104,34 +111,27 @@ function navTabs(toggle) {
 function removeAnimation(clearFrameID) {
   console.log('removeAnimation', clearFrameID);
   var conWidth = clearFrameID.find(".animation-container").width();
-  // var conWidth = clearFrameID.find("#animation-container").width();
   var elem = clearFrameID.find(".animation");
-  // var elem = clearFrameID.find("#animation");
+  clearFrameID.find(".animation-container").show();
   var posclear = 0;
+
   var widthClear = setInterval(clearFrame, 1);
   function clearFrame() {
     if (posclear > conWidth) {
       clearInterval(widthClear);
       elem.removeAttr("style");
       clearFrameID.find(".animation-container").hide();
-      // clearFrameID.find("#animation-container").hide();
       redirectedAnimate($(".content-container"));
-      // redirectedAnimate($(".wrapper"));
     } else {
-      posclear = posclear + 20;
-      elem.css({
-        left: posclear + "px"
-      });
+      posclear = transit(elem, posclear, 'left');
     }
   }
 }
 
-var baseRef = "";
-
 // slick-redirect
 function redirect(url) {
   console.log('redirect');
-  var pageHref = '/' + url + '.html';
+  var pageHref = '/' + url;
   var conHeight = $(".animation-container").height();
   var conWidth = $(".animation-container").width();
   var elem = $(".animation");
@@ -152,38 +152,24 @@ function redirect(url) {
       clearInterval(id);
       widthMove = setInterval(widthframe, 1);
     } else {
-      pos = addHeight(elem, pos);
+      pos = transit(elem, pos, 'height');
     }
   }
 
   function widthframe() {
     if (poswidth > conWidth) {
       clearInterval(widthMove);
-      window.location.href = pageHref;
-      setTimeout(() => {
-        elem.removeAttr("style");
-        $(".animation-container").hide();
-      }, 500);
+      $(location).attr('href', pageHref);
     } else {
-      poswidth = addWidth(elem, poswidth);
+      poswidth = transit(elem, poswidth, 'width');
     }
   }
 }
 
-function addHeight(container, containerHeight) {
-  containerHeight = containerHeight + 20;
-  container.css({
-    height: containerHeight + 'px'
-  });
-  return containerHeight;
-}
-
-function addWidth(container, containerWidth) {
-  containerWidth = containerWidth + 20;
-  container.css({
-    width: containerWidth + 'px'
-  });
-  return containerWidth;
+function transit(container, containerSpan, property) {
+  containerSpan = containerSpan + 20;
+  container.css(property, containerSpan + 'px');
+  return containerSpan;
 }
 
 function redirectedAnimate(frameID) {
@@ -202,14 +188,13 @@ function redirectedAnimate(frameID) {
       clearInterval(id);
       widthMove = setInterval(widthframe, 10);
     } else {
-      pos = addHeight(elem, pos);
+      pos = transit(elem, pos, 'height');
     }
   }
   function widthframe() {
     if (poswidth > conWidth) {
       clearInterval(widthMove);
       var widthClear = setInterval(clearFrame, 1);
-      // frameID.find(".content").show();
       function clearFrame() {
         $('.content').removeAttr("style");
         if (posclear > conWidth) {
@@ -218,25 +203,23 @@ function redirectedAnimate(frameID) {
           navTabs(true);
           frameID.find(".animation-container").hide();
         } else {
-          posclear = posclear + 20;
-          elem.css({
-            left: posclear + "px"
-          });
+          posclear = transit(elem, posclear, 'left');
         }
       }
     } else {
-      poswidth = addWidth(elem, poswidth);
+      poswidth = transit(elem, poswidth, 'width');
     }
   }
 }
 
 function exitAnimation(frameID, homeClear, currentPage) {
-  var conWidth = frameID.find(".animation-container").width();
   console.log('exitAnimation', frameID, conWidth, $(window).width());
+  var conWidth = frameID.find(".animation-container").width();
   var elem = frameID.find(".animation");
   console.log(elem);
   frameID.find(".animation-container").show();
   var posclear = 0;
+
   var revertX;
   if (homeClear == false) {
     elem.css({
@@ -244,27 +227,24 @@ function exitAnimation(frameID, homeClear, currentPage) {
       width: 0,
       right: 0
     });
-    var revertY = setInterval(revertFrameY, 1);
+
+    revertX = setInterval(revertFrameY, 1);
     function revertFrameY() {
       if (posclear > conWidth) {
-        clearInterval(revertY);
-        window.location.href = baseRef + "/index.html#" + currentPage;
+        clearInterval(revertX);
+        $(location).attr('href', baseRef + "/index.html#" + currentPage);
       } else {
-        posclear = addWidth(elem, posclear);
+        posclear = transit(elem, posclear, 'width');
       }
     }
   } else {
-    posclear = 0;
     revertX = setInterval(revertFrameX, 1);
     function revertFrameX() {
       if (posclear > conWidth) {
         clearInterval(revertX);
         frameID.find(".animation-container").hide();
       } else {
-        posclear = posclear + 20;
-        elem.css({
-          right: posclear + "px"
-        });
+        posclear = transit(elem, posclear, 'right');
       }
     }
   }
