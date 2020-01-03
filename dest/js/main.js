@@ -222,19 +222,17 @@ function exitAnimation(frameID, currentPage) {
   var animation = frameID.find(".animation");
   container.show();
 
-  var posclear = 0;
-
   var widthClear = setInterval(clearFrame, 1);
 
-  var initial = posclear;
+  var initial = 0;
   var goal = conWidth;
   var reverse = false;
   function clearFrame() {
-    if (initial => goal) {
+    if (initial > goal) {
       clearInterval(widthClear);
       $(location).attr('href', baseRef + "/index.html#" + currentPage);
     } else {
-      initial = transit(animation, initial, 'width', reverse);
+      initial = transit(animation, initial, 'width');
     }
   }
 }
