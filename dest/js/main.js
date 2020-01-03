@@ -82,7 +82,7 @@ $(document).ready(function() {
   });
 });
 
-// added
+// Utils
 function slideToHash(slider, hash) {
   var hashExists = false;
   $(slider).find('.slick-slide').each(function(){
@@ -95,7 +95,6 @@ function slideToHash(slider, hash) {
     $(slider).slick('slickGoTo', $(slider).find('[data-slick-start="true"]').data('slick-index'));
   }
 }
-// added
 
 function navTabs(toggle) {
   var hash = $(location).attr('hash') != '' ? $(location).attr('hash') : '#' + $('.milestones-item[data-slick-index="0"]').data('title');
@@ -107,6 +106,34 @@ function navTabs(toggle) {
     $('.tabs .selected').text(hash.substr(1).toUpperCase());
   }
 }
+
+function redirectPage(toUrl){
+  $(location).attr('href', toUrl);
+}
+
+function animatePage(frameId, fill=false, toLeft=false, callbackFunction, callbackParam){
+  var container = frameId.find(".animation-container");
+  var conWidth = container.width();
+  var animation = frameId.find(".animation");
+  container.show();
+
+  if(toLeft) { animation.css('left', '0') }
+  var initial = fill ? 0 : conWidth; // fill from 0 to conWidth
+  var goal = fill ? conWidth : 0;
+  var reverse = fill ? false : true; // fill should grow, so not reverse
+
+  var widthClear = setInterval(clearFrame, 1);
+  function clearFrame() {
+    if ((!fill && initial <= goal) || (fill && initial > goal)) {
+      clearInterval(widthClear);
+      if(!fill) { container.hide() }
+      callbackFunction(callbackParam);
+    } else {
+      initial = transit(animation, initial, 'width', reverse);
+    }
+  }
+}
+// added
 
 // slick-redirect
 function redirect(url) {
@@ -188,33 +215,6 @@ function redirectedAnimate(frameID) {
       }
     } else {
       poswidth = transit(elem, poswidth, 'width');
-    }
-  }
-}
-
-function redirectPage(toUrl){
-  $(location).attr('href', toUrl);
-}
-
-function animatePage(frameId, fill=false, toLeft=false, callbackFunction, callbackParam){
-  var container = frameId.find(".animation-container");
-  var conWidth = container.width();
-  var animation = frameId.find(".animation");
-  container.show();
-
-  if(toLeft) { animation.css('left', '0') }
-  var initial = fill ? 0 : conWidth; // fill from 0 to conWidth
-  var goal = fill ? conWidth : 0;
-  var reverse = fill ? false : true; // fill should grow, so not reverse
-
-  var widthClear = setInterval(clearFrame, 1);
-  function clearFrame() {
-    if ((!fill && initial <= goal) || (fill && initial > goal)) {
-      clearInterval(widthClear);
-      if(!fill) { container.hide() }
-      callbackFunction(callbackParam);
-    } else {
-      initial = transit(animation, initial, 'width', reverse);
     }
   }
 }
