@@ -22,7 +22,8 @@ $(document).ready(function() {
 
   // Animation control
   $('.content').css({'visibility':'hidden'});
-  removeAnimation($("#clear-animation"), $('#clear-animation').data('home'));
+  var toLeft = $('#clear-animation').data('home') ? true : false;
+  animatePage($('#clear-animation'), false, toLeft, redirectedAnimate, $('.content-container'));
 
   // navigator button
   $('.navigator-btn').on('click', function(e) {
@@ -31,9 +32,8 @@ $(document).ready(function() {
   });
   // close btn
   $('.close-btn').on('click', function() {
-    console.log($(location).attr('pathname').substr(1));
-    // exitAnimation($('#clear-animation'), false, $(this).data('page'));
-    exitAnimation($('#clear-animation'), $(this).data('page'));
+    var currentPage = baseRef + "/index.html#" + $(this).data('page');
+    animatePage($('#clear-animation'), true, false, redirectPage, currentPage);
   });
 
   // Milestones page
@@ -105,30 +105,6 @@ function navTabs(toggle) {
     var slideNum = $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index');
     $('.milestones-container').slick('slickGoTo', slideNum);
     $('.tabs .selected').text(hash.substr(1).toUpperCase());
-  }
-}
-
-function removeAnimation(frameID, isHome) {
-  var container = frameID.find(".animation-container");
-  var conWidth = container.width();
-  var animation = frameID.find(".animation");
-  container.show();
-
-  if(isHome){ animation.css('left', '0') }
-
-  var widthClear = setInterval(clearFrame, 1);
-
-  var initial = conWidth;
-  var goal = 0;
-  var reverse = true;
-  function clearFrame() {
-    if (initial <= goal) {
-      clearInterval(widthClear);
-      container.hide();
-      if(!isHome){ redirectedAnimate($(".content-container")) }
-    } else {
-      initial = transit(animation, initial, 'width', reverse);
-    }
   }
 }
 
@@ -216,37 +192,29 @@ function redirectedAnimate(frameID) {
   }
 }
 
-function exitAnimation(frameID, currentPage) {
-  var container = frameID.find(".animation-container");
-  var conWidth = container.width();
-  var animation = frameID.find(".animation");
-  container.show();
-
-  var widthClear = setInterval(clearFrame, 1);
-
-  var initial = 0;
-  var goal = conWidth;
-  var reverse = false;
-  function clearFrame() {
-    if (initial > goal) {
-      clearInterval(widthClear);
-      $(location).attr('href', baseRef + "/index.html#" + currentPage);
-    } else {
-      initial = transit(animation, initial, 'width');
-    }
-  }
+function redirectPage(toUrl){
+  $(location).attr('href', toUrl);
 }
 
-function animatePage(frameId, transitToLeft=false,  ){
-  var container = frameID.find(".animation-container");
+function animatePage(frameId, fill=false, toLeft=false, callbackFunction, callbackParam){
+  var container = frameId.find(".animation-container");
   var conWidth = container.width();
-  var animation = frameID.find(".animation");
+  var animation = frameId.find(".animation");
   container.show();
 
-  if(transitToLeft){animation.css('left', '0')}
-  var goal = 0;
+  if(toLeft) { animation.css('left', '0') }
+  var initial = fill ? 0 : conWidth; // fill from 0 to conWidth
+  var goal = fill ? conWidth : 0;
+  var reverse = fill ? false : true; // fill should grow, so not reverse
+
   var widthClear = setInterval(clearFrame, 1);
   function clearFrame() {
-
+    if ((!fill && initial <= goal) || (fill && initial > goal)) {
+      clearInterval(widthClear);
+      if(!fill) { container.hide() }
+      callbackFunction(callbackParam);
+    } else {
+      initial = transit(animation, initial, 'width', reverse);
+    }
   }
 }
