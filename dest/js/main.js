@@ -23,17 +23,17 @@ $(document).ready(function() {
   // Animation control
   $('.content').css({'visibility':'hidden'});
   var toLeft = $('#clear-animation').data('home') ? true : false;
-  animatePage($('#clear-animation'), false, toLeft, redirectedAnimate, $('.content-container'));
+  animatePage($('#clear-animation'), false, toLeft, blockAnimate, [$('.content-container'), animatePage, [$('.content-container')]]);
 
   // navigator button
   $('.navigator-btn').on('click', function(e) {
     e.preventDefault();
-    redirect($(this).attr('href'));
+    blockAnimate($('#clear-animation'), redirectPage, [$(this).attr('href')]);
   });
   // close btn
   $('.close-btn').on('click', function() {
     var currentPage = baseRef + "/index.html#" + $(this).data('page');
-    animatePage($('#clear-animation'), true, false, redirectPage, currentPage);
+    animatePage($('#clear-animation'), true, false, redirectPage, [currentPage]);
   });
 
   // Milestones page
@@ -58,6 +58,8 @@ $(document).ready(function() {
 
     navTabs(false);
   });
+  // setup
+  navTabs(true);
 
   // Events page
   // event slick
@@ -111,7 +113,13 @@ function redirectPage(toUrl){
   $(location).attr('href', toUrl);
 }
 
-function animatePage(frameId, fill=false, toLeft=false, callbackFunction, callbackParam){
+function transit(container, containerSpan, property, decrease=false) {
+  containerSpan = !decrease ? containerSpan + 20 : containerSpan - 20;
+  container.css(property, containerSpan + 'px');
+  return containerSpan;
+}
+
+function animatePage(frameId, fill=false, toLeft=false, callbackFunction=null, callbackParam=null){
   var container = frameId.find(".animation-container");
   var conWidth = container.width();
   var animation = frameId.find(".animation");
@@ -127,94 +135,42 @@ function animatePage(frameId, fill=false, toLeft=false, callbackFunction, callba
     if ((!fill && initial <= goal) || (fill && initial > goal)) {
       clearInterval(widthClear);
       if(!fill) { container.hide() }
-      callbackFunction(callbackParam);
+      if(callbackFunction) { callbackFunction.apply(this, callbackParam) }
     } else {
       initial = transit(animation, initial, 'width', reverse);
     }
   }
 }
-// added
 
-// slick-redirect
-function redirect(url) {
-  console.log('redirect');
-  var pageHref = '/' + url;
-  var conHeight = $(".animation-container").height();
-  var conWidth = $(".animation-container").width();
-  var elem = $(".animation");
-  elem.css({
-    bottom: 0,
-    width: "300px",
-    height: "100px",
-    left: "0"
-  });
-  $(".animation-container").show();
+function blockAnimate(frameId, callbackFunction=null, callbackParam=null) {
+  var container = frameId.find(".animation-container");
+  var goalHeight = container.height();
+  var goalWidth = container.width();
+  var animation = frameId.find(".animation");
+  container.show();
+  animation.css({width:'300px', height:'100px'});
 
-  var pos = 0;
-  var poswidth = elem.width();
-  var id = setInterval(frame, 1);
-  var widthMove;
-  function frame() {
-    if (pos > conHeight) {
-      clearInterval(id);
-      widthMove = setInterval(widthframe, 1);
+  var initialHeight = animation.height();
+  var initialWidth = animation.width();
+  var setupHeight = setInterval(growHeight, 2);
+  var setupWidth;
+  function growHeight() {
+    if (initialHeight > goalHeight) {
+      clearInterval(setupHeight);
+      setupWidth = setInterval(growWidth, 1);
     } else {
-      pos = transit(elem, pos, 'height');
+      initialHeight = transit(animation, initialHeight, 'height');
     }
   }
 
-  function widthframe() {
-    if (poswidth > conWidth) {
-      clearInterval(widthMove);
-      $(location).attr('href', pageHref);
+  function growWidth() {
+    if (initialWidth > goalWidth) {
+      clearInterval(setupWidth);
+      $('.content').removeAttr("style");
+      animation.css('right', '0');
+      if(callbackFunction) { callbackFunction.apply(this, callbackParam) }
     } else {
-      poswidth = transit(elem, poswidth, 'width');
-    }
-  }
-}
-
-function transit(container, containerSpan, property, decrease=false) {
-  containerSpan = !decrease ? containerSpan + 20 : containerSpan - 20;
-  container.css(property, containerSpan + 'px');
-  return containerSpan;
-}
-
-function redirectedAnimate(frameID) {
-  var conHeight = frameID.height();
-  var conWidth = frameID.width();
-  console.log('conHeight:'+ conHeight+', conWidth:'+conWidth);
-  var elem = frameID.find(".animation");
-  frameID.find(".animation-container").show();
-  var pos = 0;
-  var poswidth = elem.width();
-  var posclear = 0;
-  var id = setInterval(frame, 10);
-  var widthMove;
-  function frame() {
-    if (pos > conHeight) {
-      clearInterval(id);
-      widthMove = setInterval(widthframe, 10);
-    } else {
-      pos = transit(elem, pos, 'height');
-    }
-  }
-  function widthframe() {
-    if (poswidth > conWidth) {
-      clearInterval(widthMove);
-      var widthClear = setInterval(clearFrame, 1);
-      function clearFrame() {
-        $('.content').removeAttr("style");
-        if (posclear > conWidth) {
-          clearInterval(widthClear);
-          elem.removeAttr("style");
-          navTabs(true);
-          frameID.find(".animation-container").hide();
-        } else {
-          posclear = transit(elem, posclear, 'left');
-        }
-      }
-    } else {
-      poswidth = transit(elem, poswidth, 'width');
+      initialWidth = transit(animation, initialWidth, 'width');
     }
   }
 }
