@@ -60,28 +60,6 @@ $(document).ready(function() {
   });
   // setup
   navTabs(true);
-
-  // Events page
-  // event slick
-  $(".events-container").slick({
-    slidesToShow: 3,
-    focusOnSelect: true,
-    infinite: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
 });
 
 // Utils

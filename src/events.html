@@ -20,115 +20,7 @@
         <div class="content">
           <span data-page="events" class="close-btn">&times;</span>
           <h2>Events</h2>
-          <div class="events-container">
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">11 JAN 2020</p>
-              <hr>
-              <small>5.00pm - 7.00pm</small>
-              <div class="banner-container">
-                <p>NUS Bizad Charity Run 2020</p>
-              </div>
-            </div>
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">17 & 20 FEB 2020</p>
-              <hr>
-              <small>11.00pm - 5.00pm</small>
-              <div class="banner-container">
-                <p>NUS Career Fest 2020</p>
-              </div>
-            </div>
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">7 MAR 2020</p>
-              <hr>
-              <small>9.00am – 6.00pm</small>
-              <div class="banner-container">
-                <p>NUS Open Day 2020</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">27 MAR 2020</p>
-              <hr>
-              <small>7.30pm – 9.30pm</small>
-              <div class="banner-container">
-                <p>NUS Mind Science Centre Fundraising Gala Dinner</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">15 MAY 2020</p>
-              <hr>
-              <small>6.30pm – 9.30pm</small>
-              <div class="banner-container">
-                <p>University Awards 2020</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">3 JUL 2020</p>
-              <hr>
-              <small>7.30pm – 10.00pm</small>
-              <div class="banner-container">
-                <p>NUS Medicine Dinner 2020</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">4 JUL 2020</p>
-              <hr>
-              <small>4.00pm – 9.00pm</small>
-              <div class="banner-container">
-                <p>NUS Bukit Timah Homecoming 2020</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">9 – 17 JUL 2020</p>
-              <hr>
-              <small>Various timings</small>
-              <div class="banner-container">
-                <p>NUS Commencement 2020</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">20 – 25 JUL 2020</p>
-              <hr>
-              <small>Various timings</small>
-              <div class="banner-container">
-                <p>32nd International Olympiad in Informatics (IOI2020)</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">15 AUG 2020</p>
-              <hr>
-              <small>5.00pm – 9.30pm</small>
-              <div class="banner-container">
-                <p>Kent Ridge Alumni Family Day 2020</p>
-              </div>
-            </div>
-
-            <div class="events-item">
-              <small>Signature Event</small>
-              <p class="event-date">8 OCT 2020</p>
-              <hr>
-              <small>7.30pm – 9.30pm</small>
-              <div class="banner-container">
-                <p>USP 20th Anniversary Gala Dinner</p>
-              </div>
-            </div>
-          </div>
+          <div class="events-container"></div>
         </div>
 
       </div>
@@ -139,5 +31,44 @@
   </main>
   @@include('./partials/footer.html')
   @@include('./partials/scripts.html')
+  <script>
+  $(document).ready(function(){
+    $.ajax({
+      type: 'GET',
+      url: 'data/events.xml',
+      dataType: 'xml',
+      success: function(data){
+        $(data).find('event').each(function(){
+          var eventItem = '<div class="events-item">' +
+          '<p class="event-date">' + $(this).find('date').text() + '</p><hr />' +
+          '<small>' + $(this).find('time').text() + '</small>' +
+          '<div class="banner-container"><p>' + $(this).find('title').text() + '</p></div>' +
+          '</div>';
+          $('.events-container').append(eventItem);
+        });
+
+        // event slick
+        $(".events-container").slick({
+          slidesToShow: 3,
+          focusOnSelect: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: { slidesToShow: 2 }
+            },
+            {
+              breakpoint: 768,
+              settings: { slidesToShow: 1 }
+            }
+          ]
+        });
+      },
+      error: function(error, text, thrown){
+        console.log(text);
+      }
+    });
+  });
+  </script>
 </body>
 </html>
