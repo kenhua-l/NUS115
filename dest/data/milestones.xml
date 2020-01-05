@@ -1,70 +1,169 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <milestoneroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <milestone>
-    <title>Technology</title>
+    <category>Technology</category>
     <description>
-      Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum
+      As digital technologies continue to redefine the way we work and live, our
+      interdisciplinary strategic research in engineering, computing, medicine, physical
+      and social sciences aims to push boundaries and create innovative breakthroughs.
     </description>
+    <banner>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+    </banner>
     <image>nus_building.jpg</image>
     <bannertag>Technology</bannertag>
     <bannertext>NUS opens first net-zero energy building</bannertext>
   </milestone>
   <milestone>
-    <title>Health</title>
+    <category>Health</category>
     <description>
-      Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum
+      Health innovation is at the heart of NUS' core research clusters. In our collaborations
+      with local and international partners, we explore solutions that address prevalent and
+      emerging health issues regionally and globally.
     </description>
+    <banner>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+      <banneritem>
+        <year>2019</year>
+        <title>Strengthening cyber security with light</title>
+        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
+        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+      </banneritem>
+    </banner>
     <image>nus_building.jpg</image>
     <bannertag>Health</bannertag>
     <bannertext>NUS opens first net-zero energy building</bannertext>
   </milestone>
   <milestone>
-    <title>Enterprise</title>
+    <category>Enterprise</category>
     <description>
-      Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum
+      Since its inception in 2001, NUS Enterprise has created much impact by advancing
+      innovation and driving entrepreneurship at the University and beyond Singapore. Our
+      entrepreneurial initiatives have inspired over 3,000 students and produced more than
+      650 start-ups.
     </description>
     <image>nus_building.jpg</image>
     <bannertag>Enterprise</bannertag>
     <bannertext>NUS opens first net-zero energy building</bannertext>
   </milestone>
   <milestone>
-    <title>Community</title>
+    <category>Community</category>
     <description>
-      Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum
+      The spirit of giving and contributing to society has always been a strong hallmark of
+      the University, which was founded as a medical school in 1905, to serve the local
+      community. Since 2010, about $4 million has been donated to beneficiaries supported
+      by the Community Chest.
     </description>
     <image>nus_building.jpg</image>
     <bannertag>Community</bannertag>
     <bannertext>NUS opens first net-zero energy building</bannertext>
   </milestone>
   <milestone>
-    <title>Sustainability</title>
+    <category>Sustainability</category>
     <description>
-      Lorem ipsum technolog ydolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum
+      NUS aspires to be a Smart, Safe and Sustainable campus. In recent years, we have
+      undertaken environmental sustainability projects in energy, water, recycling, mobility
+      and green spaces to increase awareness on sustainability issues among the University community.
     </description>
     <image>nus_building.jpg</image>
     <bannertag>2019</bannertag>
