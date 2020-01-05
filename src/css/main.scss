@@ -66,12 +66,6 @@ p {
   background: rgba(11, 46, 88, 0.6);
 }
 
-.svg-wrapper {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
 svg {
   position: absolute;
   width: 200%;
@@ -288,7 +282,6 @@ html {
 #clear-animation {
   .animation-container {
     display: block;
-    // z-index: 5;
     .animation {
       right: 0;
       width: 100%;
@@ -365,7 +358,6 @@ html {
   margin: 0 auto;
   overflow: auto;
   position: relative;
-
   .content {
     padding: 2rem 2.5rem;
     height: 100%;
@@ -488,13 +480,11 @@ html {
     }
   }
   .slick-prev {
-    // left: -5%;
     &::before {
       content: "\f053";
     }
   }
   .slick-next {
-    // right: -5%;
     &::before {
       content: "\f054";
     }
