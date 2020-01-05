@@ -77,7 +77,7 @@ function blockAnimate(frameId, callbackFunction=null, callbackParam=null) {
   var goalWidth = container.width();
   var animation = frameId.find(".animation");
   container.show();
-  animation.css({width:'300px', height:'100px'});
+  animation.css({width:'100px', height:'100px'});
 
   var initialHeight = animation.height();
   var initialWidth = animation.width();
