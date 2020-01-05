@@ -1,184 +1,307 @@
-/* CSS Document */
 body {
   width: 100%;
-  height: 100vh;
-  background-color: #0e2a58;
+  height: 100%;
+  overflow: hidden;
+  background-color: #163768;
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
 }
+
+/* added */
+
+.logo {
+  -webkit-box-flex: 1;
+          flex: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.logo img {
+  max-height: 60px;
+}
+
+main {
+  -webkit-box-flex: 5;
+          flex: 5;
+  max-height: 70%;
+}
+
+button, .btn {
+  border: 1.5px solid white;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0px;
+  letter-spacing: 0.2rem;
+  color: white;
+}
+
+button:hover, .btn:hover {
+  border-color: #f5821f;
+  color: #f5821f;
+}
+
+h2 {
+  color: #fb8400;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+p {
+  color: white;
+  font-size: 1.2rem;
+  letter-spacing: 0.03rem;
+}
+
+/* added */
+
+.overlay {
+  content: " ";
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(11, 46, 88, 0.6);
+}
+
 svg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: -1;
+  width: 200%;
+  height: 100%;
+  top: 0%;
+  left: -45%;
+  z-index: -4;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
-svg .cls-1 {
-  stroke-dasharray: 800;
-  storke-dashoffset: 800;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
+
+.cls-2,
+.cls-4,
+.cls-8,
+.cls-13,
+.cls-16,
+.cls-22,
+.cls-26,
+.cls-29,
+.cls-39,
+.cls-42,
+.cls-43,
+.cls-45,
+.cls-59,
+.cls-63 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  -webkit-animation: animate 13s ease forwards 0.2s infinite alternate;
+          animation: animate 13s ease forwards 0.2s infinite alternate;
 }
-svg .cls-2 {
-  stroke-dasharray: 800;
-  storke-dashoffset: 800;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
+
+.cls-6,
+.cls-14,
+.cls-15,
+.cls-17,
+.cls-24,
+.cls-25,
+.cls-40,
+.cls-51,
+.cls-52,
+.cls-54,
+.cls-57 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  -webkit-animation: animate 13s ease forwards 1.2s infinite alternate;
+          animation: animate 13s ease forwards 1.2s infinite alternate;
 }
-svg .cls-3 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
+
+.cls-1,
+.cls-9,
+.cls-11,
+.cls-20,
+.cls-27,
+.cls-28,
+.cls-36,
+.cls-46,
+.cls-50,
+.cls-53 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  -webkit-animation: animate 13s ease forwards 2.5s infinite alternate;
+          animation: animate 13s ease forwards 2.5s infinite alternate;
 }
-svg .cls-4 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
+
+.cls-7,
+.cls-10,
+.cls-18,
+.cls-32,
+.cls-38,
+.cls-30,
+.cls-44,
+.cls-48,
+.cls-58,
+.cls-62 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  -webkit-animation: animate 13s ease forwards 3.5s infinite alternate;
+          animation: animate 13s ease forwards 3.5s infinite alternate;
 }
-svg .cls-5 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
+
+.cls-3,
+.cls-12,
+.cls-19,
+.cls-21,
+.cls-31,
+.cls-33,
+.cls-34,
+.cls-37,
+.cls-41,
+.cls-55 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  -webkit-animation: animate 13s ease forwards 4.2s infinite alternate;
+          animation: animate 13s ease forwards 4.2s infinite alternate;
 }
-svg .cls-6 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
+
+.cls-5,
+.cls-23,
+.cls-35,
+.cls-47,
+.cls-49,
+.cls-56,
+.cls-60,
+.cls-61 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  -webkit-animation: animate 14s ease forwards 5s infinite alternate;
+          animation: animate 14s ease forwards 5s infinite alternate;
 }
-svg .cls-7 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-8 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-9 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-10 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-11 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-12 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-13 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-14 {
-  stroke-dasharray: 800;
-  storke-dashoffset: 800;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-15 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-16 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
-svg .cls-17 {
-  stroke-dasharray: 500;
-  storke-dashoffset: 500;
-  -webkit-animation: animate 5s infinite alternate;
-          animation: animate 5s infinite alternate;
-}
+
 @-webkit-keyframes animate {
   from {
-    stroke-dashoffset: 800;
+    stroke-dashoffset: 1200;
   }
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: -110;
   }
 }
+
 @keyframes animate {
   from {
-    stroke-dashoffset: 800;
+    stroke-dashoffset: 1200;
   }
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: -110;
   }
 }
+
 html {
   height: 100vh;
   overflow: hidden;
 }
+
 .wrapper {
   height: 100%;
+  padding: 2.5rem 0;
 }
-.wrapper .slick-container {
-  width: 100%;
-  top: 40%;
+
+.navigator {
+  height: 100%;
 }
-.wrapper .slick-container .slick-item h2 {
-  color: white;
-  font-size: 4.5rem;
-  letter-spacing: 4px;
+
+.navigator .slick-list, .navigator .slick-track, .navigator .slick-slide {
+  height: 100%;
+}
+
+.navigator .nav-item {
   text-align: center;
-  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-  z-index: 1;
-}
-.wrapper .slick-container .slick-item:focus {
+  position: relative;
   outline: none;
 }
-.wrapper .learn-more {
-  width: 100%;
-  text-align: center;
-  top: 55%;
-  position: relative;
+
+.navigator .nav-item h2 {
+  margin-top: 4rem;
+  color: #9c9c9c;
+  font-size: 4.5rem;
+  letter-spacing: 4px;
+  line-height: 1;
 }
-.wrapper .learn-more .learn-more-btn {
-  color: white;
-  border: 1.5px solid white;
-  margin: 0 auto;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0px;
+
+@media (max-width: 1200px) {
+  .navigator .nav-item h2 {
+    font-size: 4rem;
+  }
 }
-.wrapper .footer-links {
+
+@media (max-width: 992px) {
+  .navigator .nav-item h2 {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigator .nav-item h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigator .nav-item h2 {
+    font-size: 2rem;
+  }
+}
+
+.navigator .nav-item .btn-container {
+  display: none;
   position: absolute;
+  bottom: 4rem;
   width: 100%;
+}
+
+.navigator .nav-item .btn-container .btn {
+  margin: auto;
+}
+
+.navigator .nav-item.slick-current h2 {
+  color: white !important;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.navigator .nav-item.slick-current .btn-container {
+  display: block;
+}
+
+.footer-links {
+  -webkit-box-flex: 1;
+          flex: 1;
   text-align: center;
-  top: 85%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 0.5rem 0;
+  -webkit-box-align: center;
+          align-items: center;
+  background: rgba(11, 46, 88, 0.8);
+  box-shadow: 0 0 50px 50px rgba(11, 46, 88, 0.8);
+  color: white;
 }
-.wrapper .footer-links a {
+
+.footer-links a.social {
   text-decoration: none;
-}
-.wrapper .footer-links i {
   font-size: 1.2rem;
-  color: #0e2a58;
+  color: #163768;
   width: 40px;
   height: 40px;
   display: -webkit-box;
@@ -191,6 +314,283 @@ html {
   border-radius: 100%;
   margin: 0 0.5rem;
 }
-.wrapper .footer-links .copyright-text small {
+
+.animation-container {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.animation-container .animation {
+  position: absolute;
+  bottom: 0;
+  background: #e9772c;
+}
+
+#clear-animation .animation-container {
+  display: block;
+}
+
+#clear-animation .animation-container .animation {
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tabs {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.tabs .selected {
+  display: none;
+}
+
+.tabs ul.nav-tabs {
+  border-bottom: none;
+}
+
+@media (min-width: 992px) {
+  .tabs ul.nav-tabs {
+    display: -webkit-box !important;
+    display: flex !important;
+  }
+}
+
+.tabs ul.nav-tabs .nav-link {
   color: white;
+  padding: 0 1rem;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.tabs ul.nav-tabs .nav-link:hover, .tabs ul.nav-tabs .nav-link.active {
+  border-color: transparent;
+  color: #fb8400;
+  background: transparent;
+}
+
+@media (max-width: 992px) {
+  .tabs .selected {
+    display: block;
+    width: 250px;
+    position: relative;
+    background: white;
+    padding: 0.5rem 1rem;
+    color: #fb8400;
+    margin-bottom: 0;
+  }
+  .tabs .selected::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.2rem;
+    content: "\f0d7";
+    color: #163768;
+    position: absolute;
+    right: 1rem;
+  }
+  .tabs ul.nav-tabs {
+    position: absolute;
+    top: 100%;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    width: 250px;
+    padding: 0.5rem 0;
+  }
+  .tabs ul.nav-tabs .nav-link {
+    padding: 0.25rem 1rem;
+    color: #163768;
+  }
+  .tabs ul.nav-tabs .nav-link:hover, .tabs ul.nav-tabs .nav-link.active {
+    color: #fb8400;
+  }
+}
+
+.content-container {
+  background: rgba(88, 107, 134, 0.7);
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  position: relative;
+}
+
+.content-container .content {
+  padding: 2rem 2.5rem;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .content-container .content {
+    padding: 1rem 2rem;
+  }
+}
+
+.milestones-container {
+  height: 100%;
+}
+
+.milestones-container .slick-list, .milestones-container .slick-track, .milestones-container .slick-slide {
+  height: 100%;
+}
+
+.milestones-container .milestones-item {
+  position: relative;
+}
+
+.milestones-container .milestones-item img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.milestones-container .milestones-item .text-overlay {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+}
+
+.milestones-container .milestones-item .text-overlay .tag {
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+}
+
+.milestones-container .milestones-item .text-overlay .title {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+}
+
+@media (max-width: 768px) {
+  .milestones-container .milestones-item .text-overlay .title {
+    font-size: 1rem;
+  }
+}
+
+.milestones-container .slick-prev, .milestones-container .slick-next {
+  z-index: 1;
+}
+
+.milestones-container .slick-prev::before, .milestones-container .slick-next::before {
+  color: white;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.milestones-container .slick-prev {
+  left: 10px;
+}
+
+.milestones-container .slick-prev::before {
+  content: "\f053";
+}
+
+.milestones-container .slick-next {
+  right: 10px;
+}
+
+.milestones-container .slick-next::before {
+  content: "\f054";
+}
+
+.milestones-container .slick-dots {
+  bottom: 0;
+}
+
+.milestones-container .slick-dots li {
+  padding: 0 1rem;
+}
+
+.milestones-container .slick-dots li button::before {
+  content: "";
+  border-top: 5px solid white;
+  padding: 0 1rem;
+}
+
+.events-container .events-item {
+  margin: 0 2rem;
+  color: white;
+  font-weight: 700;
+}
+
+.events-container .events-item small {
+  font-size: 1rem;
+}
+
+.events-container .events-item .event-date {
+  font-size: 1.5rem;
+}
+
+.events-container .events-item hr {
+  height: 2px;
+  background-color: white;
+}
+
+.events-container .events-item .banner-container {
+  margin-top: 1rem;
+  background: #fb8400;
+  padding: 1rem 0.5rem;
+  min-height: 200px;
+  text-align: center;
+}
+
+.events-container .events-item .banner-container p {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.events-container .slick-prev, .events-container .slick-next {
+  z-index: 1;
+  top: 15%;
+}
+
+.events-container .slick-prev::before, .events-container .slick-next::before {
+  opacity: 1;
+  color: white;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.events-container .slick-prev::before {
+  content: "\f053";
+}
+
+.events-container .slick-next::before {
+  content: "\f054";
+}
+
+.close-btn {
+  position: absolute;
+  right: 1.2rem;
+  top: 0;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
 }
