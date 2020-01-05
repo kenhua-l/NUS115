@@ -43,6 +43,8 @@ button, .btn {
   border-radius: 0px;
   letter-spacing: 0.2rem;
   color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 button:hover, .btn:hover {
@@ -51,7 +53,7 @@ button:hover, .btn:hover {
 }
 
 h1 {
-  color: #fb8400;
+  color: #f5821f;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
 }
@@ -536,18 +538,25 @@ html {
   padding: 0 1rem;
 }
 
+@media (max-width: 768px) {
+  .events-container {
+    max-width: 300px;
+    margin: auto;
+  }
+}
+
 .events-container .events-item {
-  margin: 0 2rem;
+  margin: 0 3rem;
   color: white;
   font-weight: 700;
 }
 
 .events-container .events-item small {
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .events-container .events-item .event-date {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
 }
 
 .events-container .events-item hr {
@@ -557,18 +566,35 @@ html {
 
 .events-container .events-item .banner-container {
   margin-top: 1rem;
-  background: #fb8400;
-  padding: 1rem 0.5rem;
+  background: #f5821f;
+  padding: 1rem;
   min-height: 200px;
   text-align: center;
+  width: 85%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .events-container .events-item .banner-container p {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   word-wrap: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
+}
+
+.events-container .events-item .banner-container .btn {
+  padding: 0.25rem 0.75rem;
+}
+
+.events-container .events-item .banner-container .btn:hover {
+  background: white;
+  color: #f5821f;
 }
 
 .events-container .slick-prev, .events-container .slick-next {
@@ -584,8 +610,16 @@ html {
   font-weight: 900;
 }
 
+.events-container .slick-prev {
+  left: -15px;
+}
+
 .events-container .slick-prev::before {
   content: "\f053";
+}
+
+.events-container .slick-next {
+  right: -15px;
 }
 
 .events-container .slick-next::before {

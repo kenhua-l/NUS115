@@ -37,6 +37,7 @@ button, .btn {
   border-radius: 0px;
   letter-spacing: 0.2rem;
   color: white;
+  transition: $transition;
   &:hover{
     border-color: $primary-orange-hover;
     color: $primary-orange-hover;
@@ -44,7 +45,7 @@ button, .btn {
 }
 
 h1 {
-  color: #fb8400;
+  color: $primary-orange-hover;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
 }
@@ -445,15 +446,19 @@ html {
 }
 
 .events-container {
+  @media (max-width: 768px){
+    max-width: 300px;
+    margin: auto;
+  }
   .events-item {
-    margin: 0 2rem;
+    margin: 0 3rem;
     color: white;
     font-weight: 700;
     small {
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
     .event-date {
-      font-size: 1.5rem;
+      font-size: 1.15rem;
     }
     hr {
       height: 2px;
@@ -461,14 +466,25 @@ html {
     }
     .banner-container {
       margin-top: 1rem;
-      background: #fb8400;
-      padding: 1rem 0.5rem;
+      background: $primary-orange-hover;
+      padding: 1rem;
       min-height: 200px;
       text-align: center;
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       p {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         overflow-wrap: break-word;
         hyphens: auto;
+      }
+      .btn {
+        padding: 0.25rem 0.75rem;
+        &:hover {
+          background: white;
+          color: $primary-orange-hover;
+        }
       }
     }
   }
@@ -484,11 +500,13 @@ html {
     }
   }
   .slick-prev {
+    left: -15px;
     &::before {
       content: "\f053";
     }
   }
   .slick-next {
+    right: -15px;
     &::before {
       content: "\f054";
     }

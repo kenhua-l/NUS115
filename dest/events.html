@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Events</title>
+    <title>NUS115 | Events</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,7 +33,7 @@
                 </div>
                 <div class="content">
                     <span data-page="events" class="close-btn">&times;</span>
-                    <h2>Events</h2>
+                    <h1>Events</h1>
                     <div class="events-container"></div>
                 </div>
 
@@ -69,12 +69,17 @@
                 dataType: 'xml',
                 success: function(data) {
                     $(data).find('event').each(function() {
-                        var eventItem = '<div class="events-item">' +
-                            '<p class="event-date">' + $(this).find('date').text() + '</p><hr />' +
-                            '<small>' + $(this).find('time').text() + '</small>' +
-                            '<div class="banner-container"><p>' + $(this).find('title').text() + '</p></div>' +
-                            '</div>';
-                        $('.events-container').append(eventItem);
+                        var eventitem = $('<div class="events-item"></div>');
+                        eventitem.append('<p class="event-date">' + $(this).find('date').text() + '</p><hr />');
+                        eventitem.append('<small>' + $(this).find('time').text() + '</small>');
+                        var eventcontainer = $('<div class="banner-container"></div>');
+                        eventcontainer.append('<p>' + $(this).find('title').text() + '</p>');
+                        if ($(this).find('link').length) {
+                            var link = $(this).find('link').text();
+                            eventcontainer.append('<p><a class="btn" href="' + link + '" target="_blank">LINK</a></p>');
+                        }
+                        eventitem.append(eventcontainer);
+                        $('.events-container').append(eventitem);
                     });
 
                     // event slick
