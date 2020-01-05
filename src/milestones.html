@@ -22,91 +22,17 @@
 
           <div class="tabs row">
             <p class="selected">SUSTAINABILITY</p>
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#technology">TECHNOLOGY</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#health">HEALTH</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#enterprise">ENTERPRISE</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#community">COMMUNITY</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link active" data-toggle="tab" href="#sustainability">SUSTAINABILITY</a></li>
-            </ul>
+            <ul class="nav nav-tabs" role="tablist"></ul>
           </div>
 
           <div class="row">
-            <div class="col-12 col-lg-7 tab-content">
-              <div class="tab-pane fade" id="technology" role="tabpanel">
-                <h2>Technology</h2>
-                <p>
-                  Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade" id="health" role="tabpanel">
-                <h2>Health</h2>
-                <p>
-                  health Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade" id="enterprise" role="tabpanel">
-                <h2>Enterprise</h2>
-                <p>
-                  Lorem ipsum dolor Enterprise sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade" id="community" role="tabpanel">
-                <h2>Community</h2>
-                <p>
-                  Lorem comm ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade show active" id="sustainability" role="tabpanel">
-                <h2>Sustainability</h2>
-                <p>
-                  Lorem SUS ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-            </div>
+            <div class="col-12 col-lg-7 tab-content"></div>
             <div class="col-12 col-lg-5">
-              <div class="milestones-container">
-                <div class="milestones-item" data-title="technology">
-                  <img src="./images/nus building.jpg" alt="buidling">
-                  <div class="text-overlay">
-                    <p class="tag">Technology</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="health">
-                  <img src="./images/nus building.jpg" alt="buidling">
-                  <div class="text-overlay">
-                    <p class="tag">Health</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="enterprise">
-                  <img src="./images/nus building.jpg" alt="building">
-                  <div class="text-overlay">
-                    <p class="tag">Enterprise</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="community">
-                  <img src="./images/nus building.jpg" alt="building">
-                  <div class="text-overlay">
-                    <p class="tag">Community</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="sustainability">
-                  <img src="./images/nus building.jpg" alt="building">
-                  <div class="text-overlay">
-                    <p class="tag">2019</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-              </div>
+              <div class="milestones-container"></div>
             </div>
           </div>
         </div>
       </div>
-
 
       <div class="overlay"></div>
       <!-- @@include('./partials/svg.html') -->
@@ -114,5 +40,68 @@
   </main>
   @@include('./partials/footer.html')
   @@include('./partials/scripts.html')
+  <script>
+  $(document).ready(function(){
+    var imagePath = baseRef + '/images/milestones/';
+    $.ajax({
+      type: 'GET',
+      url: 'data/milestones.xml',
+      dataType: 'xml',
+      success: function(data){
+        $(data).find('milestone').each(function(){
+          var title = $(this).find('title').text();
+
+          // tablist component
+          var tablist = '<li class="nav-item" role="tab">' +
+          '<a class="nav-link" data-toggle="tab" href="#' + title.toLowerCase() + '">' +
+          title.toUpperCase() + '</a></li>';
+          $('.nav-tabs').append(tablist);
+
+          // tabpanel component
+          var tabpanel = '<div class="tab-pane fade" id="' + title.toLowerCase() + '" role="tabpanel">' +
+          '<h2>' + title + '</h2>' +
+          '<p>' + $(this).find('description').text() + '</p></div>';
+          $('.tab-content').append(tabpanel);
+
+          // slider component
+          var milestoneitem = '<div class="milestones-item" data-title="' + title.toLowerCase() + '">' +
+          '<img src="' + imagePath + $(this).find('image').text() + '" alt="' + title.toLowerCase() + '">' +
+          '<div class="text-overlay"><p class="tag">' + $(this).find('bannertag').text() + '</p>' +
+          '<p class="title">' + $(this).find('bannertext').text() + '</p></div></div>';
+          $('.milestones-container').append(milestoneitem);
+
+        });
+
+        // Nav tabs
+        $('.selected').on('click', function(){
+          $('.tabs ul').slideToggle();
+        });
+        $('.tabs .nav-link').on('click', function(){
+          var hash = $(this).attr('href');
+          $(location).attr('hash', hash);
+          $('.milestones-container').slick('slickGoTo', $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index'))
+        })
+        // milestone slick
+        $('.milestones-container').slick({
+          dots: true,
+          adaptiveHeight: false
+        })
+        $('.milestones-container').on('beforeChange', function(e,s,c,n) {
+          var nextSlideTitle = $('.milestones-item[data-slick-index="' + n + '"]').data('title');
+          $(location).attr('hash', nextSlideTitle);
+          $('.tabs .selected').text(nextSlideTitle.toUpperCase());
+
+          navTabs(false);
+        });
+        // setup
+        navTabs(true);
+
+      },
+      error: function(error, text, thrown){
+        console.log(text);
+      }
+    });
+  });
+  </script>
 </body>
 </html>

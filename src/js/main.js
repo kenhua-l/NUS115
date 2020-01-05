@@ -35,53 +35,6 @@ $(document).ready(function() {
     var currentPage = baseRef + "/index.html#" + $(this).data('page');
     animatePage($('#clear-animation'), true, false, redirectPage, [currentPage]);
   });
-
-  // Milestones page
-  // Nav tabs
-  $('.selected').on('click', function(){
-    $('.tabs ul').slideToggle();
-  });
-  $('.tabs .nav-link').on('click', function(){
-    var hash = $(this).attr('href');
-    $(location).attr('hash', hash);
-    $('.milestones-container').slick('slickGoTo', $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index'))
-  })
-  // milestone slick
-  $('.milestones-container').slick({
-    dots: true,
-    adaptiveHeight: false
-  })
-  $('.milestones-container').on('beforeChange', function(e,s,c,n) {
-    var nextSlideTitle = $('.milestones-item[data-slick-index="' + n + '"]').data('title');
-    $(location).attr('hash', nextSlideTitle);
-    $('.tabs .selected').text(nextSlideTitle.toUpperCase());
-
-    navTabs(false);
-  });
-  // setup
-  navTabs(true);
-
-  // Events page
-  // event slick
-  $(".events-container").slick({
-    slidesToShow: 3,
-    focusOnSelect: true,
-    infinite: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
 });
 
 // Utils
