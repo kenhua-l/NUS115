@@ -1,35 +1,11 @@
 var baseRef = $(location).attr('protocol') + '//' + $(location).attr('host');
 
 $(document).ready(function() {
-  // homepage slick
-  $('.navigator').slick({
-    centerMode: true,
-    centerPadding: "25%",
-    arrows: false,
-    focusOnSelect: true,
-    infinite: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          centerPadding: "15%"
-        }
-      }
-    ]
-  });
-  var slideNum = $(location).attr('hash').substr(1);
-  slideToHash('.navigator', slideNum);
-
   // Animation control
   $('.content').css({'visibility':'hidden'});
   var toLeft = $('#clear-animation').data('home') ? true : false;
   animatePage($('#clear-animation'), false, toLeft, blockAnimate, [$('.content-container'), animatePage, [$('.content-container')]]);
 
-  // navigator button
-  $('.navigator-btn').on('click', function(e) {
-    e.preventDefault();
-    blockAnimate($('#clear-animation'), redirectPage, [$(this).attr('href')]);
-  });
   // close btn
   $('.close-btn').on('click', function() {
     var currentPage = baseRef + "/index.html#" + $(this).data('page');

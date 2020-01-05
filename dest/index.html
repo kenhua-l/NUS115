@@ -1258,6 +1258,32 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/slick.min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            // homepage slick
+            $('.navigator').slick({
+                centerMode: true,
+                centerPadding: "25%",
+                arrows: false,
+                focusOnSelect: true,
+                infinite: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        centerPadding: "15%"
+                    }
+                }]
+            });
+            var slideNum = $(location).attr('hash').substr(1);
+            slideToHash('.navigator', slideNum);
+
+            // navigator button
+            $('.navigator-btn').on('click', function(e) {
+                e.preventDefault();
+                blockAnimate($('#clear-animation'), redirectPage, [$(this).attr('href')]);
+            });
+        });
+    </script>
 </body>
 
 </html>
