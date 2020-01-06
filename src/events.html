@@ -1,79 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>NUS115 | Events</title>
-  @@include('./partials/head.html')
-</head>
-<body>
-  @@include('./partials/header.html')
-  <main>
-    <div id="clear-animation">
-      <div class="animation-container">
-        <div class="animation"></div>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="content-container">
+  <head>
+    <title>NUS115 | Events</title>
+    @@include('./partials/head.html')
+  </head>
+  <body>
+    @@include('./partials/header.html')
+    <main>
+      <div id="clear-animation">
         <div class="animation-container">
           <div class="animation"></div>
         </div>
-        <div class="content">
-          <span data-page="events" class="close-btn">&times;</span>
-          <h1>Events</h1>
-          <div class="events-container"></div>
+      </div>
+      <div class="wrapper">
+        <div class="content-container">
+          <div class="animation-container">
+            <div class="animation"></div>
+          </div>
+          <div class="content">
+            <span data-page="events" class="close-btn">&times;</span>
+            <h1>Events</h1>
+            <div class="events-container"></div>
+          </div>
         </div>
 
+        <div class="overlay"></div>
+        @@include('./partials/svg.html')
       </div>
+    </main>
+    @@include('./partials/footer.html') @@include('./partials/scripts.html')
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          type: "GET",
+          url: "data/events.xml",
+          dataType: "xml",
+          success: function(data) {
+            $(data)
+              .find("event")
+              .each(function() {
+                var eventitem = $('<div class="events-item"></div>');
+                eventitem.append(
+                  '<p class="event-date">' +
+                    $(this)
+                      .find("date")
+                      .text() +
+                    "</p><hr />"
+                );
+                eventitem.append(
+                  "<small>" +
+                    $(this)
+                      .find("time")
+                      .text() +
+                    "</small>"
+                );
+                var eventcontainer = $('<div class="banner-container"></div>');
+                eventcontainer.append(
+                  "<p>" +
+                    $(this)
+                      .find("title")
+                      .text() +
+                    "</p>"
+                );
+                if ($(this).find("link").length) {
+                  var link = $(this)
+                    .find("link")
+                    .text();
+                  eventcontainer.append(
+                    '<p><a class="btn" href="' +
+                      link +
+                      '" target="_blank">LINK</a></p>'
+                  );
+                }
+                eventitem.append(eventcontainer);
+                $(".events-container").append(eventitem);
+              });
 
-      <div class="overlay"></div>
-      <!-- @@include('./partials/svg.html') -->
-    </div>
-  </main>
-  @@include('./partials/footer.html')
-  @@include('./partials/scripts.html')
-  <script>
-  $(document).ready(function(){
-    $.ajax({
-      type: 'GET',
-      url: 'data/events.xml',
-      dataType: 'xml',
-      success: function(data){
-        $(data).find('event').each(function(){
-          var eventitem = $('<div class="events-item"></div>');
-          eventitem.append('<p class="event-date">' + $(this).find('date').text() + '</p><hr />');
-          eventitem.append('<small>' + $(this).find('time').text() + '</small>');
-          var eventcontainer = $('<div class="banner-container"></div>');
-          eventcontainer.append('<p>' + $(this).find('title').text() + '</p>');
-          if($(this).find('link').length) {
-            var link = $(this).find('link').text();
-            eventcontainer.append('<p><a class="btn" href="' + link + '" target="_blank">LINK</a></p>');
+            // event slick
+            $(".events-container").slick({
+              slidesToShow: 3,
+              focusOnSelect: true,
+              infinite: false,
+              responsive: [
+                {
+                  breakpoint: 992,
+                  settings: { slidesToShow: 2 }
+                },
+                {
+                  breakpoint: 768,
+                  settings: { slidesToShow: 1 }
+                }
+              ]
+            });
+          },
+          error: function(error, text, thrown) {
+            console.log(text);
           }
-          eventitem.append(eventcontainer);
-          $('.events-container').append(eventitem);
         });
-
-        // event slick
-        $(".events-container").slick({
-          slidesToShow: 3,
-          focusOnSelect: true,
-          infinite: false,
-          responsive: [
-            {
-              breakpoint: 992,
-              settings: { slidesToShow: 2 }
-            },
-            {
-              breakpoint: 768,
-              settings: { slidesToShow: 1 }
-            }
-          ]
-        });
-      },
-      error: function(error, text, thrown){
-        console.log(text);
-      }
-    });
-  });
-  </script>
-</body>
+      });
+    </script>
+  </body>
 </html>

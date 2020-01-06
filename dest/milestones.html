@@ -9,14 +9,6 @@
             flex-direction: column;
         }
 
-        .content .tab-content {
-            /* flex-grow: 1; */
-        }
-
-        .content .tab-content .tab-pane {
-            /* height: 100%; */
-        }
-
         .content .tab-content>.active {
             display: flex;
         }
@@ -1347,19 +1339,6 @@
                             );
 
                             $(".tab-content").append(tabpanel);
-
-                            // // tabpanel component
-                            // var tabpanel = '<div class="tab-pane fade" id="' + category.toLowerCase() + '" role="tabpanel">' +
-                            // '<h2>' + category + '</h2>' +
-                            // '<p>' + $(this).find('description').text() + '</p></div>';
-                            // $('.tab-content').append(tabpanel);
-                            //
-                            // // slider component
-                            // var milestoneitem = '<div class="milestones-item" data-title="' + category.toLowerCase() + '">' +
-                            // '<img src="' + imagePath + $(this).find('image').text() + '" alt="' + category.toLowerCase() + '">' +
-                            // '<div class="text-overlay"><p class="tag">' + $(this).find('bannertag').text() + '</p>' +
-                            // '<p class="title">' + $(this).find('bannertext').text() + '</p></div></div>';
-                            // $('.milestones-container').append(milestoneitem);
                         });
 
                     // Nav tabs
@@ -1370,8 +1349,6 @@
                         console.log("navlink click");
                         var hash = $(this).attr("href");
                         $(location).attr("hash", hash);
-                        // $('.milestones-container').resize();
-                        // $('.milestones-container').slick('slickGoTo', $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index'))
                     });
                     $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
                         console.log("tabpane change");
@@ -1387,13 +1364,6 @@
                         dots: true,
                         adaptiveHeight: false
                     });
-                    // $('.milestones-container').on('beforeChange', function(e,s,c,n) {
-                    //   var nextSlideTitle = $('.milestones-item[data-slick-index="' + n + '"]').data('title');
-                    //   $(location).attr('hash', nextSlideTitle);
-                    //   $('.tabs .selected').text(nextSlideTitle.toUpperCase());
-                    //
-                    //   navTabs(false);
-                    // });
                     // setup
                     navTabs(true);
                 },
