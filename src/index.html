@@ -1,83 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>NUS115</title>
-  @@include('./partials/head.html')
-</head>
-<body>
-  @@include('./partials/header.html')
-  <main>
-    <div id="clear-animation" data-home="true">
-      <div class="animation-container">
-        <div class="animation"></div>
+  <head>
+    <title>NUS115</title>
+    @@include('./partials/head.html')
+  </head>
+  <body>
+    @@include('./partials/header.html')
+    <main>
+      <div id="clear-animation" data-home="true">
+        <div class="animation-container">
+          <div class="animation"></div>
+        </div>
       </div>
-    </div>
 
-    <div class="wrapper">
-      <div class="navigator">
-        <div class="nav-item" data-title="about">
+      <div class="wrapper">
+        <div class="navigator">
+          <div class="nav-item" data-title="about">
             <h2>ABOUT</h2>
             <div class="btn-container">
               <a href="about.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="message">
+          </div>
+          <div class="nav-item" data-title="message">
             <h2>MESSAGE</h2>
             <div class="btn-container">
               <a href="message.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="milestones" data-slick-start="true">
+          </div>
+          <div class="nav-item" data-title="milestones" data-slick-start="true">
             <h2>MILESTONES</h2>
             <div class="btn-container">
               <a href="milestones.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="events">
+          </div>
+          <div class="nav-item" data-title="events">
             <h2>EVENTS</h2>
             <div class="btn-container">
               <a href="events.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="speaker">
+          </div>
+          <div class="nav-item" data-title="speaker">
             <h2>DISTINGUISHED SPEAKER SERIES</h2>
             <div class="btn-container">
               <a href="speaker.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
+          </div>
+        </div>
+
+        <div class="overlay"></div>
+        <div id="home-page-svg">
+          @@include('./partials/svg.html')
         </div>
       </div>
+    </main>
+    @@include('./partials/footer.html') @@include('./partials/scripts.html')
+    <script>
+      $(document).ready(function() {
+        // homepage slick
+        $(".navigator").slick({
+          centerMode: true,
+          centerPadding: "25%",
+          arrows: false,
+          focusOnSelect: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: { centerPadding: "15%" }
+            }
+          ]
+        });
+        var slideNum = $(location)
+          .attr("hash")
+          .substr(1);
+        slideToHash(".navigator", slideNum);
 
-      <div class="overlay"></div>
-      @@include('./partials/svg.html')
-    </div>
-  </main>
-  @@include('./partials/footer.html')
-  @@include('./partials/scripts.html')
-  <script>
-  $(document).ready(function() {
-    // homepage slick
-    $('.navigator').slick({
-      centerMode: true,
-      centerPadding: "25%",
-      arrows: false,
-      focusOnSelect: true,
-      infinite: false,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: { centerPadding: "15%" }
-        }
-      ]
-    });
-    var slideNum = $(location).attr('hash').substr(1);
-    slideToHash('.navigator', slideNum);
-
-    // navigator button
-    $('.navigator-btn').on('click', function(e) {
-      e.preventDefault();
-      blockAnimate($('#clear-animation'), redirectPage, [$(this).attr('href')]);
-    });
-  });
-  </script>
-</body>
+        // navigator button
+        $(".navigator-btn").on("click", function(e) {
+          e.preventDefault();
+          $("line, polyline").addClass("stop");
+          blockAnimate($("#clear-animation"), redirectPage, [
+            $(this).attr("href")
+          ]);
+        });
+      });
+    </script>
+  </body>
 </html>

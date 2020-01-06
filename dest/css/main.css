@@ -35,7 +35,8 @@ main {
   max-height: 70%;
 }
 
-button, .btn {
+button,
+.btn {
   border: 1.5px solid white;
   margin: 0 auto;
   padding: 0.5rem 1rem;
@@ -47,19 +48,22 @@ button, .btn {
   transition: all 0.3s;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   border-color: #f5821f;
   color: #f5821f;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #f5821f;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
 }
 
 @media (max-width: 768px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 1.8rem;
   }
 }
@@ -216,6 +220,11 @@ svg {
   }
 }
 
+.stop {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
 html {
   height: 100vh;
   overflow: hidden;
@@ -230,7 +239,9 @@ html {
   height: 100%;
 }
 
-.navigator .slick-list, .navigator .slick-track, .navigator .slick-slide {
+.navigator .slick-list,
+.navigator .slick-track,
+.navigator .slick-slide {
   height: 100%;
 }
 
@@ -468,7 +479,9 @@ html {
   margin-bottom: 0;
 }
 
-.milestones-container .slick-list, .milestones-container .slick-track, .milestones-container .slick-slide {
+.milestones-container .slick-list,
+.milestones-container .slick-track,
+.milestones-container .slick-slide {
   height: 100%;
 }
 
@@ -520,11 +533,13 @@ html {
   }
 }
 
-.milestones-container .slick-prev, .milestones-container .slick-next {
+.milestones-container .slick-prev,
+.milestones-container .slick-next {
   z-index: 1;
 }
 
-.milestones-container .slick-prev::before, .milestones-container .slick-next::before {
+.milestones-container .slick-prev::before,
+.milestones-container .slick-next::before {
   color: white;
   font-family: "Font Awesome 5 Free";
   font-size: 1.2rem;
@@ -620,12 +635,14 @@ html {
   color: #f5821f;
 }
 
-.events-container .slick-prev, .events-container .slick-next {
+.events-container .slick-prev,
+.events-container .slick-next {
   z-index: 1;
   top: 15%;
 }
 
-.events-container .slick-prev::before, .events-container .slick-next::before {
+.events-container .slick-prev::before,
+.events-container .slick-next::before {
   opacity: 1;
   color: white;
   font-family: "Font Awesome 5 Free";

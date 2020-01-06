@@ -1,60 +1,92 @@
-var baseRef = $(location).attr('protocol') + '//' + $(location).attr('host');
+var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host");
 
 $(document).ready(function() {
   // Animation control
-  $('.content').css({'visibility':'hidden'});
-  var toLeft = $('#clear-animation').data('home') ? true : false;
-  animatePage($('#clear-animation'), false, toLeft, blockAnimate, [$('.content-container'), animatePage, [$('.content-container')]]);
+  // var allSVG = $("div[class*='cls-']");
+  // console.log(allSVG);
+  $(".content").css({ visibility: "hidden" });
+  var toLeft = $("#clear-animation").data("home") ? true : false;
+  animatePage($("#clear-animation"), false, toLeft, blockAnimate, [
+    $(".content-container"),
+    animatePage,
+    [$(".content-container")]
+  ]);
 
+  // $("line, polyline").removeClass("stop");
   // close btn
-  $('.close-btn').on('click', function() {
-    var currentPage = baseRef + "/index.html#" + $(this).data('page');
-    animatePage($('#clear-animation'), true, false, redirectPage, [currentPage]);
+  $(".close-btn").on("click", function() {
+    var currentPage = baseRef + "/index.html#" + $(this).data("page");
+    animatePage($("#clear-animation"), true, false, redirectPage, [
+      currentPage
+    ]);
   });
 });
 
 // Utils
 function slideToHash(slider, hash) {
   var hashExists = false;
-  $(slider).find('.slick-slide').each(function(){
-    if($(this).data('title').toLowerCase() == hash.toLowerCase()){
-      hashExists = true;
-      $(slider).slick('slickGoTo', $(this).data('slick-index'));
-    }
-  })
-  if(!hashExists) {
-    $(slider).slick('slickGoTo', $(slider).find('[data-slick-start="true"]').data('slick-index'));
+  $(slider)
+    .find(".slick-slide")
+    .each(function() {
+      if (
+        $(this)
+          .data("title")
+          .toLowerCase() == hash.toLowerCase()
+      ) {
+        hashExists = true;
+        $(slider).slick("slickGoTo", $(this).data("slick-index"));
+      }
+    });
+  if (!hashExists) {
+    $(slider).slick(
+      "slickGoTo",
+      $(slider)
+        .find('[data-slick-start="true"]')
+        .data("slick-index")
+    );
   }
 }
 
 function navTabs(toggle) {
-  var hash = $(location).attr('hash') != '' ? $(location).attr('hash') : $('.nav-tabs .nav-item:first-child .nav-link').attr('href');
-  $('.tabs a[href="'+hash+'"]').click();
+  var hash =
+    $(location).attr("hash") != ""
+      ? $(location).attr("hash")
+      : $(".nav-tabs .nav-item:first-child .nav-link").attr("href");
+  $('.tabs a[href="' + hash + '"]').click();
 
   if (toggle == true) {
     // var slideNum = $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index');
     // $('.milestones-container').slick('slickGoTo', slideNum);
-    $('.tabs .selected').text(hash.substr(1).toUpperCase());
+    $(".tabs .selected").text(hash.substr(1).toUpperCase());
   }
 }
 
-function redirectPage(toUrl){
-  $(location).attr('href', toUrl);
+function redirectPage(toUrl) {
+  $(location).attr("href", toUrl);
 }
 
-function transit(container, containerSpan, property, decrease=false) {
+function transit(container, containerSpan, property, decrease = false) {
   containerSpan = !decrease ? containerSpan + 20 : containerSpan - 20;
-  container.css(property, containerSpan + 'px');
+  container.css(property, containerSpan + "px");
   return containerSpan;
 }
 
-function animatePage(frameId, fill=false, toLeft=false, callbackFunction=null, callbackParam=null){
+function animatePage(
+  frameId,
+  fill = false,
+  toLeft = false,
+  callbackFunction = null,
+  callbackParam = null
+) {
+  $("line, polyline").addClass("stop");
   var container = frameId.find(".animation-container");
   var conWidth = container.width();
   var animation = frameId.find(".animation");
   container.show();
 
-  if(toLeft) { animation.css('left', '0') }
+  if (toLeft) {
+    animation.css("left", "0");
+  }
   var initial = fill ? 0 : conWidth; // fill from 0 to conWidth
   var goal = fill ? conWidth : 0;
   var reverse = fill ? false : true; // fill should grow, so not reverse
@@ -63,21 +95,28 @@ function animatePage(frameId, fill=false, toLeft=false, callbackFunction=null, c
   function clearFrame() {
     if ((!fill && initial <= goal) || (fill && initial > goal)) {
       clearInterval(widthClear);
-      if(!fill) { container.hide() }
-      if(callbackFunction) { callbackFunction.apply(this, callbackParam) }
+      if (!fill) {
+        container.hide();
+      }
+      if (callbackFunction) {
+        callbackFunction.apply(this, callbackParam);
+        console.log("1");
+      }
     } else {
-      initial = transit(animation, initial, 'width', reverse);
+      initial = transit(animation, initial, "width", reverse);
+      console.log("2");
+      $("#home-page-svg line,#home-page-svg polyline").removeClass("stop");
     }
   }
 }
 
-function blockAnimate(frameId, callbackFunction=null, callbackParam=null) {
+function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
   var container = frameId.find(".animation-container");
   var goalHeight = container.height();
   var goalWidth = container.width();
   var animation = frameId.find(".animation");
   container.show();
-  animation.css({width:'100px', height:'100px'});
+  animation.css({ width: "100px", height: "100px" });
 
   var initialHeight = animation.height();
   var initialWidth = animation.width();
@@ -87,19 +126,25 @@ function blockAnimate(frameId, callbackFunction=null, callbackParam=null) {
     if (initialHeight > goalHeight) {
       clearInterval(setupHeight);
       setupWidth = setInterval(growWidth, 1);
+      console.log("3");
     } else {
-      initialHeight = transit(animation, initialHeight, 'height');
+      initialHeight = transit(animation, initialHeight, "height");
     }
   }
 
   function growWidth() {
     if (initialWidth > goalWidth) {
       clearInterval(setupWidth);
-      $('.content').removeAttr("style");
-      animation.css('right', '0');
-      if(callbackFunction) { callbackFunction.apply(this, callbackParam) }
+      $(".content").removeAttr("style");
+      animation.css("right", "0");
+      if (callbackFunction) {
+        callbackFunction.apply(this, callbackParam);
+        console.log("5");
+        $("line, polyline").removeClass("stop");
+      }
     } else {
-      initialWidth = transit(animation, initialWidth, 'width');
+      initialWidth = transit(animation, initialWidth, "width");
+      console.log("6");
     }
   }
 }

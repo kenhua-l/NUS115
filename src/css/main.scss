@@ -29,7 +29,8 @@ main {
   flex: 5;
   max-height: 70%;
 }
-button, .btn {
+button,
+.btn {
   border: 1.5px solid white;
   margin: 0 auto;
   padding: 0.5rem 1rem;
@@ -38,17 +39,18 @@ button, .btn {
   letter-spacing: 0.2rem;
   color: white;
   transition: $transition;
-  &:hover{
+  &:hover {
     border-color: $primary-orange-hover;
     color: $primary-orange-hover;
   }
 }
 
-h1, h2 {
+h1,
+h2 {
   color: $primary-orange-hover;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 1.8rem;
   }
 }
@@ -57,7 +59,7 @@ p {
   color: white;
   font-size: 1.2rem;
   letter-spacing: 0.03rem;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 1rem;
   }
 }
@@ -185,6 +187,12 @@ svg {
   }
 }
 
+.stop {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
 html {
   height: 100vh;
   overflow: hidden;
@@ -197,7 +205,9 @@ html {
 
 .navigator {
   height: 100%;
-  .slick-list, .slick-track, .slick-slide {
+  .slick-list,
+  .slick-track,
+  .slick-slide {
     height: 100%;
   }
   .nav-item {
@@ -309,7 +319,7 @@ html {
   }
   ul.nav-tabs {
     border-bottom: none;
-    @media (min-width: 992px){
+    @media (min-width: 992px) {
       display: flex !important;
     }
     .nav-link {
@@ -317,13 +327,14 @@ html {
       padding: 0 1rem;
       text-decoration: none;
       transition: $transition;
-      &:hover, &.active {
+      &:hover,
+      &.active {
         border-color: transparent;
         color: #fb8400;
         background: transparent;
       }
     }
-    @media (min-width: 992px){
+    @media (min-width: 992px) {
       .nav-item:first-child {
         .nav-link {
           padding-left: 0;
@@ -362,7 +373,8 @@ html {
       .nav-link {
         padding: 0.25rem 1rem;
         color: $primary-blue;
-        &:hover, &.active {
+        &:hover,
+        &.active {
           color: #fb8400;
         }
       }
@@ -391,7 +403,9 @@ html {
   &.slick-slider {
     margin-bottom: 0;
   }
-  .slick-list, .slick-track, .slick-slide {
+  .slick-list,
+  .slick-track,
+  .slick-slide {
     height: 100%;
   }
   .milestones-item {
@@ -429,7 +443,8 @@ html {
       }
     }
   }
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     z-index: 1;
     &::before {
       color: white;
@@ -464,7 +479,7 @@ html {
 }
 
 .events-container {
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     max-width: 300px;
     margin: auto;
   }
@@ -506,7 +521,8 @@ html {
       }
     }
   }
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     z-index: 1;
     top: 15%;
     &::before {
