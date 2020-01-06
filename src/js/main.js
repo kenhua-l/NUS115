@@ -1,10 +1,10 @@
-var baseRef =
-  $(location).attr("protocol") + "//" + $(location).attr("host") + "/nus-115";
+var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host");
 
 $(document).ready(function() {
+  console.log(decodeURIComponent(document.cookie));
+  document.cookie = "return_user=true";
+
   // Animation control
-  // var allSVG = $("div[class*='cls-']");
-  // console.log(allSVG);
   $(".content").css({ visibility: "hidden" });
   var toLeft = $("#clear-animation").data("home") ? true : false;
   animatePage($("#clear-animation"), false, toLeft, blockAnimate, [
@@ -21,6 +21,14 @@ $(document).ready(function() {
       currentPage
     ]);
   });
+
+  // Instruction menu for mobile
+  $(".mobile-drag").on("click", function() {
+    $(this).hide();
+  });
+  setTimeout(() => {
+    $(".mobile-drag").hide();
+  }, 3000);
 });
 
 // Utils
@@ -101,11 +109,9 @@ function animatePage(
       }
       if (callbackFunction) {
         callbackFunction.apply(this, callbackParam);
-        console.log("1");
       }
     } else {
       initial = transit(animation, initial, "width", reverse);
-      console.log("2");
       $("#home-page-svg line,#home-page-svg polyline").removeClass("stop");
     }
   }
@@ -127,7 +133,6 @@ function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
     if (initialHeight > goalHeight) {
       clearInterval(setupHeight);
       setupWidth = setInterval(growWidth, 1);
-      console.log("3");
     } else {
       initialHeight = transit(animation, initialHeight, "height");
     }
@@ -140,12 +145,10 @@ function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
       animation.css("right", "0");
       if (callbackFunction) {
         callbackFunction.apply(this, callbackParam);
-        console.log("5");
         $("line, polyline").removeClass("stop");
       }
     } else {
       initialWidth = transit(animation, initialWidth, "width");
-      console.log("6");
     }
   }
 }
