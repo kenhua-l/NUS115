@@ -223,7 +223,7 @@ html {
 
 .wrapper {
   height: 100%;
-  padding: 2.5rem 0;
+  padding: 1.8rem 0;
 }
 
 .navigator {
@@ -363,7 +363,7 @@ html {
 }
 
 .tabs {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -394,6 +394,12 @@ html {
   border-color: transparent;
   color: #fb8400;
   background: transparent;
+}
+
+@media (min-width: 992px) {
+  .tabs ul.nav-tabs .nav-item:first-child .nav-link {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 992px) {
@@ -458,6 +464,10 @@ html {
   height: 100%;
 }
 
+.milestones-container.slick-slider {
+  margin-bottom: 0;
+}
+
 .milestones-container .slick-list, .milestones-container .slick-track, .milestones-container .slick-slide {
   height: 100%;
 }
@@ -467,16 +477,17 @@ html {
 }
 
 .milestones-container .milestones-item img {
-  position: absolute;
-  top: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: -1;
 }
 
 .milestones-container .milestones-item .text-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;

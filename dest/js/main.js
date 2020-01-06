@@ -28,12 +28,12 @@ function slideToHash(slider, hash) {
 }
 
 function navTabs(toggle) {
-  var hash = $(location).attr('hash') != '' ? $(location).attr('hash') : '#' + $('.milestones-item[data-slick-index="0"]').data('title');
+  var hash = $(location).attr('hash') != '' ? $(location).attr('hash') : $('.nav-tabs .nav-item:first-child .nav-link').attr('href');
   $('.tabs a[href="'+hash+'"]').click();
 
   if (toggle == true) {
-    var slideNum = $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index');
-    $('.milestones-container').slick('slickGoTo', slideNum);
+    // var slideNum = $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index');
+    // $('.milestones-container').slick('slickGoTo', slideNum);
     $('.tabs .selected').text(hash.substr(1).toUpperCase());
   }
 }

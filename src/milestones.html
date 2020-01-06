@@ -7,8 +7,14 @@
     display: flex;
     flex-direction: column;
   }
-  .content .row:not(.tabs) {
-    flex-grow: 1;
+  .content .tab-content {
+    /* flex-grow: 1; */
+  }
+  .content .tab-content .tab-pane {
+    /* height: 100%; */
+  }
+  .content .tab-content>.active {
+    display: flex;
   }
   </style>
   @@include('./partials/head.html')
@@ -30,15 +36,13 @@
           <span data-page="milestone" class="close-btn">&times;</span>
 
           <div class="tabs row">
-            <p class="selected">TECHNOLOGY</p>
-            <ul class="nav nav-tabs" role="tablist"></ul>
+            <div class="col-12">
+              <p class="selected">TECHNOLOGY</p>
+              <ul class="nav nav-tabs" role="tablist"></ul>
+            </div>
           </div>
 
-          <div class="row">
-            <div class="col-12 col-lg-7 tab-content"></div>
-            <div class="col-12 col-lg-5">
-              <div class="milestones-container"></div>
-            </div>
+          <div class="tab-content">
           </div>
         </div>
       </div>
@@ -67,17 +71,37 @@
           $('.nav-tabs').append(tablist);
 
           // tabpanel component
-          var tabpanel = '<div class="tab-pane fade" id="' + category.toLowerCase() + '" role="tabpanel">' +
-          '<h2>' + category + '</h2>' +
-          '<p>' + $(this).find('description').text() + '</p></div>';
+          var tabpanel = $('<div class="tab-pane fade row" id="' + category.toLowerCase() + '" role="tabpanel"></div>');
+
+          var description = $('<div class="col-12 col-lg-7"></div>');
+          description.append('<h2>' + category + '</h2><p>' + $(this).find('description').text() + '</p>');
+          tabpanel.append(description);
+
+          var slider = $('<div class="milestones-container"></div>');
+          $(this).find('banner').find('banneritem').each(function(){
+            var banneritem = $('<a class="milestones-item" href="' + $(this).find('link').text() +'" target="_blank"></a>');
+            banneritem.append('<img src="' + imagePath + $(this).find('image').text() + '" alt="' + $(this).find('title').text() + '">');
+            banneritem.append('<div class="text-overlay"><p class="tag">' + $(this).find('year').text() + '</p>' +
+                              '<p class="title">' + $(this).find('title').text() + '</p></div></div>');
+            slider.append(banneritem);
+          });
+          tabpanel.append($('<div class="col-12 col-lg-5"></div>').append(slider));
+
           $('.tab-content').append(tabpanel);
 
-          // slider component
-          var milestoneitem = '<div class="milestones-item" data-title="' + category.toLowerCase() + '">' +
-          '<img src="' + imagePath + $(this).find('image').text() + '" alt="' + category.toLowerCase() + '">' +
-          '<div class="text-overlay"><p class="tag">' + $(this).find('bannertag').text() + '</p>' +
-          '<p class="title">' + $(this).find('bannertext').text() + '</p></div></div>';
-          $('.milestones-container').append(milestoneitem);
+
+          // // tabpanel component
+          // var tabpanel = '<div class="tab-pane fade" id="' + category.toLowerCase() + '" role="tabpanel">' +
+          // '<h2>' + category + '</h2>' +
+          // '<p>' + $(this).find('description').text() + '</p></div>';
+          // $('.tab-content').append(tabpanel);
+          //
+          // // slider component
+          // var milestoneitem = '<div class="milestones-item" data-title="' + category.toLowerCase() + '">' +
+          // '<img src="' + imagePath + $(this).find('image').text() + '" alt="' + category.toLowerCase() + '">' +
+          // '<div class="text-overlay"><p class="tag">' + $(this).find('bannertag').text() + '</p>' +
+          // '<p class="title">' + $(this).find('bannertext').text() + '</p></div></div>';
+          // $('.milestones-container').append(milestoneitem);
 
         });
 
@@ -86,22 +110,29 @@
           $('.tabs ul').slideToggle();
         });
         $('.tabs .nav-link').on('click', function(){
+          console.log('navlink click');
           var hash = $(this).attr('href');
           $(location).attr('hash', hash);
-          $('.milestones-container').slick('slickGoTo', $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index'))
+          // $('.milestones-container').resize();
+          // $('.milestones-container').slick('slickGoTo', $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index'))
         })
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+          console.log('tabpane change');
+          $('.milestones-container').slick('getSlick').refresh();
+          $('.milestones-container').resize();
+        });
         // milestone slick
         $('.milestones-container').slick({
           dots: true,
           adaptiveHeight: false
         })
-        $('.milestones-container').on('beforeChange', function(e,s,c,n) {
-          var nextSlideTitle = $('.milestones-item[data-slick-index="' + n + '"]').data('title');
-          $(location).attr('hash', nextSlideTitle);
-          $('.tabs .selected').text(nextSlideTitle.toUpperCase());
-
-          navTabs(false);
-        });
+        // $('.milestones-container').on('beforeChange', function(e,s,c,n) {
+        //   var nextSlideTitle = $('.milestones-item[data-slick-index="' + n + '"]').data('title');
+        //   $(location).attr('hash', nextSlideTitle);
+        //   $('.tabs .selected').text(nextSlideTitle.toUpperCase());
+        //
+        //   navTabs(false);
+        // });
         // setup
         navTabs(true);
 

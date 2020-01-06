@@ -192,7 +192,7 @@ html {
 
 .wrapper {
   height: 100%;
-  padding: 2.5rem 0;
+  padding: 1.8rem 0;
 }
 
 .navigator {
@@ -302,7 +302,7 @@ html {
 }
 
 .tabs {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   .selected {
     display: none;
@@ -321,6 +321,13 @@ html {
         border-color: transparent;
         color: #fb8400;
         background: transparent;
+      }
+    }
+    @media (min-width: 992px){
+      .nav-item:first-child {
+        .nav-link {
+          padding-left: 0;
+        }
       }
     }
   }
@@ -381,20 +388,25 @@ html {
 
 .milestones-container {
   height: 100%;
+  &.slick-slider {
+    margin-bottom: 0;
+  }
   .slick-list, .slick-track, .slick-slide {
     height: 100%;
   }
   .milestones-item {
     position: relative;
     img {
-      position: absolute;
-      top: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
       object-fit: cover;
-      z-index: -1;
+      // z-index: -1;
     }
     .text-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;

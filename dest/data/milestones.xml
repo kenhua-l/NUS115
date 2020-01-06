@@ -16,21 +16,21 @@
       </banneritem>
       <banneritem>
         <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+        <title>Exceptional sense of touch for robots and prosthetics</title>
+        <link>http://news.nus.edu.sg/research/exceptional-touch-robots-prosthetics</link>
+        <image>technology/2019-exceptional-sense-of-touch-for-robots-and-prosthetics.jpg</image>
       </banneritem>
       <banneritem>
         <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+        <title>Virtual encounters with mass casualty incidents</title>
+        <link>http://news.nus.edu.sg/highlights/virtual-encounters-mass-casualty-incidents</link>
+        <image>technology/2019-virtual-encounters-with-mass-casualty-incidents.jpg</image>
       </banneritem>
       <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+        <year>2018</year>
+        <title>NUS, Grab partner to transform cities</title>
+        <link>http://news.nus.edu.sg/highlights/nus-grab-partner-transform-cities</link>
+        <image>technology/2018-nus-grab-partner-to-transform-cities.jpg</image>
       </banneritem>
       <banneritem>
         <year>2019</year>
@@ -63,9 +63,6 @@
         <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
       </banneritem>
     </banner>
-    <image>nus_building.jpg</image>
-    <bannertag>Technology</bannertag>
-    <bannertext>NUS opens first net-zero energy building</bannertext>
   </milestone>
   <milestone>
     <category>Health</category>
@@ -76,64 +73,21 @@
     </description>
     <banner>
       <banneritem>
-        <year>2019</year>
+        <year>Health</year>
         <title>Strengthening cyber security with light</title>
         <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
         <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
       </banneritem>
       <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
+        <year>Healthagain</year>
+        <title>Exceptional sense of touch for robots and prosthetics</title>
+        <link>http://news.nus.edu.sg/research/exceptional-touch-robots-prosthetics</link>
+        <image>technology/2019-exceptional-sense-of-touch-for-robots-and-prosthetics.jpg</image>
       </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
-      <banneritem>
-        <year>2019</year>
-        <title>Strengthening cyber security with light</title>
-        <link>http://news.nus.edu.sg/research/strengthening-cybersecurity</link>
-        <image>technology/2019-strengthening-cyber-security-with-light.jpg</image>
-      </banneritem>
+
     </banner>
-    <image>nus_building.jpg</image>
-    <bannertag>Health</bannertag>
-    <bannertext>NUS opens first net-zero energy building</bannertext>
   </milestone>
+<!--
   <milestone>
     <category>Enterprise</category>
     <description>
@@ -168,5 +122,5 @@
     <image>nus_building.jpg</image>
     <bannertag>2019</bannertag>
     <bannertext>NUS opens first net-zero energy building</bannertext>
-  </milestone>
+  </milestone> -->
 </milestoneroot>
