@@ -13,7 +13,6 @@ $(document).ready(function() {
     [$(".content-container")]
   ]);
 
-  // $("line, polyline").removeClass("stop");
   // close btn
   $(".close-btn").on("click", function() {
     var currentPage = baseRef + "/index.html#" + $(this).data("page");
@@ -106,18 +105,21 @@ function animatePage(
       clearInterval(widthClear);
       if (!fill) {
         container.hide();
+        $("line, polyline").removeClass("stop");
       }
       if (callbackFunction) {
         callbackFunction.apply(this, callbackParam);
       }
     } else {
       initial = transit(animation, initial, "width", reverse);
-      $("#home-page-svg line,#home-page-svg polyline").removeClass("stop");
     }
   }
 }
 
 function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
+  if(frameId.length == 0) {
+    return;
+  }
   var container = frameId.find(".animation-container");
   var goalHeight = container.height();
   var goalWidth = container.width();
@@ -127,9 +129,10 @@ function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
 
   var initialHeight = animation.height();
   var initialWidth = animation.width();
-  var setupHeight = setInterval(growHeight, 2);
+  var setupHeight = setInterval(growHeight, 1);
   var setupWidth;
   function growHeight() {
+    $("line, polyline").addClass("stop");
     if (initialHeight > goalHeight) {
       clearInterval(setupHeight);
       setupWidth = setInterval(growWidth, 1);
@@ -140,12 +143,12 @@ function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
 
   function growWidth() {
     if (initialWidth > goalWidth) {
+      $("line, polyline").removeClass("stop");
       clearInterval(setupWidth);
       $(".content").removeAttr("style");
       animation.css("right", "0");
       if (callbackFunction) {
         callbackFunction.apply(this, callbackParam);
-        $("line, polyline").removeClass("stop");
       }
     } else {
       initialWidth = transit(animation, initialWidth, "width");

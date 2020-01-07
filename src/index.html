@@ -54,9 +54,7 @@
         </div>
 
         <div class="overlay"></div>
-        <div id="home-page-svg">
-          @@include('./partials/svg.html')
-        </div>
+        @@include('./partials/svg.html')
       </div>
     </main>
     @@include('./partials/footer.html')
@@ -85,7 +83,6 @@
         // navigator button
         $(".navigator-btn").on("click", function(e) {
           e.preventDefault();
-          $("line, polyline").addClass("stop");
           blockAnimate($("#clear-animation"), redirectPage, [
             $(this).attr("href")
           ]);
