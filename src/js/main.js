@@ -17,24 +17,6 @@ $(document).ready(function() {
       currentPage
     ]);
   });
-
-  var return_user = localStorage.getItem("return_user");
-  // Instruction menu for mobile
-  $(".mobile-drag").on("click", function() {
-    $(this).hide();
-  });
-
-  if ($(window).width() < 768) {
-    if (return_user != "true") {
-      $(".mobile-drag").css({
-        visibility: "visible"
-      });
-      localStorage.setItem("return_user", "true");
-      setTimeout(() => {
-        $(".mobile-drag").hide();
-      }, 3000);
-    }
-  }
 });
 
 // Utils

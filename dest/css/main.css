@@ -652,7 +652,7 @@ html {
   top: 0;
   background: #163768;
   opacity: 0.8;
-  z-index: 4;
+  z-index: 2;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
