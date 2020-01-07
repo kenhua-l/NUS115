@@ -502,7 +502,7 @@ html {
     }
     .event-date {
       font-size: 1.4rem;
-      font-weight: 700 !important;
+      font-weight: 700;
     }
     hr {
       height: 2px;
@@ -522,7 +522,7 @@ html {
         font-size: 1.1rem;
         overflow-wrap: break-word;
         hyphens: auto;
-        font-weight: 700 !important;
+        font-weight: 700;
 
         @media (max-width: 768px) {
           font-size: 1.3rem;
