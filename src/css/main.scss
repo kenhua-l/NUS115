@@ -503,13 +503,12 @@ html {
 }
 
 .events-container {
-  @media (max-width: 768px) {
-    max-width: 300px;
-    margin: auto;
-  }
   .events-item {
     margin: 0 3rem;
     color: white;
+    @media (max-width: 568px) {
+      margin: 0 2rem;
+    }
     small {
       font-size: 0.95rem;
     }
@@ -524,7 +523,7 @@ html {
     .banner-container {
       margin-top: 1rem;
       background: $primary-orange-hover;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       min-height: 200px;
       text-align: center;
       width: 85%;
@@ -533,22 +532,19 @@ html {
       justify-content: center;
       p {
         font-size: 1.1rem;
-        overflow-wrap: break-word;
-        hyphens: auto;
         font-weight: 700;
-
-        @media (max-width: 768px) {
-          font-size: 1.3rem;
-        }
       }
       .link {
         color: white;
         transition: $transition;
         text-decoration: none;
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
         &::after {
           content: "→";
           font-size: 1.5rem;
           padding-left: 0.35rem;
+          vertical-align: sub;
         }
         &:hover {
           color: #ddd;

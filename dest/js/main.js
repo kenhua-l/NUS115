@@ -1,4 +1,4 @@
-var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host");
+var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host") + "/nus-115";
 
 $(document).ready(function() {
   // Animation control
