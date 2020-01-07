@@ -1247,6 +1247,7 @@
             <small>© National University of Singapore. All Right Reserved.</small>
         </div>
     </footer>
+
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/slick.min.js" type="text/javascript"></script>
@@ -1259,7 +1260,6 @@
                 url: "data/milestones.xml",
                 dataType: "xml",
                 success: function(data) {
-                    console.log("success");
                     $(data)
                         .find("milestone")
                         .each(function() {
