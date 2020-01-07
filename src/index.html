@@ -1,57 +1,114 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>NUS 115</title>
-  @@include('./partials/head.html')
-</head>
-<body>
-  @@include('./partials/header.html')
-  <main>
-    <div id="clear-animation" data-home="true">
-      <div class="animation-container">
-        <div class="animation"></div>
+  <head>
+    <title>NUS115</title>
+    @@include('./partials/head.html')
+  </head>
+  <body>
+    @@include('./partials/header.html')
+    <main>
+      <div class="mobile-drag">
+        <div class="item-container">
+          <img src="./images/drag icon.png" />
+          <p>DRAG TO EXPLORE MORE</p>
+        </div>
       </div>
-    </div>
 
-    <div class="wrapper">
-      <div class="navigator">
-        <div class="nav-item" data-title="about">
+      <div id="clear-animation" data-home="true">
+        <div class="animation-container">
+          <div class="animation"></div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="navigator">
+          <div class="nav-item" data-title="about">
             <h2>ABOUT</h2>
             <div class="btn-container">
               <a href="about.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="message">
-            <h2>MESSAGE</h2>
+          </div>
+          <div class="nav-item" data-title="message">
+            <h2>NUS PRESIDENT'S MESSAGE</h2>
             <div class="btn-container">
               <a href="message.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="milestones" data-slick-start="true">
+          </div>
+          <div class="nav-item" data-title="milestones" data-slick-start="true">
             <h2>MILESTONES</h2>
             <div class="btn-container">
               <a href="milestones.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="events">
+          </div>
+          <div class="nav-item" data-title="events">
             <h2>EVENTS</h2>
             <div class="btn-container">
               <a href="events.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-        </div>
-        <div class="nav-item" data-title="speaker">
+          </div>
+          <div class="nav-item" data-title="speaker">
             <h2>DISTINGUISHED SPEAKER SERIES</h2>
             <div class="btn-container">
               <a href="speaker.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
+          </div>
         </div>
-      </div>
 
-      <div class="overlay"></div>
-      @@include('./partials/svg.html')
-    </div>
-  </main>
-  @@include('./partials/footer.html')
-  @@include('./partials/scripts.html')
-</body>
+        <div class="overlay"></div>
+        @@include('./partials/svg.html')
+      </div>
+    </main>
+    @@include('./partials/footer.html')
+    @@include('./partials/scripts.html')
+    <script>
+      $(document).ready(function() {
+        var return_user = localStorage.getItem("return_user");
+        // Instruction menu for mobile
+        $(".mobile-drag").on("click", function() {
+          $(this).hide();
+        });
+        if ($(window).width() < 768) {
+          // if (return_user != "true") {
+            $(".mobile-drag").css({
+              visibility: "visible"
+            })
+            $(".mobile-drag img").animate({ marginLeft: 120 }, 800, function() {
+              $(this).animate({ marginLeft: 0, marginRight: 120 }, 1000, function() {
+                $(this).animate({ marginRight: 0 }), 800;
+              });
+            });
+            // localStorage.setItem("return_user", "true");
+            setTimeout(() => {
+              $(".mobile-drag").fadeOut();
+            }, 3000);
+          // }
+        }
+        // homepage slick
+        $(".navigator").slick({
+          centerMode: true,
+          centerPadding: "25%",
+          arrows: false,
+          focusOnSelect: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: { centerPadding: "15%" }
+            }
+          ]
+        });
+        var slideNum = $(location)
+          .attr("hash")
+          .substr(1);
+        slideToHash(".navigator", slideNum);
+
+        // navigator button
+        $(".navigator-btn").on("click", function(e) {
+          e.preventDefault();
+          blockAnimate($("#clear-animation"), redirectPage, [
+            $(this).attr("href")
+          ]);
+        });
+      });
+    </script>
+  </body>
 </html>

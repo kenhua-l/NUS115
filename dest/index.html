@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>NUS 115</title>
+    <title>NUS115</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,12 +21,18 @@
     </header>
 
     <main>
+        <div class="mobile-drag">
+            <div class="item-container">
+                <img src="./images/drag icon.png" />
+                <p>DRAG TO EXPLORE MORE</p>
+            </div>
+        </div>
+
         <div id="clear-animation" data-home="true">
             <div class="animation-container">
                 <div class="animation"></div>
             </div>
         </div>
-
         <div class="wrapper">
             <div class="navigator">
                 <div class="nav-item" data-title="about">
@@ -36,7 +42,7 @@
                     </div>
                 </div>
                 <div class="nav-item" data-title="message">
-                    <h2>MESSAGE</h2>
+                    <h2>NUS PRESIDENT'S MESSAGE</h2>
                     <div class="btn-container">
                         <a href="message.html" class="btn navigator-btn">LEARN MORE</a>
                     </div>
@@ -1258,6 +1264,64 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/slick.min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            var return_user = localStorage.getItem("return_user");
+            // Instruction menu for mobile
+            $(".mobile-drag").on("click", function() {
+                $(this).hide();
+            });
+            if ($(window).width() < 768) {
+                // if (return_user != "true") {
+                $(".mobile-drag").css({
+                    visibility: "visible"
+                })
+                $(".mobile-drag img").animate({
+                    marginLeft: 120
+                }, 800, function() {
+                    $(this).animate({
+                        marginLeft: 0,
+                        marginRight: 120
+                    }, 1000, function() {
+                        $(this).animate({
+                            marginRight: 0
+                        }), 800;
+                    });
+                });
+                // localStorage.setItem("return_user", "true");
+                setTimeout(() => {
+                    $(".mobile-drag").fadeOut();
+                }, 3000);
+                // }
+            }
+            // homepage slick
+            $(".navigator").slick({
+                centerMode: true,
+                centerPadding: "25%",
+                arrows: false,
+                focusOnSelect: true,
+                infinite: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        centerPadding: "15%"
+                    }
+                }]
+            });
+            var slideNum = $(location)
+                .attr("hash")
+                .substr(1);
+            slideToHash(".navigator", slideNum);
+
+            // navigator button
+            $(".navigator-btn").on("click", function(e) {
+                e.preventDefault();
+                blockAnimate($("#clear-animation"), redirectPage, [
+                    $(this).attr("href")
+                ]);
+            });
+        });
+    </script>
 </body>
 
 </html>

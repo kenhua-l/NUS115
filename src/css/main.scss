@@ -21,6 +21,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  a {
+    margin-top: 1.5rem;
+  }
   img {
     max-height: 60px;
   }
@@ -29,7 +32,8 @@ main {
   flex: 5;
   max-height: 70%;
 }
-button, .btn {
+button,
+.btn {
   border: 1.5px solid white;
   margin: 0 auto;
   padding: 0.5rem 1rem;
@@ -37,22 +41,31 @@ button, .btn {
   border-radius: 0px;
   letter-spacing: 0.2rem;
   color: white;
-  &:hover{
+  transition: $transition;
+  &:hover {
     border-color: $primary-orange-hover;
     color: $primary-orange-hover;
   }
 }
 
+h1,
 h2 {
-  color: #fb8400;
+  color: $primary-orange-hover;
   margin-bottom: 1.5rem;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  @media (max-width: 768px) {
+    font-size: 2.1rem;
+  }
 }
 
 p {
   color: white;
   font-size: 1.2rem;
   letter-spacing: 0.03rem;
+  font-weight: 300;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 /* added */
 
@@ -178,6 +191,12 @@ svg {
   }
 }
 
+.stop {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
 html {
   height: 100vh;
   overflow: hidden;
@@ -185,27 +204,33 @@ html {
 
 .wrapper {
   height: 100%;
-  padding: 2.5rem 0;
+  padding: 1.8rem 0;
 }
 
 .navigator {
   height: 100%;
-  .slick-list, .slick-track, .slick-slide {
+
+  .slick-list,
+  .slick-track,
+  .slick-slide {
     height: 100%;
   }
   .nav-item {
     text-align: center;
     position: relative;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
     h2 {
       margin-top: 4rem;
       color: #9c9c9c;
       font-size: 4.5rem;
       letter-spacing: 4px;
       line-height: 1;
-
       @media (max-width: 1200px) {
-        font-size: 4rem;
+        font-size: 4.5rem;
       }
       @media (max-width: 992px) {
         font-size: 3.8rem;
@@ -251,10 +276,10 @@ html {
   color: white;
   a.social {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $primary-blue;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,14 +316,14 @@ html {
 }
 
 .tabs {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   .selected {
     display: none;
   }
   ul.nav-tabs {
     border-bottom: none;
-    @media (min-width: 992px){
+    @media (min-width: 992px) {
       display: flex !important;
     }
     .nav-link {
@@ -306,17 +331,26 @@ html {
       padding: 0 1rem;
       text-decoration: none;
       transition: $transition;
-      &:hover, &.active {
+      &:hover,
+      &.active {
         border-color: transparent;
         color: #fb8400;
         background: transparent;
+      }
+    }
+    @media (min-width: 992px) {
+      .nav-item:first-child {
+        .nav-link {
+          padding-left: 0;
+        }
       }
     }
   }
   @media (max-width: 992px) {
     .selected {
       display: block;
-      width: 250px;
+      width: 80%;
+      max-width: 250px;
       position: relative;
       background: white;
       padding: 0.5rem 1rem;
@@ -343,7 +377,8 @@ html {
       .nav-link {
         padding: 0.25rem 1rem;
         color: $primary-blue;
-        &:hover, &.active {
+        &:hover,
+        &.active {
           color: #fb8400;
         }
       }
@@ -358,6 +393,9 @@ html {
   margin: 0 auto;
   overflow: auto;
   position: relative;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
   .content {
     padding: 2rem 2.5rem;
     height: 100%;
@@ -369,20 +407,35 @@ html {
 
 .milestones-container {
   height: 100%;
-  .slick-list, .slick-track, .slick-slide {
+  @media (max-width: 992px) {
+    height: auto;
+  }
+  &.slick-slider {
+    margin-bottom: 0;
+    @media (max-width: 992px) {
+      margin-bottom: 2rem;
+    }
+  }
+  .slick-list,
+  .slick-track,
+  .slick-slide {
     height: 100%;
+    @media (max-width: 992px) {
+      height: auto;
+    }
   }
   .milestones-item {
     position: relative;
     img {
-      position: absolute;
-      top: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
       object-fit: cover;
-      z-index: -1;
     }
     .text-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -393,11 +446,11 @@ html {
       .tag {
         font-size: 1rem;
         letter-spacing: 0.3rem;
+        margin-bottom: 0.25rem;
       }
       .title {
         width: 70%;
         margin: 0 auto;
-        font-size: 1.8rem;
         font-weight: 600;
         letter-spacing: 0.15rem;
         @media (max-width: 768px) {
@@ -406,7 +459,8 @@ html {
       }
     }
   }
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     z-index: 1;
     &::before {
       color: white;
@@ -428,28 +482,40 @@ html {
     }
   }
   .slick-dots {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
     bottom: 0;
     li {
-      padding: 0 1rem;
-      button::before {
-        content: "";
-        border-top: 5px solid white;
-        padding: 0 1rem;
+      flex: 1;
+      max-width: 20px;
+      width: auto;
+      button {
+        width: auto;
+        &::before {
+          content: "";
+          border-top: 5px solid white;
+          width: 100%;
+        }
       }
     }
   }
 }
 
 .events-container {
+  @media (max-width: 768px) {
+    max-width: 300px;
+    margin: auto;
+  }
   .events-item {
-    margin: 0 2rem;
+    margin: 0 3rem;
     color: white;
-    font-weight: 700;
     small {
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
     .event-date {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 700;
     }
     hr {
       height: 2px;
@@ -457,34 +523,66 @@ html {
     }
     .banner-container {
       margin-top: 1rem;
-      background: #fb8400;
-      padding: 1rem 0.5rem;
+      background: $primary-orange-hover;
+      padding: 1rem;
       min-height: 200px;
       text-align: center;
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       p {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         overflow-wrap: break-word;
         hyphens: auto;
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+          font-size: 1.3rem;
+        }
+      }
+      .link {
+        color: white;
+        transition: $transition;
+        text-decoration: none;
+        &::after {
+          content: "→";
+          font-size: 1.5rem;
+          padding-left: 0.35rem;
+        }
+        &:hover {
+          color: #ddd;
+        }
+      }
+      .btn {
+        padding: 0.25rem 0.75rem;
+        &:hover {
+          background: white;
+          color: $primary-orange-hover;
+        }
       }
     }
   }
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     z-index: 1;
     top: 15%;
     &::before {
-      opacity: 1;
-      color: white;
+      // opacity: 1;
+      // color: white;
       font-family: "Font Awesome 5 Free";
       font-size: 1.5rem;
       font-weight: 900;
     }
   }
   .slick-prev {
+    left: -15px;
     &::before {
       content: "\f053";
     }
   }
   .slick-next {
+    right: -15px;
     &::before {
       content: "\f054";
     }
@@ -499,4 +597,26 @@ html {
   color: white;
   cursor: pointer;
   z-index: 1;
+}
+
+.mobile-drag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: $primary-blue;
+  opacity: 0.8;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+
+  .item-container {
+    text-align: center;
+    img {
+      width: 50px;
+      padding: 1rem 0;
+    }
+  }
 }

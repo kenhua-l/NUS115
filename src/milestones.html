@@ -1,118 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Milestones</title>
-  @@include('./partials/head.html')
-</head>
-<body>
-  @@include('./partials/header.html')
-  <main>
-    <div id="clear-animation">
-      <div class="animation-container">
-        <div class="animation"></div>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="content-container">
+  <head>
+    <title>NUS115 | Milestones</title>
+    <style>
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+      .content .tab-content {
+        flex: 1;
+      }
+      .content .tab-content > .active {
+        display: flex;
+        height: 100%;
+      }
+    </style>
+    @@include('./partials/head.html')
+  </head>
+  <body>
+    @@include('./partials/header.html')
+    <main>
+      <div id="clear-animation">
         <div class="animation-container">
           <div class="animation"></div>
         </div>
-        <div class="content">
-          <span data-page="milestone" class="close-btn">&times;</span>
-
-          <div class="tabs row">
-            <p class="selected">SUSTAINABILITY</p>
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#technology">TECHNOLOGY</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#health">HEALTH</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#enterprise">ENTERPRISE</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link" data-toggle="tab" href="#community">COMMUNITY</a></li>
-              <li class="nav-item" role="tab"><a class="nav-link active" data-toggle="tab" href="#sustainability">SUSTAINABILITY</a></li>
-            </ul>
+      </div>
+      <div class="wrapper">
+        <div class="content-container">
+          <div class="animation-container">
+            <div class="animation"></div>
           </div>
+          <div class="content">
+            <span data-page="milestone" class="close-btn">&times;</span>
 
-          <div class="row">
-            <div class="col-12 col-lg-7 tab-content">
-              <div class="tab-pane fade" id="technology" role="tabpanel">
-                <h2>Technology</h2>
-                <p>
-                  Lorem ipsum technologydolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade" id="health" role="tabpanel">
-                <h2>Health</h2>
-                <p>
-                  health Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade" id="enterprise" role="tabpanel">
-                <h2>Enterprise</h2>
-                <p>
-                  Lorem ipsum dolor Enterprise sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade" id="community" role="tabpanel">
-                <h2>Community</h2>
-                <p>
-                  Lorem comm ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="tab-pane fade show active" id="sustainability" role="tabpanel">
-                <h2>Sustainability</h2>
-                <p>
-                  Lorem SUS ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
+            <div class="tabs row">
+              <div class="col-12">
+                <p class="selected">TECHNOLOGY</p>
+                <ul class="nav nav-tabs" role="tablist"></ul>
               </div>
             </div>
-            <div class="col-12 col-lg-5">
-              <div class="milestones-container">
-                <div class="milestones-item" data-title="technology">
-                  <img src="./images/nus building.jpg" alt="buidling">
-                  <div class="text-overlay">
-                    <p class="tag">Technology</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="health">
-                  <img src="./images/nus building.jpg" alt="buidling">
-                  <div class="text-overlay">
-                    <p class="tag">Health</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="enterprise">
-                  <img src="./images/nus building.jpg" alt="building">
-                  <div class="text-overlay">
-                    <p class="tag">Enterprise</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="community">
-                  <img src="./images/nus building.jpg" alt="building">
-                  <div class="text-overlay">
-                    <p class="tag">Community</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-                <div class="milestones-item" data-title="sustainability">
-                  <img src="./images/nus building.jpg" alt="building">
-                  <div class="text-overlay">
-                    <p class="tag">2019</p>
-                    <p class="title">NUS opens first net-zero energy building</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            <div class="tab-content"></div>
           </div>
         </div>
+
+        <div class="overlay"></div>
+        @@include('./partials/svg.html')
       </div>
+    </main>
+    @@include('./partials/footer.html')
+    @@include('./partials/scripts.html')
+    <script>
+      $(document).ready(function() {
+        var imagePath = baseRef + "/images/milestones/";
+        $.ajax({
+          type: "GET",
+          url: "data/milestones.xml",
+          dataType: "xml",
+          success: function(data) {
+            $(data)
+              .find("milestone")
+              .each(function() {
+                var category = $(this)
+                  .find("category")
+                  .text();
 
+                // tablist component
+                var tablist =
+                  '<li class="nav-item" role="tab">' +
+                  '<a class="nav-link" data-toggle="tab" href="#' +
+                  category.toLowerCase() +
+                  '">' +
+                  category.toUpperCase() +
+                  "</a></li>";
+                $(".nav-tabs").append(tablist);
 
-      <div class="overlay"></div>
-      <!-- @@include('./partials/svg.html') -->
-    </div>
-  </main>
-  @@include('./partials/footer.html')
-  @@include('./partials/scripts.html')
-</body>
+                // tabpanel component
+                var tabpanel = $(
+                  '<div class="tab-pane fade row" id="' +
+                    category.toLowerCase() +
+                    '" role="tabpanel"></div>'
+                );
+
+                var description = $('<div class="col-12 col-lg-7"></div>');
+                description.append(
+                  "<h2>" +
+                    category +
+                    "</h2><p>" +
+                    $(this)
+                      .find("description")
+                      .text() +
+                    "</p>"
+                );
+                tabpanel.append(description);
+
+                var slider = $('<div class="milestones-container"></div>');
+                $(this)
+                  .find("banner")
+                  .find("banneritem")
+                  .each(function() {
+                    var banneritem = $(
+                      '<a class="milestones-item" href="' +
+                        $(this)
+                          .find("link")
+                          .text() +
+                        '" target="_blank"></a>'
+                    );
+                    banneritem.append(
+                      '<img src="' +
+                        imagePath +
+                        $(this)
+                          .find("image")
+                          .text() +
+                        '" alt="' +
+                        $(this)
+                          .find("title")
+                          .text() +
+                        '">'
+                    );
+                    banneritem.append(
+                      '<div class="text-overlay"><p class="tag">' +
+                        $(this)
+                          .find("year")
+                          .text() +
+                        "</p>" +
+                        '<p class="title">' +
+                        $(this)
+                          .find("title")
+                          .text() +
+                        "</p></div></div>"
+                    );
+                    slider.append(banneritem);
+                  });
+                tabpanel.append(
+                  $('<div class="col-12 col-lg-5"></div>').append(slider)
+                );
+
+                $(".tab-content").append(tabpanel);
+              });
+
+            // Nav tabs
+            $(".selected").on("click", function() {
+              $(".tabs ul").slideToggle();
+            });
+            $(".tabs .nav-link").on("click", function() {
+              var hash = $(this).attr("href");
+              $(location).attr("hash", hash);
+              $(".tabs .nav-tabs").slideUp();
+            });
+            $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+              $(".tabs .selected").text($(this).text());
+              $(".milestones-container").slick("unslick");
+              $(".milestones-container").slick({
+                dots: true,
+                adaptiveHeight: false
+              });
+            });
+
+            // milestone slick
+            $(".milestones-container").slick({
+              dots: true,
+              adaptiveHeight: false
+            });
+            // setup
+            navTabs(true);
+          },
+          error: function(error, text, thrown) {
+            console.log(text);
+          }
+        });
+      });
+      $(document).bind('click', function (e) {
+        if (!$(e.target).parents().hasClass("tabs")) $(".tabs .nav-tabs").hide();
+      });
+    </script>
+  </body>
 </html>

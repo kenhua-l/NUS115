@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<eventroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <event>
+    <date>11 JAN 2020</date>
+    <time>5.00pm - 7.00pm</time>
+    <title>NUS Bizad Charity Run 2020 - Celebrating NUS115</title>
+    <link>https://www.bizadcharityrun.com</link>
+  </event>
+  <event>
+    <date>17 - 20 FEB 2020</date>
+    <time>11.00pm - 5.00pm</time>
+    <title>NUS Career Fest 2020</title>
+  </event>
+  <event>
+    <date>7 MAR 2020</date>
+    <time>9.00am – 6.00pm</time>
+    <title>NUS Open Day 2020</title>
+  </event>
+  <event>
+    <date>13 - 28 MAR 2020</date>
+    <time>Various timings</time>
+    <title>NUS Arts Festival 2020 - "Ways of Seeing"</title>
+    <link>http://www.nusartsfestival.com</link>
+  </event>
+  <event>
+    <date>27 MAR 2020</date>
+    <time>7.30pm – 9.30pm</time>
+    <title>NUS Mind Science Centre Fundraising Gala Dinner</title>
+  </event>
+  <event>
+    <date>15 MAY 2020</date>
+    <time>6.30pm – 9.30pm</time>
+    <title>University Awards 2020</title>
+  </event>
+  <event>
+    <date>3 JUL 2020</date>
+    <time>7.30pm – 10.00pm</time>
+    <title>NUS Medicine Dinner 2020</title>
+  </event>
+  <event>
+    <date>4 JUL 2020</date>
+    <time>4.00pm – 9.00pm</time>
+    <title>NUS Bukit Timah Homecoming 2020</title>
+  </event>
+  <event>
+    <date>9 – 17 JUL 2020</date>
+    <time>Various timings</time>
+    <title>NUS Commencement 2020</title>
+  </event>
+  <event>
+    <date>20 – 25 JUL 2020</date>
+    <time>Various timings</time>
+    <title>32nd International Olympiad in Informatics (IOI2020)</title>
+  </event>
+  <event>
+    <date>15 AUG 2020</date>
+    <time>5.00pm – 9.30pm</time>
+    <title>Kent Ridge Alumni Family Day 2020</title>
+  </event>
+  <event>
+    <date>8 OCT 2020</date>
+    <time>7.30pm – 9.30pm</time>
+    <title>USP 20th Anniversary Gala Dinner</title>
+  </event>
+</eventroot>
