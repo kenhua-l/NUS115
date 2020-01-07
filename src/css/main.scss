@@ -407,13 +407,22 @@ html {
 
 .milestones-container {
   height: 100%;
+  @media (max-width: 992px) {
+    height: auto;
+  }
   &.slick-slider {
     margin-bottom: 0;
+    @media (max-width: 992px) {
+      margin-bottom: 2rem;
+    }
   }
   .slick-list,
   .slick-track,
   .slick-slide {
     height: 100%;
+    @media (max-width: 992px) {
+      height: auto;
+    }
   }
   .milestones-item {
     position: relative;
@@ -474,13 +483,21 @@ html {
     }
   }
   .slick-dots {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
     bottom: 0;
     li {
-      padding: 0 1rem;
-      button::before {
-        content: "";
-        border-top: 5px solid white;
-        padding: 0 1rem;
+      flex: 1;
+      max-width: 20px;
+      width: auto;
+      button {
+        width: auto;
+        &::before {
+          content: "";
+          border-top: 5px solid white;
+          width: 100%;
+        }
       }
     }
   }

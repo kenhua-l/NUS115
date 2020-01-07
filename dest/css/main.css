@@ -430,13 +430,30 @@ html {
 .milestones-container {
   height: 100%;
 }
+@media (max-width: 992px) {
+  .milestones-container {
+    height: auto;
+  }
+}
 .milestones-container.slick-slider {
   margin-bottom: 0;
+}
+@media (max-width: 992px) {
+  .milestones-container.slick-slider {
+    margin-bottom: 2rem;
+  }
 }
 .milestones-container .slick-list,
 .milestones-container .slick-track,
 .milestones-container .slick-slide {
   height: 100%;
+}
+@media (max-width: 992px) {
+  .milestones-container .slick-list,
+  .milestones-container .slick-track,
+  .milestones-container .slick-slide {
+    height: auto;
+  }
 }
 .milestones-container .milestones-item {
   position: relative;
@@ -505,15 +522,26 @@ html {
   content: "\f054";
 }
 .milestones-container .slick-dots {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 0 2rem;
   bottom: 0;
 }
 .milestones-container .slick-dots li {
-  padding: 0 1rem;
+  -webkit-box-flex: 1;
+          flex: 1;
+  max-width: 20px;
+  width: auto;
+}
+.milestones-container .slick-dots li button {
+  width: auto;
 }
 .milestones-container .slick-dots li button::before {
   content: "";
   border-top: 5px solid white;
-  padding: 0 1rem;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .events-container {
