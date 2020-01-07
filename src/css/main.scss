@@ -216,19 +216,16 @@ html {
     text-align: center;
     position: relative;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
     h2 {
       margin-top: 4rem;
       color: #9c9c9c;
       font-size: 4.5rem;
       letter-spacing: 4px;
       line-height: 1;
-
-      // align center
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      height: 50%;
       @media (max-width: 1200px) {
         font-size: 4.5rem;
       }
@@ -245,7 +242,7 @@ html {
     .btn-container {
       display: none;
       position: absolute;
-      bottom: 30%;
+      bottom: 4rem;
       width: 100%;
       @media (max-width: 768px) {
         bottom: auto;
@@ -526,6 +523,19 @@ html {
 
         @media (max-width: 768px) {
           font-size: 1.3rem;
+        }
+      }
+      .link {
+        color: white;
+        transition: $transition;
+        text-decoration: none;
+        &::after {
+          content: "→";
+          font-size: 1.5rem;
+          padding-left: 0.35rem;
+        }
+        &:hover {
+          color: #ddd;
         }
       }
       .btn {
