@@ -1346,12 +1346,12 @@
                         $(".tabs ul").slideToggle();
                     });
                     $(".tabs .nav-link").on("click", function() {
-                        console.log("navlink click");
                         var hash = $(this).attr("href");
                         $(location).attr("hash", hash);
+                        $(".tabs .nav-tabs").slideUp();
                     });
                     $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-                        console.log("tabpane change");
+                        $(".tabs .selected").text($(this).text());
                         $(".milestones-container").slick("unslick");
                         $(".milestones-container").slick({
                             dots: true,
@@ -1371,6 +1371,9 @@
                     console.log(text);
                 }
             });
+        });
+        $(document).bind('click', function(e) {
+            if (!$(e.target).parents().hasClass("tabs")) $(".tabs .nav-tabs").hide();
         });
     </script>
 </body>

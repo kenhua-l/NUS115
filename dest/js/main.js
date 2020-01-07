@@ -63,8 +63,6 @@ function navTabs(toggle) {
   $('.tabs a[href="' + hash + '"]').click();
 
   if (toggle == true) {
-    // var slideNum = $('.milestones-item[data-title="' + hash.substr(1) + '"]').data('slick-index');
-    // $('.milestones-container').slick('slickGoTo', slideNum);
     $(".tabs .selected").text(hash.substr(1).toUpperCase());
   }
 }
