@@ -1,9 +1,6 @@
 var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host");
 
 $(document).ready(function() {
-  console.log(decodeURIComponent(document.cookie));
-  document.cookie = "return_user=true";
-
   // Animation control
   $(".content").css({ visibility: "hidden" });
   var toLeft = $("#clear-animation").data("home") ? true : false;
@@ -21,13 +18,23 @@ $(document).ready(function() {
     ]);
   });
 
+  var return_user = localStorage.getItem("return_user");
   // Instruction menu for mobile
   $(".mobile-drag").on("click", function() {
     $(this).hide();
   });
-  setTimeout(() => {
-    $(".mobile-drag").hide();
-  }, 3000);
+
+  if ($(window).width() < 768) {
+    if (return_user != "true") {
+      $(".mobile-drag").css({
+        visibility: "visible"
+      });
+      localStorage.setItem("return_user", "true");
+      setTimeout(() => {
+        $(".mobile-drag").hide();
+      }, 3000);
+    }
+  }
 });
 
 // Utils
