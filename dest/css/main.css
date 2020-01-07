@@ -543,15 +543,14 @@ html {
   border-top: 5px solid white;
   width: 100%;
 }
-@media (max-width: 768px) {
-  .events-container {
-    max-width: 300px;
-    margin: auto;
-  }
-}
 .events-container .events-item {
   margin: 0 3rem;
   color: white;
+}
+@media (max-width: 568px) {
+  .events-container .events-item {
+    margin: 0 2rem;
+  }
 }
 .events-container .events-item small {
   font-size: 0.95rem;
@@ -567,7 +566,7 @@ html {
 .events-container .events-item .banner-container {
   margin-top: 1rem;
   background: #f5821f;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   min-height: 200px;
   text-align: center;
   width: 85%;
@@ -581,27 +580,21 @@ html {
 }
 .events-container .events-item .banner-container p {
   font-size: 1.1rem;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   font-weight: 700;
-}
-@media (max-width: 768px) {
-  .events-container .events-item .banner-container p {
-    font-size: 1.3rem;
-  }
 }
 .events-container .events-item .banner-container .link {
   color: white;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-decoration: none;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
 }
 .events-container .events-item .banner-container .link::after {
   content: "→";
   font-size: 1.5rem;
   padding-left: 0.35rem;
+  vertical-align: sub;
 }
 .events-container .events-item .banner-container .link:hover {
   color: #ddd;
