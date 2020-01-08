@@ -45,12 +45,13 @@
               <a href="events.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
           </div>
-          <div class="nav-item" data-title="speaker">
+          <!-- TO be live on February -->
+          <!-- <div class="nav-item" data-title="speaker">
             <h2>DISTINGUISHED SPEAKER SERIES</h2>
             <div class="btn-container">
               <a href="speaker.html" class="btn navigator-btn">LEARN MORE</a>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="overlay"></div>
@@ -66,22 +67,20 @@
         $(".mobile-drag").on("click", function() {
           $(this).hide();
         });
-        if ($(window).width() < 768) {
-          // if (return_user != "true") {
-            $(".mobile-drag").css({
-              visibility: "visible"
-            })
-            $(".mobile-drag img").animate({ marginLeft: 120 }, 800, function() {
-              $(this).animate({ marginLeft: 0, marginRight: 120 }, 1000, function() {
-                $(this).animate({ marginRight: 0 }), 800;
-              });
-            });
-            // localStorage.setItem("return_user", "true");
-            setTimeout(function() {
-              $(".mobile-drag").fadeOut();
-            }, 3000);
-          // }
-        }
+        // if (return_user != "true") {
+        $(".mobile-drag").css({
+          visibility: "visible"
+        })
+        $(".mobile-drag img").animate({ marginLeft: 120 }, 800, function() {
+          $(this).animate({ marginLeft: 0, marginRight: 120 }, 1000, function() {
+            $(this).animate({ marginRight: 0 }), 800;
+          });
+        });
+        // localStorage.setItem("return_user", "true");
+        setTimeout(function() {
+          $(".mobile-drag").fadeOut();
+        }, 3000);
+        // }
         // homepage slick
         $(".navigator").slick({
           centerMode: true,
