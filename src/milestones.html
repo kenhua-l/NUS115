@@ -96,7 +96,11 @@
                         $(this)
                           .find("link")
                           .text() +
-                        '" target="_blank"></a>'
+                        '" target="_blank" aria-label="' +
+                        $(this)
+                          .find("title")
+                          .text() +
+                        '"></a>'
                     );
                     banneritem.append(
                       '<img src="' +
