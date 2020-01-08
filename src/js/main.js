@@ -1,4 +1,4 @@
-var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host") + "/nus-115";
+var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host");
 
 $(document).ready(function() {
   // Animation control
@@ -60,19 +60,28 @@ function redirectPage(toUrl) {
   $(location).attr("href", toUrl);
 }
 
-function transit(container, containerSpan, property, decrease = false) {
+function transit(container, containerSpan, property, decrease) {
+  if(decrease === undefined) {
+    decrease = false;
+  }
   containerSpan = !decrease ? containerSpan + 20 : containerSpan - 20;
   container.css(property, containerSpan + "px");
   return containerSpan;
 }
 
-function animatePage(
-  frameId,
-  fill = false,
-  toLeft = false,
-  callbackFunction = null,
-  callbackParam = null
-) {
+function animatePage(frameId, fill, toLeft, callbackFunction, callbackParam) {
+  if(fill === undefined) {
+    fill = false;
+  }
+  if(toLeft === undefined) {
+    fill = false;
+  }
+  if(callbackFunction === undefined) {
+    callbackFunction = null;
+  }
+  if(callbackParam === undefined) {
+    callbackParam = null;
+  }
   $("line, polyline").addClass("stop");
   var container = frameId.find(".animation-container");
   var conWidth = container.width();
@@ -103,9 +112,15 @@ function animatePage(
   }
 }
 
-function blockAnimate(frameId, callbackFunction = null, callbackParam = null) {
+function blockAnimate(frameId, callbackFunction, callbackParam) {
   if(frameId.length == 0) {
     return;
+  }
+  if(callbackFunction === undefined) {
+    callbackFunction = null;
+  }
+  if(callbackParam === undefined) {
+    callbackParam = null;
   }
   var container = frameId.find(".animation-container");
   var goalHeight = container.height();
