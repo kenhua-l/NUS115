@@ -32,6 +32,7 @@ function css() {
     postcsspartialimport,
     autoprefixer,
     precss
+    // uglify
     // cssnano
   ];
   return src("src/css/*.scss")

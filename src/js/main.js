@@ -1,6 +1,15 @@
 var baseRef = $(location).attr("protocol") + "//" + $(location).attr("host");
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+var isEdge = !isIE && !!window.StyleMedia;
+var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
 
 $(document).ready(function() {
+  if(!(isFirefox  || isSafari || isEdge || isChrome || isEdgeChromium)) {
+    $('#browser').show();
+  }
   // Animation control
   $(".content").css({ visibility: "hidden" });
   var toLeft = $("#clear-animation").data("home") ? true : false;
@@ -61,7 +70,7 @@ function redirectPage(toUrl) {
 }
 
 function transit(container, containerSpan, property, decrease) {
-  if(decrease === undefined) {
+  if (decrease === undefined) {
     decrease = false;
   }
   containerSpan = !decrease ? containerSpan + 20 : containerSpan - 20;
@@ -70,16 +79,16 @@ function transit(container, containerSpan, property, decrease) {
 }
 
 function animatePage(frameId, fill, toLeft, callbackFunction, callbackParam) {
-  if(fill === undefined) {
+  if (fill === undefined) {
     fill = false;
   }
-  if(toLeft === undefined) {
+  if (toLeft === undefined) {
     fill = false;
   }
-  if(callbackFunction === undefined) {
+  if (callbackFunction === undefined) {
     callbackFunction = null;
   }
-  if(callbackParam === undefined) {
+  if (callbackParam === undefined) {
     callbackParam = null;
   }
   $("line, polyline").addClass("stop");
@@ -116,10 +125,10 @@ function blockAnimate(frameId, callbackFunction, callbackParam) {
   if(frameId.length == 0) {
     return;
   }
-  if(callbackFunction === undefined) {
+  if (callbackFunction === undefined) {
     callbackFunction = null;
   }
-  if(callbackParam === undefined) {
+  if (callbackParam === undefined) {
     callbackParam = null;
   }
   var container = frameId.find(".animation-container");
