@@ -5,26 +5,17 @@ body {
   overflow: hidden;
   background-color: #163768;
   position: fixed;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
 }
 /* added */
 .logo {
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
   width: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .logo a {
   margin-top: 1.5rem;
@@ -39,8 +30,7 @@ body {
   font-size: 1.8rem;
 }
 main {
-  -webkit-box-flex: 5;
-          flex: 5;
+  flex: 5;
   max-height: 70%;
 }
 button,
@@ -52,7 +42,6 @@ button,
   border-radius: 0px;
   letter-spacing: 0.2rem;
   color: white;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 button:hover,
@@ -100,8 +89,7 @@ svg {
   top: 0%;
   left: -45%;
   z-index: -4;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+  transform: translateZ(0);
 }
 .cls-2,
 .cls-4,
@@ -119,8 +107,7 @@ svg {
 .cls-63 {
   stroke-dashoffset: 1200px;
   stroke-dasharray: 1000px;
-  -webkit-animation: animate 25s ease forwards 0.2s infinite alternate;
-          animation: animate 25s ease forwards 0.2s infinite alternate;
+  animation: animate 25s ease forwards 0.2s infinite alternate;
 }
 .cls-6,
 .cls-14,
@@ -135,8 +122,7 @@ svg {
 .cls-57 {
   stroke-dashoffset: 1200px;
   stroke-dasharray: 600px;
-  -webkit-animation: animate 25s ease forwards 1.2s infinite alternate;
-          animation: animate 25s ease forwards 1.2s infinite alternate;
+  animation: animate 25s ease forwards 1.2s infinite alternate;
 }
 .cls-1,
 .cls-9,
@@ -150,8 +136,7 @@ svg {
 .cls-53 {
   stroke-dashoffset: 1200px;
   stroke-dasharray: 1200px;
-  -webkit-animation: animate 25s ease forwards 2.5s infinite alternate;
-          animation: animate 25s ease forwards 2.5s infinite alternate;
+  animation: animate 25s ease forwards 2.5s infinite alternate;
 }
 .cls-7,
 .cls-10,
@@ -165,8 +150,7 @@ svg {
 .cls-62 {
   stroke-dashoffset: 1200px;
   stroke-dasharray: 300px;
-  -webkit-animation: animate 25s ease forwards 3.5s infinite alternate;
-          animation: animate 25s ease forwards 3.5s infinite alternate;
+  animation: animate 25s ease forwards 3.5s infinite alternate;
 }
 .cls-3,
 .cls-12,
@@ -180,8 +164,7 @@ svg {
 .cls-55 {
   stroke-dashoffset: 1200px;
   stroke-dasharray: 900px;
-  -webkit-animation: animate 25s ease forwards 4.2s infinite alternate;
-          animation: animate 25s ease forwards 4.2s infinite alternate;
+  animation: animate 25s ease forwards 4.2s infinite alternate;
 }
 .cls-5,
 .cls-23,
@@ -193,16 +176,7 @@ svg {
 .cls-61 {
   stroke-dashoffset: 1200px;
   stroke-dasharray: 1200px;
-  -webkit-animation: animate 25s ease forwards 5s infinite alternate;
-          animation: animate 25s ease forwards 5s infinite alternate;
-}
-@-webkit-keyframes animate {
-  from {
-    stroke-dashoffset: 1200px;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
+  animation: animate 25s ease forwards 5s infinite alternate;
 }
 @keyframes animate {
   from {
@@ -213,7 +187,6 @@ svg {
   }
 }
 .stop {
-  -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
 html {
@@ -239,12 +212,9 @@ img {
   text-align: center;
   position: relative;
   outline: none;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 4rem;
 }
 .navigator .nav-item h2 {
@@ -286,26 +256,19 @@ img {
 }
 .navigator .nav-item.slick-current h2 {
   color: white !important;
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
+  transform: scale(1.15);
 }
 .navigator .nav-item.slick-current .btn-container {
   display: block;
 }
 .footer-links {
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
   text-align: center;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   padding: 0.5rem 0;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   background: rgba(11, 46, 88, 0.8);
   box-shadow: 0 0 50px 50px rgba(11, 46, 88, 0.8);
   color: #e5e5e5;
@@ -316,12 +279,9 @@ img {
   color: #163768;
   width: 30px;
   height: 30px;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background: white;
   border-radius: 100%;
   margin: 0 0.5rem;
@@ -367,7 +327,6 @@ img {
 }
 @media (min-width: 992px) {
   .tabs ul.nav-tabs {
-    display: -webkit-box !important;
     display: flex !important;
   }
 }
@@ -375,7 +334,6 @@ img {
   color: white;
   padding: 0 1rem;
   text-decoration: none;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .tabs ul.nav-tabs .nav-link:hover, .tabs ul.nav-tabs .nav-link.active {
@@ -490,15 +448,10 @@ img {
   top: 0;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
@@ -543,16 +496,13 @@ img {
   content: "\f054";
 }
 .milestones-container .slick-dots {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding: 0 2rem;
   bottom: 0;
 }
 .milestones-container .slick-dots li {
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
   max-width: 20px;
   width: auto;
 }
@@ -591,13 +541,9 @@ img {
   min-height: 200px;
   text-align: center;
   width: 85%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .events-container .events-item .banner-container p {
   font-size: 1.1rem;
@@ -605,7 +551,6 @@ img {
 }
 .events-container .events-item .banner-container .link {
   color: white;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-decoration: none;
   margin-top: 1.5rem;
@@ -667,12 +612,9 @@ img {
   background: #163768;
   opacity: 0.8;
   z-index: 2;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   visibility: hidden;
 }
 .mobile-drag .item-container {
